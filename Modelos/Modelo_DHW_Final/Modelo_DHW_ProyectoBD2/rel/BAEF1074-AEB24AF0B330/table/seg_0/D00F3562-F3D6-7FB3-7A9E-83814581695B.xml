@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D00F3562-F3D6-7FB3-7A9E-83814581695B" name="TBL_ZONAS_RESTRINGIDAS">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ZONA_RESTRINGIDA" id="725C9CBA-64F0-442A-2439-A58DDD1CC5C0">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24</dataTypeSize>
+<ownDataTypeParameters>24,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LNG" id="68F2B063-775A-7F4C-8B7A-30D72E4AA9F4">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAT" id="AD81B98A-3B69-1A5D-DB3A-BA9944D09ABD">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UBICACION_NOMBRE" id="E5116F7B-CA3A-D8D2-9865-E86200208C9D">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C3CC68E8-57E7-3B97-9CF6-1A896EEF2CCF" name="TBL_ZONAS_RESTRINGIDAS_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="725C9CBA-64F0-442A-2439-A58DDD1CC5C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

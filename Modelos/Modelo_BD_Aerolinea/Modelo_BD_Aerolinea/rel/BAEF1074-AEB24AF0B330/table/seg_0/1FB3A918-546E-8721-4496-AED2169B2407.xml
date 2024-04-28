@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1FB3A918-546E-8721-4496-AED2169B2407" name="TBL_LUGARES">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:48:52 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_LUGAR" id="521141D9-EAB3-652D-B2F7-80E70449B1D5">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:49:28 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_LUGAR_PADRE" id="DD345CB8-96A9-62C5-2F05-F6670265D37D">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:54:44 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D65F9386-EC30-6BD2-D02A-FDE9365AE30E" referredColumn="521141D9-EAB3-652D-B2F7-80E70449B1D5"/>
+</associations>
+</Column>
+<Column name="ID_TIPO_LUGAR" id="9B44D7BD-7A14-A59A-FD4E-EDBB3B0CD6AA">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:55:16 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4BB28717-918F-06BC-CBC2-723C1AF4439F" referredColumn="E2FBAD68-82CB-78AE-4B58-53D068AB522B"/>
+</associations>
+</Column>
+<Column name="LUGAR" id="700F9E5A-A764-CBBE-7CA5-8B0CE133271B">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:49:28 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ZIP" id="CE5F91AC-4BC0-5C06-9969-8E6300CF7406">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-18 07:50:57 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="295E5504-F4EE-F192-2B33-FE39FC496F23" name="TBL_LUGARES_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:49:28 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="521141D9-EAB3-652D-B2F7-80E70449B1D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B247E71D-2B55-D8AF-476C-A637A38597E2" name="TBL_LUGARES_TBL_LUGARES_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:54:44 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DD345CB8-96A9-62C5-2F05-F6670265D37D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9960B15F-C33B-C374-CFCC-F282018B3966" name="TBL_LUGARES_TBL_TIPO_LUGAR_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:55:16 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B44D7BD-7A14-A59A-FD4E-EDBB3B0CD6AA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

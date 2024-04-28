@@ -1,0 +1,238 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="38CDE6E1-39B5-72BA-9B9C-86A9ED5FD559" name="TBL_VUELOS">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:11:02 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_VUELO" id="6D541BF0-44CB-D3BD-74C7-A3FF72E61EAB">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:20:17 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_AEROLINEA" id="BBCF384E-EC19-2C3D-5048-B29AAC45850E">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:28:30 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D688BEE0-6D4F-67A7-B2C3-1EB78253B6FF" referredColumn="0A54094A-C96C-BF70-1EB4-784EB52B6F4D"/>
+</associations>
+</Column>
+<Column name="ID_RUTA" id="B69B9418-B0F5-539F-2A47-2F365B89A6DD">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:32:05 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="213C929E-47FB-E153-54C4-4391C4103227" referredColumn="409F5587-182C-0C69-1DF0-13525C82F4F7"/>
+</associations>
+</Column>
+<Column name="ID_TIPO_VUELO" id="1D90C29A-F01F-E3F2-805A-85790495C9B4">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:47:54 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EB46962B-CC8E-466D-C008-814EE14B25F1" referredColumn="5A0C3BC7-C476-973B-1103-A2A18C105EF8"/>
+</associations>
+</Column>
+<Column name="ID_AEROPUERTO_PARTIDA" id="2E1EE783-8A1C-7A5C-752A-FB08773B19E9">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 23:49:19 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4B08EEFB-A205-DEBD-3F04-BD2A70F196A7" referredColumn="6BE3306D-611E-96E5-BD30-A45504AB329C"/>
+</associations>
+</Column>
+<Column name="ID_AEROPUERTO_LLEGADA" id="F65C0B08-1D5B-0232-4053-1E62048B453E">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 23:49:31 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="428EA1DA-AEAF-063C-8C6F-2242D3AC1C99" referredColumn="6BE3306D-611E-96E5-BD30-A45504AB329C"/>
+</associations>
+</Column>
+<Column name="ID_OFERTA" id="EBF5F794-B17A-FDA3-873E-B5F11F1B1FFC">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:57:38 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A32448F-E50C-5836-B749-1F897DD0C337" referredColumn="704AEB40-1C7C-7593-65B5-D7489F27494F"/>
+</associations>
+</Column>
+<Column name="FECHA_PARTIDA" id="77DC1763-9AF3-912D-83FD-9774AA864CAE">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:20:17 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUMERO_VUELO" id="17E00DAC-E80E-4880-4589-232BCFC1AF0E">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:20:17 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HORA_LLEGADA" id="4249DD2C-7CA7-2305-B0C7-99F581E43514">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:20:17 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HORA_PARTIDA" id="AC5FA4E6-9870-5EBF-0CB4-1ACD180E0BB9">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-23 18:01:13 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GATE" id="E4BBBCC0-CF0A-B008-84B8-B9129C58A127">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-23 18:06:27 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="654850DA-5714-265E-E50E-14351F5D3C5A" name="TBL_VUELOS_PK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:20:17 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D541BF0-44CB-D3BD-74C7-A3FF72E61EAB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9AE7DE96-81DE-9CFE-C0C0-2064E21EEEC7" name="TBL_VUELOS_TBL_A_FK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:28:30 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BBCF384E-EC19-2C3D-5048-B29AAC45850E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="40F7C794-9805-CE8D-B611-72A1372477DD" name="TBL_VUELOS_TBL_RUTAS_FK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:32:05 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B69B9418-B0F5-539F-2A47-2F365B89A6DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3881B77C-C16F-72D7-8FB1-BF42DE41B89E" name="TBL_VUELOS_TBL_TIPOS_VUELOS_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:47:54 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D90C29A-F01F-E3F2-805A-85790495C9B4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E79AEF2-0E6B-4C3E-6D86-8DB50B68E1BA" name="TBL_VUELOS_TBL_AER_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 23:49:19 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E1EE783-8A1C-7A5C-752A-FB08773B19E9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2CB82B67-3262-4D18-64A8-B23ECDFAAF2C" name="TBL_VUELOS_TBL_AER_FKv1">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 23:49:31 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F65C0B08-1D5B-0232-4053-1E62048B453E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E614026F-3C82-0D5B-5AD2-CE9BE5FD8C41" name="TBL_VUELOS_TBL_OF_V_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:57:38 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EBF5F794-B17A-FDA3-873E-B5F11F1B1FFC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

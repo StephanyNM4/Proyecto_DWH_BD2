@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4D5A45F0-1F86-7AA9-B16C-B746F3D4C377" name="TBL_AEROLINEAS">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:26:54 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_AEROLINEA" id="0A54094A-C96C-BF70-1EB4-784EB52B6F4D">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:27:23 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AEROLINEA" id="1343D304-7171-2302-4F13-358D0DBB19E2">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:28:22 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7063761-D34A-5E43-6AFC-5D815F63A013" name="TBL_AEROLINEA_PK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:27:23 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A54094A-C96C-BF70-1EB4-784EB52B6F4D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F7A26DF-ADBE-1207-503C-CBD5078C0626" name="TBL_METODO_PAGO">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 00:38:37 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_23</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_METODO_PAGO" id="239DA1C5-4AD5-A892-7B00-93CFA01E4FC2">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 00:40:56 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="METODO_PAGO" id="DAEBD191-C3A4-1648-C038-24E7DD5EC9F6">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 00:40:56 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="14257153-E996-E187-4702-6D6C0487C9EB" name="TBL_METODO_PAGO_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 00:40:56 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="239DA1C5-4AD5-A892-7B00-93CFA01E4FC2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

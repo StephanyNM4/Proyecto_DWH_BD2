@@ -1,0 +1,176 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="18A722A9-1BCF-49E6-386E-633197007D94" name="TBL_CARRERAS">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_CARRERA" id="C69DC8DE-6E04-4427-83A1-C8DB169B0378">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24</dataTypeSize>
+<ownDataTypeParameters>24,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_CONDUCTOR" id="62464F8E-7FEF-DDCF-EC83-C09C24760917">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24</dataTypeSize>
+<ownDataTypeParameters>24,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="61D24136-1F75-3852-98FD-E106AF402845" referredColumn="C04A1F46-192A-765B-42EA-9E904A47056F"/>
+</associations>
+</Column>
+<Column name="CORREO_ELECTRONICO" id="FFFFB4E2-7857-2FE4-8DF0-AE512A746FF0">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:55:03 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8AF25FDE-67F5-1B85-D8AA-DC96AB883472" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+</associations>
+</Column>
+<Column name="LNG_INICIO" id="A10990DB-3E95-6A04-CD87-99E87FB3D96A">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAT_INICIO" id="3B450E31-3434-8D75-3CD3-F87951CD6304">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UBICACION_INICIO" id="DAD3D53E-88C0-41FE-FDB2-63BDDD7C8916">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LNG_FINAL" id="29D5AD19-F48A-6430-5ED4-B9F845D859DC">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LAT_FINAL" id="9F81365C-630E-B18C-FFA1-0CA0212F0367">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO" id="7D00D173-DA95-CB38-8E24-D8299760B746">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA" id="94E3FC69-AAE0-57A6-5125-2B1562EED767">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MONTO_TOTAL" id="188F7D27-A1FC-4FE5-55D9-5E2EA584CED4">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="116C1946-65B4-07E2-4BB9-BA6528C21564" name="TBL_CARRERAS_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C69DC8DE-6E04-4427-83A1-C8DB169B0378"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3F0F6DA4-8DB9-4B1F-1DEB-2738A6792D3B" name="TBL_CARRERAS_TBL_C_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62464F8E-7FEF-DDCF-EC83-C09C24760917"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3EB2B242-7650-3475-F3D0-12A96EC65A6A" name="TBL_CA_TBL_C_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:47:09 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FFFFB4E2-7857-2FE4-8DF0-AE512A746FF0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

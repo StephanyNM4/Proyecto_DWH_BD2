@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4BB28717-918F-06BC-CBC2-723C1AF4439F" containerWithKeyObject="1FB3A918-546E-8721-4496-AED2169B2407" localFKIndex="9960B15F-C33B-C374-CFCC-F282018B3966" name="TBL_LUGARES_TBL_TIPO_LUGAR_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:55:16 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<referredTableLongName>TBL_TIPO_LUGAR</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B86FC40F-39D8-65E4-5A70-6D5C69FB9A61</referredTableID>
+<keyObject>FF700D9E-E545-DA02-CCA1-F2400B7599A5</keyObject>
+<referredKeyID>FF700D9E-E545-DA02-CCA1-F2400B7599A5</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_TIPO_LUGAR</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

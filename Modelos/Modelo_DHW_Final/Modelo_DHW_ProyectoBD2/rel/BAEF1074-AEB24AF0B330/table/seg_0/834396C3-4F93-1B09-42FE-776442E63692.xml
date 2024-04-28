@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="834396C3-4F93-1B09-42FE-776442E63692" name="TBL_CLIENTES">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:14:16 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CORREO_ELECTRONICO" id="EF4372F4-5C57-8D25-D29E-677EA54AF4DE">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 03:41:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="A52E1DF5-5E58-8528-8DDF-5CDBE9208769">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 03:41:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APELLIDO" id="B46BF2BB-38DF-4FCC-3152-21E977473E82">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 03:41:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TELEFONO" id="37698C3C-D139-9735-10EC-2921F89E0BA8">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 03:41:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTRASENA" id="B82242D5-617D-13F2-BCC8-53030E5C31C7">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 03:41:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GENERO" id="E2A57A6D-0FCB-D7B5-A0E7-AD494A6E63FE">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 03:41:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_REGISTRO" id="E6E1A5DA-65F4-C468-3FD2-407F920769AF">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-25 04:37:05 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="678563C1-96F4-8F8A-F48F-540B75FBD2B1" name="TBL_CLIENTES_PK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:43:07 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="34B55ABC-969E-425F-59BB-C89B50C0A577" name="TBL_CLIENTES__UN">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 04:25:52 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

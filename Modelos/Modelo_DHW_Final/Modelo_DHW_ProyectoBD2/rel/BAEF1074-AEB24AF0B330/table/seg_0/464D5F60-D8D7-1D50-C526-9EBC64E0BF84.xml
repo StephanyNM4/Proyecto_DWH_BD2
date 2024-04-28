@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="464D5F60-D8D7-1D50-C526-9EBC64E0BF84" name="TBL_CONDUCTORES">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_CONDUCTOR" id="C04A1F46-192A-765B-42EA-9E904A47056F">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24</dataTypeSize>
+<ownDataTypeParameters>24,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_CARRO" id="AB75E374-985F-38C9-7A67-F306E28B6E01">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>24</dataTypeSize>
+<ownDataTypeParameters>24,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="022DECD6-D30E-CAE4-A1F6-DBE75D832803" referredColumn="A0C922C7-8EEF-35AB-707E-5B5BF2F5E9FA"/>
+</associations>
+</Column>
+<Column name="NOMBRE" id="D4332341-BD98-8626-3998-31A17BD94784">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APELLIDO" id="11D7CF16-1886-52B5-B74C-572090CFA3CD">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TELEFONO" id="2CF41297-132D-1B3E-A345-E2C2A09F030D">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORREO" id="D0B1A767-8338-79BE-9663-FAA6A7C5C544">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_NACIMIENTO" id="B9D1710F-0F66-C479-069B-3936CAEE1815">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_CONTRATACION" id="D1F4736A-326C-4D15-6AFC-AD3E00E5BE46">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_UBER" id="CC90327A-7C33-B9B1-952D-5484099D9DDC">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B3631548-AA25-BC2E-9B60-203535FB0F2D" name="TBL_CONDUCTORES_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C04A1F46-192A-765B-42EA-9E904A47056F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="16163573-8261-51AC-3E43-E673BBEA29BB" name="TBL_CO_TBL_H_U_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB75E374-985F-38C9-7A67-F306E28B6E01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

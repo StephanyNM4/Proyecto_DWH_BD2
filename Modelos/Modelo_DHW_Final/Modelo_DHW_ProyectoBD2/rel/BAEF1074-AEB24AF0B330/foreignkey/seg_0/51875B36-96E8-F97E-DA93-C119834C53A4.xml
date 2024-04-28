@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="51875B36-96E8-F97E-DA93-C119834C53A4" containerWithKeyObject="40340681-3837-4735-331E-9EB292E71A1C" localFKIndex="160FF245-C528-A399-5A91-C9F25A953569" name="TBL_BOLETOS_TBL_AS_FK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 15:27:44 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<referredTableLongName>TBL_ASIENTOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E85112BE-6285-A177-380F-9430513FC6B6</referredTableID>
+<keyObject>E8BFB883-F630-0AAD-BB24-FF3916A5E94D</keyObject>
+<referredKeyID>E8BFB883-F630-0AAD-BB24-FF3916A5E94D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_ASIENTO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

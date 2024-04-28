@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B7348047-146E-F0C4-A75B-86BF69EA2CF4" name="TBL_FACTURA_BOLETOS">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 00:51:53 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_24</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_BOLETO_FACTURA" id="5BF72E8A-16AC-7BA8-73C6-C951B78A4B27">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:16:00 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_FACTURA" id="AAD7CD40-384D-3036-F70C-7C8CBD004254">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 00:52:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F1F7F760-2369-D80E-3106-BBB224A5F4A3" referredColumn="4D02085B-A8E8-6128-5ED7-5DB09205C116"/>
+</associations>
+</Column>
+<Column name="ID_BOLETO" id="ABF46324-9B26-7452-FA3A-32D88800E389">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:00:53 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="90B8EF14-B48B-E724-2038-BCC6A1708871" referredColumn="5A756DD9-9B28-63CE-6919-529EBD8C7C8D"/>
+</associations>
+</Column>
+<Column name="SUBTOTAL" id="82CB29F1-9E05-AC3C-EB76-9A42550D8489">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:03:03 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="933D50BD-99F1-E228-8E2D-EB0F3ABCC43A" name="TBL_FACTURA_BOLETOS_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:16:00 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BF72E8A-16AC-7BA8-73C6-C951B78A4B27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A19D032C-2B51-17B2-9182-DA6BA81556A7" name="TBL_FA_B_TBL_F_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 00:52:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AAD7CD40-384D-3036-F70C-7C8CBD004254"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="95E7E7D3-02B1-8B61-059A-148B794C640B" name="TBL_FACTURA_B_TBL_B_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:00:53 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ABF46324-9B26-7452-FA3A-32D88800E389"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

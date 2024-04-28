@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E420241E-53B2-16C6-A5E8-5D8184F30373" name="TBL_OFERTAS_VUELO">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:55:54 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_33</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_OFERTA" id="704AEB40-1C7C-7593-65B5-D7489F27494F">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:56:52 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCUENTO" id="72DB379A-4220-E678-720F-C67A1337A085">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:56:52 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_INICIO" id="42EB8A66-C065-C38C-6BAB-F5D3FCE4FE37">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:56:52 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_FIN" id="73011F0F-C026-7F8F-EB93-F43CBA1DA595">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:56:52 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AA2F0904-D71A-89FA-21E6-7071781D4677" name="TBL_OFERTAS_VUELO_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:56:52 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="704AEB40-1C7C-7593-65B5-D7489F27494F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

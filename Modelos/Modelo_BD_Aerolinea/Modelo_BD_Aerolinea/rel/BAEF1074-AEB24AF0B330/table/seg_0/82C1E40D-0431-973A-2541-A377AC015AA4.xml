@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="82C1E40D-0431-973A-2541-A377AC015AA4" name="TBL_AVIONES">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:50:42 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_31</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_AVION" id="86C98766-F915-CB3E-656B-26E44CF19144">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:51:11 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_AEROLINEA" id="EE2C34BD-1E78-8A4D-A46F-B7726C35019D">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:51:29 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6F868109-1744-48A6-EFDA-7490A8BD0DB5" referredColumn="0A54094A-C96C-BF70-1EB4-784EB52B6F4D"/>
+</associations>
+</Column>
+<Column name="ID_MODELO" id="65C0E5ED-42DB-0AAA-AA96-9B6C7352915D">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:53:21 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C2FA06C2-3B2C-EDA2-6918-C8A22B4AE086" referredColumn="0E186541-B51F-4CF2-9845-5C960A52519B"/>
+</associations>
+</Column>
+<Column name="CAPACIDAD_PASAJEROS" id="AF2344A4-D4DD-F55C-47EF-DA3B5401BC02">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:51:54 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5E0EAB90-98EA-D72F-CD30-CB1BDAF03E18" name="TBL_AVIONES_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:51:11 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86C98766-F915-CB3E-656B-26E44CF19144"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E81D944D-35E8-FEE7-BB1D-3A9F55C12555" name="TBL_AVIONES_TBL_AER_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:51:29 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE2C34BD-1E78-8A4D-A46F-B7726C35019D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="702ACC0F-0065-713D-64F0-A5988409F289" name="TBL_AV_TBL_M_A_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:53:21 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="65C0E5ED-42DB-0AAA-AA96-9B6C7352915D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E640C47C-89F1-C71B-E2CF-FB5F9BA863CA" name="TBL_EVALUACIONES_X_HOTEL">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:14:05 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_28</ordsAlias>
+<abbreviation>EVALUACIONES</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_EVALUACION" id="9068BE7D-F4BE-32B0-C5E7-53262D872584">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:15:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LIMPIEZA" id="133E0582-9FAA-213D-B2C7-51983494BF1A">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:15:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SERVICIO_Y_PERSONAL" id="0157324B-3E11-744D-A045-E284CD7AF9A4">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:15:48 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONDICIONES_PROPIEDAD" id="B22AEE15-240D-1C40-003C-4D5AA6DAD0FF">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:16:11 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CALIFICACION_PROMEDIO" id="93C55631-8276-BBBE-55C1-2898884EA91F">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:16:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_EVALUACION" id="D14D4E73-1EC9-34C0-9704-9F92B5A0600A">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:18:11 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORREO_CLIENTE" id="23FCDBC4-6129-01F2-D5BA-25C774321DB8">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:18:40 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6692C8AE-FF34-C2A1-EE75-8B9BCA2032BA" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+</associations>
+</Column>
+<Column name="ID_HOTEL" id="D5A62DE5-1F0A-F23E-9023-AA25AA8FB5F2">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:18:55 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="582CCD00-1613-6E73-900E-306F7FE3353A" referredColumn="CB7390F5-80A5-D348-8A3C-E4089D1A5DFD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F0240C52-ED30-AE29-F9C4-0DDBC573E252" name="TBL_EVALUACIONES_X_HOTEL_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:15:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9068BE7D-F4BE-32B0-C5E7-53262D872584"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="055F6E46-85DB-5FCC-B43E-D552C6FAD18F" name="FK_EVALUACIONES_X_HOTEL_C">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:22:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="23FCDBC4-6129-01F2-D5BA-25C774321DB8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5FF5080F-9F7A-851C-7778-F0960EDB735C" name="FK_EVALUACIONES_HOTEL">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:23:32 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D5A62DE5-1F0A-F23E-9023-AA25AA8FB5F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

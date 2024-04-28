@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E85112BE-6285-A177-380F-9430513FC6B6" name="TBL_ASIENTOS">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 03:56:09 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ASIENTO" id="2227A884-831F-43BE-00FF-4C30528F24F6">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:09:25 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_VUELO" id="84C3C5EE-A289-3965-AAFC-AF3B7E229269">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:11:10 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F89D95DA-1D16-21F6-A5D3-8BF508EE0B08" referredColumn="6D541BF0-44CB-D3BD-74C7-A3FF72E61EAB"/>
+</associations>
+</Column>
+<Column name="NOMBRE_ASIENTO" id="25B6E415-E64A-1A0F-CD67-78BEC914F80B">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 17:12:04 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DISPONIBLE" id="67BB39C8-A93F-56F9-5428-EA4EFA93E9DC">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:09:25 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_ASIENTO" id="AD4D3DEE-5A12-911E-40AE-9F09AD62CF10">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 04:04:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO_BASE_ASIENTO" id="832905FE-9E0B-BC8F-1425-C34BC02D1A27">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 04:04:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E8BFB883-F630-0AAD-BB24-FF3916A5E94D" name="TBL_ASIENTOS_PK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:09:25 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2227A884-831F-43BE-00FF-4C30528F24F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="72B952BB-49C3-FACB-66AF-2F5D0FFDF8E6" name="TBL_ASIENTOS_TBL_V_FK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:11:10 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84C3C5EE-A289-3965-AAFC-AF3B7E229269"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

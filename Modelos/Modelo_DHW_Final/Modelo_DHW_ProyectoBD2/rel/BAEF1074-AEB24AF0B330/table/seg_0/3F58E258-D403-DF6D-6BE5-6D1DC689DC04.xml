@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3F58E258-D403-DF6D-6BE5-6D1DC689DC04" name="TBL_POLITICAS">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 13:57:02 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_26</ordsAlias>
+<abbreviation>POLITICAS</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_POLITICA" id="7A324E1E-9480-D84F-4125-9E6DDF71DA1E">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:02:12 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POLITICA" id="33E202BB-DCDA-6AFE-77B4-7EF34A890AAE">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:02:12 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="490B9A86-34B8-49BE-4905-3F6DF54DDA03" name="TBL_POLITICAS_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:02:12 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A324E1E-9480-D84F-4125-9E6DDF71DA1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

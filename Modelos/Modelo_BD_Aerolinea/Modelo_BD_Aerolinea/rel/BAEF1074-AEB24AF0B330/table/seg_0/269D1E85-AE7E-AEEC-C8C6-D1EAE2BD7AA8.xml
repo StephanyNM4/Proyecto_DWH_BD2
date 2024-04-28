@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="269D1E85-AE7E-AEEC-C8C6-D1EAE2BD7AA8" name="TBL_ESTADO_RESERVA">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:07:27 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_29</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ESTADO_RESERVA" id="BD9981AD-6487-F129-BE00-5808FA824C01">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:07:52 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO_RESERVA" id="7E556915-E080-C5C6-17CD-23B4DA5E30A7">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:09:10 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5DC585E8-6CB3-B181-9860-CF2C1B43DC04" name="TBL_ESTADO_RESERVA_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:07:52 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD9981AD-6487-F129-BE00-5808FA824C01"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B7B3B86B-09E9-A71D-2CC9-FFA2C2C6D5D4" name="TBL_EMPLEADOS">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 06:09:55 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_24</ordsAlias>
+<abbreviation>EMPLEADOS</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_EMPLEADO" id="087A6213-8D1D-0195-CA94-AAAE87FA6AFF">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:43:53 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="BFD9CCEE-6900-57C4-B27E-DAB8E2A4F14E">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:43:53 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="APELLIDO" id="5789D34D-CB70-09FA-4565-B111F6C70755">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:44:10 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORREO_ELECTRONICO" id="B252CDD6-8B88-24B2-CF5A-F141552DC897">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:44:29 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTRASENIA" id="35BDE585-42FE-9ABD-91E9-8141A522F232">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:44:46 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TELEFONO" id="E22FB7D1-D425-3B91-FB77-CF111B77A66D">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:45:42 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GENERO" id="E314D99D-5442-9DE6-F90D-0E51748BB79C">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:45:58 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO_CIVIL" id="1FD57900-DCC4-EE09-98A1-DF7E04C1063B">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:46:14 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_TIPO_EMPLEADO" id="5050683A-5EEF-39CE-40AB-7098C5A74347">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:46:32 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EFB945A7-EBF3-9D1C-499C-15DC2A1324B6" referredColumn="F5A3FE31-A6F5-E34D-9C21-A4BDF355C9D9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3230235E-9691-914F-0509-7FAD212E6274" name="TBL_EMPLEADOS_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:43:53 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="087A6213-8D1D-0195-CA94-AAAE87FA6AFF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D909478-6B74-9206-3AC0-1CAF681AB575" name="FK_TIPOS_EMP_TIPO">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:51:28 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5050683A-5EEF-39CE-40AB-7098C5A74347"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

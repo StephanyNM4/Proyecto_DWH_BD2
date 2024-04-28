@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9743F8B9-41A3-AD4F-86D9-EFAB3F2A5765" name="TBL_SERVICIOS_POR_BOLETO">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-18 18:47:46 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_34</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_SERVICIO_ADICIONAL" id="9D06B256-6ACF-61C5-A932-60996F0382DF">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-18 18:48:00 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="217C3C0E-8713-7214-01D7-5B9E824701EF" referredColumn="CF78AB59-5098-A768-A9D8-8B6694F0B26B"/>
+</associations>
+</Column>
+<Column name="ID_BOLETO_FACTURA" id="16BD59CA-4ACC-53B2-29F7-803C2790F301">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-18 18:48:25 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F2ABC079-5190-434A-DC3D-222B43E95489" referredColumn="5BF72E8A-16AC-7BA8-73C6-C951B78A4B27"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0E6A2E00-33A8-48B9-9521-74B3459FC9A3" name="TBL_S_P_B_TBL_S_A_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-18 18:48:00 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9D06B256-6ACF-61C5-A932-60996F0382DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B2C6A1B-3C96-6D35-A57A-383DA9EBE5F7" name="TBL_S_P_B_TBL_F_B_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-18 18:48:25 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16BD59CA-4ACC-53B2-29F7-803C2790F301"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

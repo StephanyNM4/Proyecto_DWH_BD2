@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="86412AF3-CF72-5463-8D5B-A7D5DF6AFF0A" containerWithKeyObject="40340681-3837-4735-331E-9EB292E71A1C" localFKIndex="3F6F7EE9-9E84-8025-5A12-800D6E0B668D" name="TBL_BOLETOS_TBL_ES_FK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:11:50 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<referredTableLongName>TBL_ESCALAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>408DC859-10BF-7A69-409A-430610009D90</referredTableID>
+<keyObject>878EFDD9-3B4E-65DC-F8BA-F19FE331FC4F</keyObject>
+<referredKeyID>878EFDD9-3B4E-65DC-F8BA-F19FE331FC4F</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID_ESCALA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

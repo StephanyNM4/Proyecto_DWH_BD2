@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3097AEB8-67D3-2E61-7198-B983866AE78B" name="TBL_SERVICIOS_X_HOTEL">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:07:28 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_41</ordsAlias>
+<abbreviation>SERVICIOS_X_HOTEL</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_HOTEL" id="E202EE86-A26E-16B0-4A75-82A10A4CDD60">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:08:39 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="65B3C9F1-7E2E-9B89-361C-08756809B14A" referredColumn="CB7390F5-80A5-D348-8A3C-E4089D1A5DFD"/>
+</associations>
+</Column>
+<Column name="ID_SERVICIO" id="19805FEE-FD2A-6130-EA11-236348F22D25">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:08:39 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="231AF583-0FC3-E37C-C70A-8E1A2DAD4D0F" referredColumn="3C1B1071-9DC0-3D83-1C1D-156F8E53FA0C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="22A47087-DAC0-C33F-65E1-5B1C395DCC7E" name="TBL_SERVICIOS_X_HOTEL_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:08:49 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E202EE86-A26E-16B0-4A75-82A10A4CDD60"/>
+<colUsage columnID="19805FEE-FD2A-6130-EA11-236348F22D25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="582BFA73-C513-23D3-A0B6-6E0511BF3E2B" name="FK_SERVICIOS_X_HOTEL_H">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:09:12 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E202EE86-A26E-16B0-4A75-82A10A4CDD60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E0C1A3D3-6984-37EE-4E24-7F43A18C909F" name="FK_SERVICIOS_X_HOTEL_S">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:11:40 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19805FEE-FD2A-6130-EA11-236348F22D25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C7A825DC-29F7-015D-8B43-9FEF5F1A59C9" name="TBL_RUTAS">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:13:21 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_RUTA" id="409F5587-182C-0C69-1DF0-13525C82F4F7">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:29:43 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_LUGAR_ORIGEN" id="FDDFA1EF-68A2-866F-A99A-C77440E11B35">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:58:29 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E1992AFD-A28C-5591-C69F-0663BF5F0A1A" referredColumn="521141D9-EAB3-652D-B2F7-80E70449B1D5"/>
+</associations>
+</Column>
+<Column name="ID_LUGAR_DESTINO" id="9266E2CB-0396-6AEA-83DE-B7B3EE4180ED">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:58:21 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5FB98BF8-8C85-D4C0-9558-49636297907E" referredColumn="521141D9-EAB3-652D-B2F7-80E70449B1D5"/>
+</associations>
+</Column>
+<Column name="DISTANCIA" id="1D7947A9-09A8-D06C-519B-2BD1AD0FE293">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:32:46 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1B04AD9B-1063-80E9-78FA-ACF1D7EA9C7C" name="TBL_RUTAS_PK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:29:43 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="409F5587-182C-0C69-1DF0-13525C82F4F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB20080A-6232-98A6-B538-F483B2C2EBD6" name="TBL_RUTAS_TBL_LUGARES_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:58:21 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9266E2CB-0396-6AEA-83DE-B7B3EE4180ED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8CDB0887-FD58-5ADD-3388-E8D2392DD73A" name="TBL_RUTAS_TBL_LUGARES_FKv2">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-17 22:58:29 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FDDFA1EF-68A2-866F-A99A-C77440E11B35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

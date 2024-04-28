@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F89D95DA-1D16-21F6-A5D3-8BF508EE0B08" containerWithKeyObject="E85112BE-6285-A177-380F-9430513FC6B6" localFKIndex="72B952BB-49C3-FACB-66AF-2F5D0FFDF8E6" name="TBL_ASIENTOS_TBL_V_FK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:11:10 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<referredTableLongName>TBL_VUELOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>38CDE6E1-39B5-72BA-9B9C-86A9ED5FD559</referredTableID>
+<keyObject>654850DA-5714-265E-E50E-14351F5D3C5A</keyObject>
+<referredKeyID>654850DA-5714-265E-E50E-14351F5D3C5A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_VUELO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

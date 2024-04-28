@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CA11BDAC-5831-6B86-88F2-5FA6086B92B6" containerWithKeyObject="ED479218-31B7-0787-8501-28676E891B91" localFKIndex="37EA7E22-0A74-8DE7-6183-7179F13D19EC" name="TBL_COM_TBL_C_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:44:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<referredTableLongName>TBL_CARRERAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>18A722A9-1BCF-49E6-386E-633197007D94</referredTableID>
+<keyObject>116C1946-65B4-07E2-4BB9-BA6528C21564</keyObject>
+<referredKeyID>116C1946-65B4-07E2-4BB9-BA6528C21564</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_CARRERA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

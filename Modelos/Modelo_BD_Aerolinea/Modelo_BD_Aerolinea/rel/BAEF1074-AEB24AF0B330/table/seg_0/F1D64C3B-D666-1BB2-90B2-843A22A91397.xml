@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F1D64C3B-D666-1BB2-90B2-843A22A91397" name="TBL_RESERVAS">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:07:01 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_28</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_RESERVA" id="F0F81664-7EB5-8D88-208A-AAAC15ACE0CF">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:07:24 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_ESTADO_RESERVA" id="A6C4D0CE-A618-C682-6073-B0C820F5C9BE">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:08:47 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4DB9BC22-ED59-F45A-E97C-D235210E34EF" referredColumn="BD9981AD-6487-F129-BE00-5808FA824C01"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AAC0F643-0F99-9EFC-B681-A6B7AEAC4DBD" name="TBL_RESERVAS_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:07:24 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0F81664-7EB5-8D88-208A-AAAC15ACE0CF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CDA809D6-DAC3-9C4B-7BCF-682B01373674" name="TBL_RESERVAS_TBL_E_R_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 02:08:47 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6C4D0CE-A618-C682-6073-B0C820F5C9BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

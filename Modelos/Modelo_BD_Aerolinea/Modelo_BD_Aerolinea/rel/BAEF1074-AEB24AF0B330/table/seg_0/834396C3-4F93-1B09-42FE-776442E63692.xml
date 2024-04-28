@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="834396C3-4F93-1B09-42FE-776442E63692" name="TBL_CLIENTES">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:14:16 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_CLIENTE" id="616FBE74-520E-DE0D-3980-A7E8B280D58A">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:25:00 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="62416200-EFE5-F648-9808-1FC4C9F5C1D5" referredColumn="357D59C2-EE57-FE8B-D40E-EB6587EA19A7"/>
+</associations>
+</Column>
+<Column name="FECHA_REGISTRO" id="E6E1A5DA-65F4-C468-3FD2-407F920769AF">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-25 04:37:05 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="678563C1-96F4-8F8A-F48F-540B75FBD2B1" name="TBL_CLIENTES_PK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:43:07 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="616FBE74-520E-DE0D-3980-A7E8B280D58A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5B27F70D-8361-1389-23B4-C6D28FAEFEF7" name="TBL_CLIENTES_TBL_P_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:25:00 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="616FBE74-520E-DE0D-3980-A7E8B280D58A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

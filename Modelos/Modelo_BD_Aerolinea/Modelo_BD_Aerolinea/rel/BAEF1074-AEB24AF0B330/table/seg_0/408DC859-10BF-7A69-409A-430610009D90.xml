@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="408DC859-10BF-7A69-409A-430610009D90" name="TBL_ESCALAS">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-23 19:05:41 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_ESCALA" id="E89E47F6-B221-C3E4-83CF-C05CC7D4379D">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-23 19:06:35 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_VUELO_PADRE" id="59B7FB77-9C4C-52C3-5F38-71B0B4B3A071">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-30 05:17:50 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46227EE1-6290-2D7D-E107-7586A69FF89B" referredColumn="6D541BF0-44CB-D3BD-74C7-A3FF72E61EAB"/>
+</associations>
+</Column>
+<Column name="ID_VUELO" id="EEB9D261-6C1C-0F36-8B60-287FDDC56F73">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-23 19:06:44 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD034797-2405-1978-0853-028569E1D88B" referredColumn="6D541BF0-44CB-D3BD-74C7-A3FF72E61EAB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="878EFDD9-3B4E-65DC-F8BA-F19FE331FC4F" name="TBL_ESCALAS_PK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-23 19:06:35 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E89E47F6-B221-C3E4-83CF-C05CC7D4379D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D7F3E207-82DE-6886-FE42-B9FFE2E22881" name="TBL_ESCALAS_TBL_V_FK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-23 19:06:44 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EEB9D261-6C1C-0F36-8B60-287FDDC56F73"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AE0AC4A1-2291-36D4-9A32-FA6A536F9DFA" name="TBL_ES_TBL_V_FK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-30 05:17:50 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59B7FB77-9C4C-52C3-5F38-71B0B4B3A071"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="62D3622C-4E36-39C7-8A98-BF18F86BCEF1" name="TBL_TIPOS_EMPLEADOS">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 06:09:55 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_25</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_TIPO_EMPLEADO" id="F5A3FE31-A6F5-E34D-9C21-A4BDF355C9D9">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:49:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_EMPLEADO" id="CFE024AA-CBFD-7726-7F47-D6BC45F8199D">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:49:46 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALARIO_MIN" id="A1EE2B8D-D19C-5DBD-9584-43A6DC4ADEC0">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:50:14 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALARIO_MAX" id="B105175F-56DB-06CD-2A54-8A93A1CDBBE2">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:50:29 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AREA" id="E9147DA4-C522-CEA8-949E-21E1A7B128D0">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:54:06 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="42F34EE0-B003-F58F-A6AC-D680BDAEC3D6" name="TBL_TIPOS_EMPLEADOS_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:49:26 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F5A3FE31-A6F5-E34D-9C21-A4BDF355C9D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

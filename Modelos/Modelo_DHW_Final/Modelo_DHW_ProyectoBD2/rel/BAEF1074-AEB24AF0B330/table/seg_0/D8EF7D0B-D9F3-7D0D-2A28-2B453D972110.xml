@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D8EF7D0B-D9F3-7D0D-2A28-2B453D972110" name="TBL_AMENIDADES">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:51:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_37</ordsAlias>
+<abbreviation>AMENIDADES</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_AMENIDAD" id="84C5EE9E-BB91-E9D9-2FD4-9AAB2BC2B337">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:52:11 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AMENIDAD" id="F907BC0B-EFD9-7F11-6BAE-0FAD9CB08A18">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:52:49 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATEGORIA" id="F2149C5A-70A9-AC02-273A-BEBE1157CB14">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:53:17 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9F8F546D-C198-F74F-2891-C747AC2C248C" name="TBL_AMENIDADES_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:52:11 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84C5EE9E-BB91-E9D9-2FD4-9AAB2BC2B337"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

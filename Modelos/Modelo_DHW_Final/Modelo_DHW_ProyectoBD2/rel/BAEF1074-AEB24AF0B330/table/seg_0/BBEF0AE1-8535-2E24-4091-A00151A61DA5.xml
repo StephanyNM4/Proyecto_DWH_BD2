@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BBEF0AE1-8535-2E24-4091-A00151A61DA5" name="TBL_RESERVACIONES">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:18:12 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_45</ordsAlias>
+<abbreviation>RESERVACIONES</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_RESERVACION" id="5B1D1E1C-5AA1-D9C2-4155-4CF74FBAE55D">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:18:49 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_INICIO" id="BDFC3CCD-3F58-8BDE-3F12-DB525F69EBF8">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:19:44 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_FIN" id="A0EE6D86-0C23-7938-EACA-D07EB75384A2">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:20:15 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO" id="83C85302-BA4B-F508-4126-2B44DB14D8BD">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:20:34 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORREO_CLIENTE" id="F6ED47E1-531B-8CBD-815D-D2F1DB335DBF">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:21:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="73E42DCC-8055-73B7-12FE-CBEDD06F9CEC" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+</associations>
+</Column>
+<Column name="CODIGO_HABITACION" id="F617EB1F-DD63-25E9-CA7C-16D55C47571E">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:21:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="38CA4010-CA39-0B2F-1BB7-EA3145EB2A4B" referredColumn="E654C474-ECA6-EE67-8E55-6A81F0709356"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3B6922B4-CC60-45F2-5F0B-F5024346789C" name="TBL_RESERVACIONES_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:19:44 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B1D1E1C-5AA1-D9C2-4155-4CF74FBAE55D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C5B7870C-666C-5078-8C11-FF4DC40D390D" name="FK_RESERVACIONES_HABIT">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:26:43 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F617EB1F-DD63-25E9-CA7C-16D55C47571E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8750A979-1824-8380-47B1-9BD184A5D8B6" name="FK_RESERVACIONES_CLIENTE">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:27:31 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6ED47E1-531B-8CBD-815D-D2F1DB335DBF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

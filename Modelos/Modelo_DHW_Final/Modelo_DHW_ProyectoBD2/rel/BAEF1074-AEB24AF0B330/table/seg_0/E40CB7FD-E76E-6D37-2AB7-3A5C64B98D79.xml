@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E40CB7FD-E76E-6D37-2AB7-3A5C64B98D79" name="TBL_SEGUIMIENTOS_EQUIPAJE">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:51:58 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_26</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_SEGUIMIENTO" id="700406EE-1FE5-C6BB-9665-1497741E0A58">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:52:50 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_EQUIPAJE" id="C6DB81DB-DDCA-9535-0F03-133180F67205">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:53:02 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CDEA056-AEA1-F416-6610-433111EC5E1C" referredColumn="E3278A88-54F6-0E39-6FF1-AA8AC032C856"/>
+</associations>
+</Column>
+<Column name="LATITUD" id="AD7284DB-A76C-5A1D-5D3E-15E2C30EDF2C">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:52:50 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO_EQUIPAJE" id="41AD65B6-29A4-979A-3F67-3ABDB167291D">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 03:52:55 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1092DE8-39E5-7110-4E12-7CC0909A4602" name="TBL_SEGUIMIENTOS_EQUIPAJE_PK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:52:50 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="700406EE-1FE5-C6BB-9665-1497741E0A58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="41BFE830-3D9A-64AE-E7D6-3A893534FEC0" name="TBL_SE_E_TBL_E_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:53:02 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6DB81DB-DDCA-9535-0F03-133180F67205"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

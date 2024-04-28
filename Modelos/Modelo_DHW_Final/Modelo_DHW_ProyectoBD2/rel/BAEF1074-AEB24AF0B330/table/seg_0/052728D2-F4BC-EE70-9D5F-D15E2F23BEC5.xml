@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="052728D2-F4BC-EE70-9D5F-D15E2F23BEC5" name="TBL_POLITICAS_X_HOTEL">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:03:09 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_27</ordsAlias>
+<abbreviation>POLITICAS_X_HOTEL</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_POLITICA" id="1CFE433B-CF0D-5C1B-C43A-4F36DE45007E">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:07:19 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25A2987D-3A03-88B3-94D5-09E6CA78D4C9" referredColumn="7A324E1E-9480-D84F-4125-9E6DDF71DA1E"/>
+</associations>
+</Column>
+<Column name="ID_HOTEL" id="5A59392F-E00A-BC90-9FC7-0D2DB342DF53">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:09:00 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="06C1B335-C446-03EF-20A5-85D67B4139ED" referredColumn="CB7390F5-80A5-D348-8A3C-E4089D1A5DFD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="784240A3-4C11-6EDE-A8C4-44F88FA37C54" name="TBL_POLITICAS_X_HOTEL_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:07:19 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CFE433B-CF0D-5C1B-C43A-4F36DE45007E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A73F270E-07AE-CFD8-A7F9-26177A5A0335" name="FK_POLITICAS_X_HOTEL_HOTEL">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:09:00 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A59392F-E00A-BC90-9FC7-0D2DB342DF53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A65D8DD9-5FEE-7B53-798F-F00831554D5C" name="FK_POLITICAS_X_HOTEL_POLITICA">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:12:35 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CFE433B-CF0D-5C1B-C43A-4F36DE45007E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="90B8EF14-B48B-E724-2038-BCC6A1708871" containerWithKeyObject="B7348047-146E-F0C4-A75B-86BF69EA2CF4" localFKIndex="95E7E7D3-02B1-8B61-059A-148B794C640B" name="TBL_FACTURA_B_TBL_B_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:00:53 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<referredTableLongName>TBL_BOLETOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>40340681-3837-4735-331E-9EB292E71A1C</referredTableID>
+<keyObject>2EE03742-C0F9-FC8D-4651-E450033E772C</keyObject>
+<referredKeyID>2EE03742-C0F9-FC8D-4651-E450033E772C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_BOLETO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

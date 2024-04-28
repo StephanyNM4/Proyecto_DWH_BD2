@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4D9C7DCC-F0E1-CFEF-DA57-734ECD45FA18" containerWithKeyObject="573A9452-E0AA-FFFD-93DB-BA42E567FDB2" localFKIndex="E7C3ECAC-8842-4FC9-1C07-627BF79F03ED" name="TBL_E_P_B_TBL_F_B_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-21 04:36:55 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<referredTableLongName>TBL_FACTURA_BOLETOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B7348047-146E-F0C4-A75B-86BF69EA2CF4</referredTableID>
+<keyObject>933D50BD-99F1-E228-8E2D-EB0F3ABCC43A</keyObject>
+<referredKeyID>933D50BD-99F1-E228-8E2D-EB0F3ABCC43A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_BOLETO_FACTURA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

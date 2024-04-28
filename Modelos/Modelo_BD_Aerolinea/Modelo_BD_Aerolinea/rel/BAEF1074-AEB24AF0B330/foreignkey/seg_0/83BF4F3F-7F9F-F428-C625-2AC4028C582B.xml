@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="83BF4F3F-7F9F-F428-C625-2AC4028C582B" containerWithKeyObject="0226CC07-2E22-DFB7-6895-94C73895A57D" localFKIndex="C879A97F-3DB4-E436-D057-80E01E7819C8" name="TBL_FACT_TBL_M_P_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 00:50:03 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<referredTableLongName>TBL_METODO_PAGO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4F7A26DF-ADBE-1207-503C-CBD5078C0626</referredTableID>
+<keyObject>14257153-E996-E187-4702-6D6C0487C9EB</keyObject>
+<referredKeyID>14257153-E996-E187-4702-6D6C0487C9EB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_METODO_PAGO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

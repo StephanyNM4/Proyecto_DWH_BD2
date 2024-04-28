@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="17F511ED-E05E-070C-C3E9-A644E4F97CF0" containerWithKeyObject="B0FE950F-0152-2E55-375E-E9EE68D87EF5" localFKIndex="C8E40C1D-BCF9-5AA3-333D-8568EEE1AF79" name="TBL_EMPL_TBL_T_E_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-02-18 01:26:18 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<referredTableLongName>TBL_TIPOS_EMPLEADOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2682DAA6-BDBD-9349-D3A2-BD164E96035E</referredTableID>
+<keyObject>D0CB8D7F-C89D-B7E0-E3FD-8AFB119D8F48</keyObject>
+<referredKeyID>D0CB8D7F-C89D-B7E0-E3FD-8AFB119D8F48</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_TIPO_EMPLEADO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

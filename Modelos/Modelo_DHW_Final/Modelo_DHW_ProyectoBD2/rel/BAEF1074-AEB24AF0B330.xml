@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="DHW_PROYECTO_BD2" id="BAEF1074-485F-E685-4BB9-AEB24AF0B330" mainViewID="7241CC15-E957-F3C8-8B6D-C83B5267548E">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-18 16:09:33 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

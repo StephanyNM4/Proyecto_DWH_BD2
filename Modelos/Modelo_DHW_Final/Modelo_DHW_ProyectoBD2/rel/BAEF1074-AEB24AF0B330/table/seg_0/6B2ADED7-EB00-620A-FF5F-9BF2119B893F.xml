@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6B2ADED7-EB00-620A-FF5F-9BF2119B893F" name="TBL_HABITACIONES">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:45:33 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_36</ordsAlias>
+<abbreviation>HABITACIONES</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_HABITACION" id="E654C474-ECA6-EE67-8E55-6A81F0709356">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:46:13 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO" id="871A55CB-2AEB-3C69-04B8-E4B3A0A4C933">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:48:02 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LIMITE_PERSONAS" id="D2D184EA-B49A-6777-581C-08231069D222">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:48:34 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CANTIDAD_CAMAS" id="A5BCEB1D-0AD5-D71C-315A-B00D8B24FB27">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:48:50 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="78DE7159-9020-6296-3087-70D98C46BCF8">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:49:23 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DISPONIBLE" id="76020BBA-1E8D-3555-168C-54C6BCCB6CBE">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:49:46 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT034</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_HOTEL" id="E0596F99-6287-7D11-8581-FE1B5AA5F77F">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:50:13 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E71E88C9-1250-2301-CE40-1CB86804C668" referredColumn="CB7390F5-80A5-D348-8A3C-E4089D1A5DFD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9972CA28-D174-8441-5258-1F3255EDE7DD" name="TBL_HABITACIONES_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:46:13 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E654C474-ECA6-EE67-8E55-6A81F0709356"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="54F02BFE-4633-D82B-28EF-144C410A4976" name="TBL_HABITACIONES_HOTELES_FK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:51:09 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0596F99-6287-7D11-8581-FE1B5AA5F77F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

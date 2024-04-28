@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2FF271D1-5D09-4818-1433-79E4BBB32659" name="TBL_TIPO_ASIENTO">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:09:27 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_TIPO_ASIENTO" id="FCAC8AFD-0B8B-1911-EC48-A0285361647D">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:10:13 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_ASIENTO" id="D7AC49B4-0C1C-99A6-0CBD-742170F6B440">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:10:13 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECIO_BASE" id="4E851DE7-CB2A-4075-45EE-83E8FD7361A3">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-30 05:40:26 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5AC4E8F4-E609-6294-27AD-E7AD6D4F4E03" name="TBL_TIPO_ASIENTO_PK">
+<createdBy>steph</createdBy>
+<createdTime>2023-11-24 04:10:13 UTC</createdTime>
+<ownerDesignName>Modelo_BD_Aerolinea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCAC8AFD-0B8B-1911-EC48-A0285361647D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

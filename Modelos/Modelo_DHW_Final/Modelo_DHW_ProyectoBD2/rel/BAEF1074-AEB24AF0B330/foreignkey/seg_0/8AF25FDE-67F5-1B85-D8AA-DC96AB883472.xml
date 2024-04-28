@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8AF25FDE-67F5-1B85-D8AA-DC96AB883472" containerWithKeyObject="18A722A9-1BCF-49E6-386E-633197007D94" localFKIndex="3EB2B242-7650-3475-F3D0-12A96EC65A6A" name="TBL_CA_TBL_C_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-03-24 05:47:09 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<referredTableLongName>TBL_CLIENTES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>834396C3-4F93-1B09-42FE-776442E63692</referredTableID>
+<keyObject>678563C1-96F4-8F8A-F48F-540B75FBD2B1</keyObject>
+<referredKeyID>678563C1-96F4-8F8A-F48F-540B75FBD2B1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CORREO_ELECTRONICO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

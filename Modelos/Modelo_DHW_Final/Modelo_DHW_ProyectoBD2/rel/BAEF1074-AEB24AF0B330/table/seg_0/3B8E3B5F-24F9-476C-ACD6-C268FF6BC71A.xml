@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3B8E3B5F-24F9-476C-ACD6-C268FF6BC71A" name="TBL_AMENIDADES_X_HABITACION">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:55:29 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<ordsAlias>table_38</ordsAlias>
+<abbreviation>AMENIDADES_X_HABITACION</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_HABITACION" id="1DA763CC-CD72-716A-281E-6489046594C3">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:56:49 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E1C6C10-9DE3-774F-BA4C-3C8CAB9DA907" referredColumn="E654C474-ECA6-EE67-8E55-6A81F0709356"/>
+</associations>
+</Column>
+<Column name="ID_AMENIDAD" id="CFEA7904-2F08-95E2-9BB5-08EACCF30873">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:56:49 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="548CBC58-F369-BD28-D47A-4A9AA05C3E28" referredColumn="84C5EE9E-BB91-E9D9-2FD4-9AAB2BC2B337"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7059F9DE-B877-9F5F-896E-A8121922318B" name="TBL_AMENIDADES_X_HABITACION_PK">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:57:03 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1DA763CC-CD72-716A-281E-6489046594C3"/>
+<colUsage columnID="CFEA7904-2F08-95E2-9BB5-08EACCF30873"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38EA9D47-FE76-9038-4AA6-3B07D005ED89" name="FK_AMENIDADES_HAB">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:00:09 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1DA763CC-CD72-716A-281E-6489046594C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60752478-3EA3-9B8F-4BC4-06F72B76F01A" name="FK_AMENIDADES_HAB_AM">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:03:33 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFEA7904-2F08-95E2-9BB5-08EACCF30873"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
