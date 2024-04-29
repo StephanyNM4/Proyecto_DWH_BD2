@@ -230,18 +230,18 @@ GO
 
 CREATE TABLE evaluaciones_hotel (
 	id_evaluacion INT IDENTITY PRIMARY KEY,
-    limpieza INT,
-    servicio_y_personal INT,
-    condiciones_propiedad INT,
-    cuidado_medio_ambiente INT,
-    calificacion_promedio AS (limpieza + servicio_y_personal + condiciones_propiedad + cuidado_medio_ambiente) / 4.0,
+    limpieza INT DEFAULT 5,
+    servicio_y_personal INT DEFAULT 5,
+    condiciones_propiedad INT DEFAULT 5,
+    cuidado_medio_ambiente INT DEFAULT 5,
+    calificacion_promedio AS ROUND((limpieza + servicio_y_personal + condiciones_propiedad + cuidado_medio_ambiente) / 4.0, 2),
 	fecha_evaluacion DATE NOT NULL,
 	id_cliente INT NOT NULL,
 	id_sucursal INT NOT NULL,
+	sugerencias VARCHAR(1000)
 
 	CONSTRAINT fk_evaluacion_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
-	CONSTRAINT fk_evaluacion_sucursal FOREIGN KEY (id_sucursal) REFERENCES sucursales(id_sucursal),
-	CONSTRAINT uq_evaluacion UNIQUE (fecha_evaluacion, id_cliente, id_sucursal)
+	CONSTRAINT fk_evaluacion_sucursal FOREIGN KEY (id_sucursal) REFERENCES sucursales(id_sucursal)
 );
 GO
 
