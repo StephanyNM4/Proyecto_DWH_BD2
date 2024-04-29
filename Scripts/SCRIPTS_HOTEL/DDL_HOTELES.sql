@@ -1,4 +1,5 @@
-
+--use master
+--drop database hoteles
 CREATE DATABASE hoteles;
 GO
 USE hoteles;
@@ -44,7 +45,7 @@ GO
 
 CREATE TABLE personas(
 	id_persona INT IDENTITY PRIMARY KEY,
-	nombre VARCHAR(100) NOT NULL,
+	nombre  VARCHAR(100) NOT NULL,
 	apellido VARCHAR(100) NOT NULL,
 	no_identidad VARCHAR(100) UNIQUE NOT NULL,
 	fecha_nacimiento DATE,
@@ -60,20 +61,20 @@ CREATE TABLE personas(
 );
 GO
 
-CREATE TABLE dias(
-	id_dia INT IDENTITY PRIMARY KEY,
-	dia VARCHAR(50) UNIQUE NOT NULL
+CREATE TABLE periodos_tiempo(
+	id_periodo INT IDENTITY PRIMARY KEY,
+	periodo VARCHAR(50) UNIQUE NOT NULL
 );
 GO
 
-CREATE TABLE horarios(
-	id_horario INT IDENTITY PRIMARY KEY,
+CREATE TABLE turnos(
+	id_turno INT IDENTITY PRIMARY KEY,
 	hora_inicio TIME NOT NULL,
 	hora_fin TIME NOT NULL,
-	id_dia INT NOT NULL,
+	id_periodo INT NOT NULL,
 
-	CONSTRAINT fk_horario_dia FOREIGN KEY (id_dia) REFERENCES dias(id_dia),
-	CONSTRAINT uq_horario UNIQUE (hora_inicio, hora_fin, id_dia)
+	CONSTRAINT fk_turno_periodo FOREIGN KEY (id_periodo) REFERENCES periodos_tiempo(id_periodo),
+	CONSTRAINT uq_periodo UNIQUE (hora_inicio, hora_fin, id_periodo)
 );
 GO
 
@@ -126,14 +127,14 @@ CREATE TABLE ded_bon_contratos(
 );
 GO
 
-CREATE TABLE contratos_horarios(
+CREATE TABLE contratos_turnos(
 	id INT IDENTITY PRIMARY KEY,
 	id_contrato INT NOT NULL,
-	id_horario INT NOT NULL,
+	id_turno INT NOT NULL,
 
 	CONSTRAINT fk_contrato_h FOREIGN KEY (id_contrato) REFERENCES contratos(id_contrato),
-	CONSTRAINT fk_horario_c FOREIGN KEY (id_horario) REFERENCES horarios(id_horario),
-	CONSTRAINT uq_horario_contrato UNIQUE (id_contrato, id_horario)
+	CONSTRAINT fk_turno_c FOREIGN KEY (id_turno) REFERENCES turnos(id_turno),
+	CONSTRAINT uq_turno_contrato UNIQUE (id_contrato, id_turno)
 );
 GO
 
@@ -170,6 +171,17 @@ CREATE TABLE sucursales(
 	CONSTRAINT fk_sucursal_hotel FOREIGN KEY (id_hotel) REFERENCES hoteles(id_hotel),
 	CONSTRAINT fk_sucursal_direccion FOREIGN KEY (id_direccion) REFERENCES direcciones(id_direccion),
 	CONSTRAINT uq_sucursale UNIQUE (id_direccion, id_hotel)
+);
+GO
+
+CREATE TABLE empleados_sucursales(
+	id INT IDENTITY PRIMARY KEY,
+	id_empleado INT NOT NULL,
+	id_sucursal INT NOT NULL
+
+	CONSTRAINT fk_empleado_sucursal FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado),
+	CONSTRAINT fk_sucursal_empleado FOREIGN KEY (id_sucursal) REFERENCES sucursales(id_sucursal),
+	CONSTRAINT uq_empleadoss UNIQUE (id_empleado, id_sucursal)
 );
 GO
 
@@ -244,12 +256,6 @@ CREATE TABLE favoritos_de_clientes(
 	CONSTRAINT fk_favorito_csucursal FOREIGN KEY (id_sucursal) REFERENCES sucursales(id_sucursal),
 	CONSTRAINT uq_favorito UNIQUE (id_cliente, id_sucursal)
 );
-
-CREATE TABLE tipos_habitaciones(
-	id_tipo INT IDENTITY PRIMARY KEY,
-	tipo_habitacion VARCHAR(100) NOT NULL UNIQUE
-);
-GO
 
 CREATE TABLE tipos_habitaciones(
 	id_tipo INT IDENTITY PRIMARY KEY,
