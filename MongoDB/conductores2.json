@@ -1,0 +1,290 @@
+[{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55c9"
+  },
+  "nombre": "Tomas",
+  "apellido": "Valladares",
+  "telefono": "+1222333444",
+  "correo": "tommy_valladares@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": {
+    "$date": "2003-12-12T06:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2020-06-15T00:00:00.000Z"
+  },
+  "disponible": true,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d5"
+  },
+  "carro": {
+    "marca": "Honda",
+    "color": "Azul",
+    "placa": "259G-98DV",
+    "anio": 2020,
+    "fechaInicio": {
+      "$date": "2023-08-14T00:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55ca"
+  },
+  "nombre": "Laura",
+  "apellido": "Perez",
+  "telefono": "+1555666777",
+  "correo": "laura_perez@gmail.com",
+  "contrasena": "5678",
+  "fechaNacimiento": {
+    "$date": "1995-05-25T00:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2018-10-03T06:00:00.000Z"
+  },
+  "disponible": false,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d6"
+  },
+  "carro": {
+    "marca": "Toyota",
+    "color": "Rojo",
+    "placa": "567H-44VF",
+    "anio": 2018,
+    "fechaInicio": {
+      "$date": "2024-05-14T00:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55cb"
+  },
+  "nombre": "Juan",
+  "apellido": "Garcia",
+  "telefono": "+1333444555",
+  "correo": "juangarcia@gmail.com",
+  "contrasena": "9012",
+  "fechaNacimiento": {
+    "$date": "1988-08-10T05:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2015-05-11T06:00:00.000Z"
+  },
+  "disponible": true,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d6"
+  },
+  "carro": {
+    "marca": "Chevrolet",
+    "color": "Blanco",
+    "placa": "890K-33BH",
+    "anio": 2017,
+    "fechaInicio": {
+      "$date": "2018-02-04T06:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55cd"
+  },
+  "nombre": "Pedro",
+  "apellido": "Martinez",
+  "telefono": "+1888999000",
+  "correo": "pedromartinez@gmail.com",
+  "contrasena": "6789",
+  "fechaNacimiento": {
+    "$date": "1985-02-04T06:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2014-02-20T00:00:00.000Z"
+  },
+  "disponible": false,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d7"
+  },
+  "carro": {
+    "marca": "Nissan",
+    "color": "Gris",
+    "placa": "789L-55XS",
+    "anio": 2015,
+    "fechaInicio": {
+      "$date": "2016-10-15T00:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55ce"
+  },
+  "nombre": "Maria",
+  "apellido": "Rodriguez",
+  "telefono": "+1999222333",
+  "correo": "maria_rodriguez@gmail.com",
+  "contrasena": "2345",
+  "fechaNacimiento": {
+    "$date": "1998-10-08T00:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2019-08-12T06:00:00.000Z"
+  },
+  "disponible": true,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d7"
+  },
+  "carro": {
+    "marca": "Mazda",
+    "color": "Verde",
+    "placa": "123N-66XC",
+    "anio": 2019,
+    "fechaInicio": {
+      "$date": "2020-03-20T00:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55cf"
+  },
+  "nombre": "Carlos",
+  "apellido": "Sanchez",
+  "telefono": "+1444555666",
+  "correo": "carlossanchez@gmail.com",
+  "contrasena": "7890",
+  "fechaNacimiento": {
+    "$date": "1993-10-19T00:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2017-01-29T00:00:00.000Z"
+  },
+  "disponible": true,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d6"
+  },
+  "carro": {
+    "marca": "Volkswagen",
+    "color": "Amarillo",
+    "placa": "456T-11VW",
+    "anio": 2017,
+    "fechaInicio": {
+      "$date": "2024-04-28T00:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55d0"
+  },
+  "nombre": "Sofia",
+  "apellido": "Gomez",
+  "telefono": "+1777888999",
+  "correo": "sofiagomez@gmail.com",
+  "contrasena": "4567",
+  "fechaNacimiento": {
+    "$date": "1996-12-03T00:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2017-10-22T00:00:00.000Z"
+  },
+  "disponible": false,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d6"
+  },
+  "carro": {
+    "marca": "BMW",
+    "color": "Plateado",
+    "placa": "789Z-77BT",
+    "anio": 2018,
+    "fechaInicio": {
+      "$date": "2019-10-04T06:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55d1"
+  },
+  "nombre": "Elena",
+  "apellido": "Diaz",
+  "telefono": "+1666777888",
+  "correo": "elenadiaz@gmail.com",
+  "contrasena": "7890",
+  "fechaNacimiento": {
+    "$date": "1991-05-11T06:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2020-05-14T00:00:00.000Z"
+  },
+  "disponible": true,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d5"
+  },
+  "carro": {
+    "marca": "Mercedes-Benz",
+    "color": "Dorado",
+    "placa": "334C-99ER",
+    "anio": 2016,
+    "fechaInicio": {
+      "$date": "2024-09-18T00:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55d2"
+  },
+  "nombre": "Pablo",
+  "apellido": "Fernandez",
+  "telefono": "+1555666777",
+  "correo": "pablofernandez@gmail.com",
+  "contrasena": "2345",
+  "fechaNacimiento": {
+    "$date": "1987-08-18T00:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2020-12-10T06:00:00.000Z"
+  },
+  "disponible": true,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d5"
+  },
+  "carro": {
+    "marca": "Hyundai",
+    "color": "Morado",
+    "placa": "123D-88RP",
+    "anio": 2015,
+    "fechaInicio": {
+      "$date": "2023-10-15T00:00:00.000Z"
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "662ebf466f6bc7e4e9cc55cc"
+  },
+  "nombre": "Ana",
+  "apellido": "Lopez",
+  "telefono": "+1666777888",
+  "correo": "analopez@gmail.com",
+  "contrasena": "3456",
+  "fechaNacimiento": {
+    "$date": "1990-10-06T00:00:00.000Z"
+  },
+  "fechaContratacion": {
+    "$date": "2016-03-07T06:00:00.000Z"
+  },
+  "disponible": true,
+  "tipoUber": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d5"
+  },
+  "carro": {
+    "marca": "Ford",
+    "color": "Negro",
+    "placa": "456M-22PL",
+    "anio": 2016,
+    "fechaInicio": {
+      "$date": "2017-12-30T00:00:00.000Z"
+    }
+  }
+}]

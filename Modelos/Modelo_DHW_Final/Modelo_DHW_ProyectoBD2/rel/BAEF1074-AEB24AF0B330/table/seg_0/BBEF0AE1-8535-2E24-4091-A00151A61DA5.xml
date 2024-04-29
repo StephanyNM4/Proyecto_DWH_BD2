@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CORREO_CLIENTE1" id="C589D29F-E5B9-E7F0-E946-59A5BF0891D6">
+<Column name="CORREO_CLIENTE" id="C589D29F-E5B9-E7F0-E946-59A5BF0891D6">
 <createdBy>Dorian Contreras</createdBy>
 <createdTime>2024-04-29 08:44:57 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>

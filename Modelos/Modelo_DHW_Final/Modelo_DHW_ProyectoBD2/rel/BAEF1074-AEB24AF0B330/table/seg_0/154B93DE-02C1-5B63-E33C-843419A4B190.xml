@@ -8,10 +8,32 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_SERVICIO" id="3C1B1071-9DC0-3D83-1C1D-156F8E53FA0C">
+<Column name="ID_SERVICIO_DWH" id="3C1B1071-9DC0-3D83-1C1D-156F8E53FA0C">
 <createdBy>steph</createdBy>
 <createdTime>2024-03-24 03:46:12 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_FACTURA_AEROLINEA" id="BE680DFD-7D5D-44CA-5DED-DEABFC01A99B">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-29 19:09:23 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_FACTURA_HOTEL" id="FF927393-CEB9-FC9C-CE57-7C0594301777">
+<createdBy>steph</createdBy>
+<createdTime>2024-04-29 19:09:23 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
