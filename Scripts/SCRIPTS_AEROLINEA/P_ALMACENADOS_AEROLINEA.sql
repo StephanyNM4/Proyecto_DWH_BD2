@@ -1,15 +1,3 @@
----------CREA FECHAS ALEATORIAS (FUTURAS)
-CREATE OR REPLACE FUNCTION F_FECHAS
-RETURN DATE
-AS
-    V_FECHA_ACTUAL DATE := SYSDATE;
-    V_NUM NUMBER := ROUND(DBMS_RANDOM.VALUE(0, 365));
-    V_FECHA_ALEATORIA DATE;
-BEGIN
-    V_FECHA_ALEATORIA := SYSDATE + V_NUM;
-    RETURN V_FECHA_ALEATORIA;
-END;
-
 ---------------------------------------------------------------INSERTA  1100 VUELOS
 CREATE OR REPLACE PROCEDURE P_INSERTAR_VUELOS
 AS
@@ -37,7 +25,7 @@ BEGIN
             ROUND(DBMS_RANDOM.VALUE(1, 30)),
             ROUND(DBMS_RANDOM.VALUE(1, 30)),
             NULL,
-            F_FECHAS,
+            SYSDATE + ROUND(DBMS_RANDOM.VALUE(-600, 100)) ,
             ROUND(DBMS_RANDOM.VALUE(1400, 8000)),
             '00:00:00',
             '00:00:00',
@@ -101,6 +89,7 @@ AS
     V_CONT_EQUIPAJES NUMBER := 0;
     V_EQUIPAJES NUMBER;
     V_ID_ASIENTO NUMBER := 0;
+    V_FECHA_FACTURA DATE := SYSDATE + ROUND(DBMS_RANDOM.VALUE(-650, 0));
 BEGIN
         ---GENERA CANTIDAD DE BOLETOS TOTAL
         WHILE V_CONT_BOLETOS_TOTAL < 500 LOOP          
@@ -111,7 +100,7 @@ BEGIN
         V_CLIENTE := ROUND(DBMS_RANDOM.VALUE(4, 20));  ----CLIENTE QUE COMPRA LOS BOLETOS
         V_PRECIO := ROUND(DBMS_RANDOM.VALUE(1000, 4000));--PRECIO BOLETO
         V_ID_FACTURA := SEQ_ID_FACTURAS.NEXTVAL;
-        
+
         ----------------GENERA FACTURA
             INSERT INTO tbl_facturas (
                 id_factura,
@@ -123,7 +112,7 @@ BEGIN
             ) VALUES (
                 V_ID_FACTURA,
                 ROUND(DBMS_RANDOM.VALUE(1, 2)),
-                SYSDATE,
+                V_FECHA_FACTURA,
                 15,
                 NULL,
                 NULL
@@ -227,6 +216,8 @@ BEGIN
                         END IF;
                         
                     END LOOP; 
+                
+                V_FECHA_FACTURA := V_FECHA_FACTURA + 1;
                 V_CONT_BOLETOS_FACTURA := V_CONT_BOLETOS_FACTURA + 1;
         END LOOP;
         

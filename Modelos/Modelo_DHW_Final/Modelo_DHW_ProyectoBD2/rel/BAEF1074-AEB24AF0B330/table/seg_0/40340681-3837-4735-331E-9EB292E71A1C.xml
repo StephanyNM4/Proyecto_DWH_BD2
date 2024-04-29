@@ -63,19 +63,19 @@
 <colAssociation fkAssociation="86412AF3-CF72-5463-8D5B-A7D5DF6AFF0A" referredColumn="E89E47F6-B221-C3E4-83CF-C05CC7D4379D"/>
 </associations>
 </Column>
-<Column name="CORREO_ELECTRONICO" id="BEF3018D-9186-12E9-96CB-8739595836E6">
-<createdBy>steph</createdBy>
-<createdTime>2024-03-24 05:55:03 UTC</createdTime>
+<Column name="CORREO_ELECTRONICO" id="5C6168CB-C6FC-0F86-82DD-464EB44404C2">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:39:28 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
+<dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="45032FFB-0177-92E2-34CB-956259E08ED8" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+<colAssociation fkAssociation="58FD4778-D241-FF5A-DA7C-30570822A272" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
 </associations>
 </Column>
 <Column name="PRECIO" id="9949F4FB-6631-F64F-CBB6-DC4D4FEE4AEA">
@@ -114,16 +114,6 @@
 <colUsage columnID="5A756DD9-9B28-63CE-6919-529EBD8C7C8D"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="DC6EACD0-81AD-2B1B-6115-E385FCB5C877" name="TBL_BOLETOS_TBL_C_FK">
-<createdBy>steph</createdBy>
-<createdTime>2023-11-18 18:04:46 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="BEF3018D-9186-12E9-96CB-8739595836E6"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="3F6F7EE9-9E84-8025-5A12-800D6E0B668D" name="TBL_BOLETOS_TBL_ES_FK">
 <createdBy>steph</createdBy>
 <createdTime>2023-11-24 04:11:50 UTC</createdTime>
@@ -152,6 +142,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="C6524002-4BBC-06CD-4BAB-69A492896590"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E4EC422E-4B18-8455-9901-5AB907082E65" name="TBL_BOL_TBL_CLI_FK">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:39:28 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C6168CB-C6FC-0F86-82DD-464EB44404C2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

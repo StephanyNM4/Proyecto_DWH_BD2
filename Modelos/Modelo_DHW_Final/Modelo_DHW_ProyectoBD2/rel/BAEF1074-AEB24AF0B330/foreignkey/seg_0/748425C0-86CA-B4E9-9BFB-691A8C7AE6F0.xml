@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6692C8AE-FF34-C2A1-EE75-8B9BCA2032BA" containerWithKeyObject="E640C47C-89F1-C71B-E2CF-FB5F9BA863CA" localFKIndex="055F6E46-85DB-5FCC-B43E-D552C6FAD18F" name="FK_EVALUACIONES_X_HOTEL_C">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 14:22:22 UTC</createdTime>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="748425C0-86CA-B4E9-9BFB-691A8C7AE6F0" containerWithKeyObject="18A722A9-1BCF-49E6-386E-633197007D94" localFKIndex="75790566-AD9E-F8F7-4CEA-F35B908682EA" name="TBL_CAR_TBL_CLI_FK">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:38:08 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <referredTableLongName>TBL_CLIENTES</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

@@ -1,0 +1,216 @@
+[{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55ba"
+  },
+  "nombre": "Tommy",
+  "apellido": "Matamoros",
+  "telefono": "+1222333444",
+  "correo": "tommy_matamoros@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "12/10/1998",
+  "ubicacion": {
+    "lng": 14.087730094565837,
+    "lat": -87.1792606054228,
+    "ubicacionNombre": "Catedral Episcopal Santa María de los Ángeles"
+  },
+  "carreras": [],
+  "fechaRegistro": "12/03/2013"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55bb"
+  },
+  "nombre": "Pedro",
+  "apellido": "Pérez",
+  "telefono": "+1999888777",
+  "correo": "pedro_perez@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "15/08/2000",
+  "ubicacion": {
+    "lng": 13.535403870556163,
+    "lat": -87.32317661217138,
+    "ubicacionNombre": "Balneario Los Mangos"
+  },
+  "carreras": [],
+  "fechaRegistro": "12/03/2015"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55bc"
+  },
+  "nombre": "Ana",
+  "apellido": "Díaz",
+  "telefono": "+1444555666",
+  "correo": "ana.diaz@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "05/03/1980",
+  "ubicacion": {
+    "lng": 14.12642119181108,
+    "lat": -87.19422378931587,
+    "ubicacionNombre": "Parque El Picacho"
+  },
+  "carreras": [],
+  "fechaRegistro": "12/03/2012"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55bd"
+  },
+  "nombre": "Cecilia",
+  "apellido": "Corea",
+  "telefono": "+1222333444",
+  "correo": "cecilia_corea@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "12/05/2004",
+  "ubicacion": {
+    "lng": 43.80530322765988,
+    "lat": 11.243321365215198,
+    "ubicacionNombre": "Hotel Corolle"
+  },
+  "carreras": [],
+  "fechaRegistro": "12/03/2022"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55be"
+  },
+  "nombre": "Angela",
+  "apellido": "Aguilar",
+  "telefono": "+1222333444",
+  "correo": "angela_aguilar@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "01/06/2001",
+  "ubicacion": {
+    "lng": 56.156783257036594,
+    "lat": 9.560626048753864,
+    "ubicacionNombre": "AQUA Aquarium & Wildlife Park"
+  },
+  "carreras": [],
+  "fechaRegistro": "12/03/2024"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55bf"
+  },
+  "nombre": "Richard",
+  "apellido": "Torres",
+  "telefono": "+1222333444",
+  "correo": "richard.torres@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "13/06/1995",
+  "ubicacion": {
+    "lng": 56.15557843565382,
+    "lat": 9.424075343691898,
+    "ubicacionNombre": "Tollundgaard Golf Park"
+  },
+  "carreras": [],
+  "fechaRegistro": "12/03/2024"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55c0"
+  },
+  "nombre": "Marcelo",
+  "apellido": "Vijil",
+  "telefono": "+1222333444",
+  "correo": "marcelo_vijil@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "31/12/1963",
+  "ubicacion": {
+    "lng": 52.4273961088407,
+    "lat": 13.04128578239314,
+    "ubicacionNombre": "Sanssouci Palace"
+  },
+  "carreras": [],
+  "fechaRegistro": "27/04/2024"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55c1"
+  },
+  "nombre": "Nicolle",
+  "apellido": "Colindres",
+  "telefono": "+1222333444",
+  "correo": "nico.colindres@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "09/04/1996",
+  "ubicacion": {
+    "lng": 52.66321432486264,
+    "lat": 13.41670088642721,
+    "ubicacionNombre": "Gewerbegebiet Süd"
+  },
+  "carreras": [],
+  "fechaRegistro": "10/04/2024"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55c2"
+  },
+  "nombre": "Angel",
+  "apellido": "Vasquez",
+  "telefono": "+1222333444",
+  "correo": "angel_vasquez@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "06/11/1979",
+  "ubicacion": {
+    "lng": 39.063369258195216,
+    "lat": 125.78905522325792,
+    "ubicacionNombre": "Kumsusan Palace of the Sun"
+  },
+  "carreras": [],
+  "fechaRegistro": "10/04/2024"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55c3"
+  },
+  "nombre": "Annie",
+  "apellido": "Mendoza",
+  "telefono": "+1222333444",
+  "correo": "annie.mendoza@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "15/12/2003",
+  "ubicacion": {
+    "lng": 39.00230014175366,
+    "lat": 125.74237681285373,
+    "ubicacionNombre": "Railroad Revolution History Museum"
+  },
+  "carreras": [],
+  "fechaRegistro": "10/04/2024"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55c4"
+  },
+  "nombre": "Andree",
+  "apellido": "Villalobo",
+  "telefono": "+1222333444",
+  "correo": "andree.villalobo@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "29/02/1996",
+  "ubicacion": {
+    "lng": 39.02595473661605,
+    "lat": 125.75243474886125,
+    "ubicacionNombre": "Yanggakdo International Hotel"
+  },
+  "carreras": [],
+  "fechaRegistro": "10/04/2024"
+},
+{
+  "_id": {
+    "$oid": "662eaa716f6bc7e4e9cc55c5"
+  },
+  "nombre": "Carlos",
+  "apellido": "Asfura",
+  "telefono": "+1222333444",
+  "correo": "asfura_carlitos@gmail.com",
+  "contrasena": "1234",
+  "fechaNacimiento": "15/12/2003",
+  "ubicacion": {
+    "lng": 39.00230014175366,
+    "lat": 125.74237681285373,
+    "ubicacionNombre": "Railroad Revolution History Museum"
+  },
+  "carreras": [],
+  "fechaRegistro": "10/04/2024"
+}]

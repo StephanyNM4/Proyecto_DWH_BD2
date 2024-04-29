@@ -1,0 +1,120 @@
+[{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e1"
+  },
+  "lng": -33.9144,
+  "lat": 151.2372,
+  "ubicacionNombre": "Sculpture by the Sea, Bondi, Sídney, Australia"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e2"
+  },
+  "lng": 36.2648,
+  "lat": -111.0377,
+  "ubicacionNombre": "Antelope Canyon, Arizona, EE. UU."
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e3"
+  },
+  "lng": -15.855,
+  "lat": -47.934,
+  "ubicacionNombre": "Palacio do Itamaraty, Brasilia, Brasil"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e4"
+  },
+  "lng": 53.3498,
+  "lat": -6.2603,
+  "ubicacionNombre": "Acantilados de Howth, Dublín, Irlanda"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e5"
+  },
+  "lng": 38.7894,
+  "lat": -9.4661,
+  "ubicacionNombre": "Quinta da Regaleira, Sintra, Portugal"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e6"
+  },
+  "lng": 40.3504,
+  "lat": -3.7689,
+  "ubicacionNombre": "Ciudad Encantada, Cuenca, España"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e7"
+  },
+  "lng": 38.0521,
+  "lat": -87.3016,
+  "ubicacionNombre": "Lago de los Bosques, Kentucky, EE. UU."
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e8"
+  },
+  "lng": 33.8431,
+  "lat": -117.9938,
+  "ubicacionNombre": "The Wave, Arizona, EE. UU."
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55e9"
+  },
+  "lng": 37.5122,
+  "lat": 126.998,
+  "ubicacionNombre": "Namsan Seoul Tower, Seúl, Corea del Sur"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55ea"
+  },
+  "lng": -34.5298,
+  "lat": -58.4156,
+  "ubicacionNombre": "Puente de la Mujer, Buenos Aires, Argentina"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55eb"
+  },
+  "lng": 44.5632,
+  "lat": -71.3415,
+  "ubicacionNombre": "Monte Washington, New Hampshire, EE. UU."
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55ec"
+  },
+  "lng": 36.0652,
+  "lat": -112.1386,
+  "ubicacionNombre": "Horseshoe Bend, Arizona, EE. UU."
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55ed"
+  },
+  "lng": 59.4395,
+  "lat": 24.8328,
+  "ubicacionNombre": "Parque Kadriorg, Tallin, Estonia"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55ee"
+  },
+  "lng": -8.4164,
+  "lat": 115.2583,
+  "ubicacionNombre": "Templo Lempuyang, Bali, Indonesia"
+},
+{
+  "_id": {
+    "$oid": "662ec2f86f6bc7e4e9cc55ef"
+  },
+  "lng": 34.1266,
+  "lat": -116.315,
+  "ubicacionNombre": "Pioneertown, California, EE. UU."
+}]

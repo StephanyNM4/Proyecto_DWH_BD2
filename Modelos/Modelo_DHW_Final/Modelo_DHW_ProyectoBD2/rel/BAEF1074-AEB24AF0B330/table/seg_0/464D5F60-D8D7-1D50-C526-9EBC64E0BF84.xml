@@ -19,21 +19,6 @@
 <ownDataTypeParameters>24,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ID_CARRO" id="AB75E374-985F-38C9-7A67-F306E28B6E01">
-<createdBy>steph</createdBy>
-<createdTime>2024-03-24 05:44:38 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>24</dataTypeSize>
-<ownDataTypeParameters>24,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="022DECD6-D30E-CAE4-A1F6-DBE75D832803" referredColumn="A0C922C7-8EEF-35AB-707E-5B5BF2F5E9FA"/>
-</associations>
-</Column>
 <Column name="NOMBRE" id="D4332341-BD98-8626-3998-31A17BD94784">
 <createdBy>steph</createdBy>
 <createdTime>2024-03-24 05:44:38 UTC</createdTime>
@@ -127,16 +112,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="C04A1F46-192A-765B-42EA-9E904A47056F"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="16163573-8261-51AC-3E43-E673BBEA29BB" name="TBL_CO_TBL_H_U_FK">
-<createdBy>steph</createdBy>
-<createdTime>2024-03-24 05:44:38 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="AB75E374-985F-38C9-7A67-F306E28B6E01"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

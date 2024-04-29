@@ -19,6 +19,21 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CORREO_CLIENTE1" id="C589D29F-E5B9-E7F0-E946-59A5BF0891D6">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:44:57 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="306FCC34-97D6-FF6E-7988-52861AA12CF8" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+</associations>
+</Column>
 <Column name="FECHA_INICIO" id="BDFC3CCD-3F58-8BDE-3F12-DB525F69EBF8">
 <createdBy>Usuario</createdBy>
 <createdTime>2024-03-24 15:19:44 UTC</createdTime>
@@ -48,20 +63,6 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="CORREO_CLIENTE" id="F6ED47E1-531B-8CBD-815D-D2F1DB335DBF">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 15:21:22 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="73E42DCC-8055-73B7-12FE-CBEDD06F9CEC" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
-</associations>
 </Column>
 <Column name="CODIGO_HABITACION" id="F617EB1F-DD63-25E9-CA7C-16D55C47571E">
 <createdBy>Usuario</createdBy>
@@ -100,14 +101,14 @@
 <colUsage columnID="F617EB1F-DD63-25E9-CA7C-16D55C47571E"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="8750A979-1824-8380-47B1-9BD184A5D8B6" name="FK_RESERVACIONES_CLIENTE">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 15:27:31 UTC</createdTime>
+<ind_PK_UK id="0DB6D823-3059-0485-F88C-B7397AC14F3D" name="TBL_RES_TBL_CLI_FK">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:44:57 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="F6ED47E1-531B-8CBD-815D-D2F1DB335DBF"/>
+<colUsage columnID="C589D29F-E5B9-E7F0-E946-59A5BF0891D6"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
