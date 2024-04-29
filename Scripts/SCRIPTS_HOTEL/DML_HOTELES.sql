@@ -259,4 +259,58 @@ VALUES
 	('Catoceavo', 1.0, 0.15);
 GO
 
+--Insertar datos en la tabla dias
 INSERT INTO dias (dia) VALUES ('DOMINGO'), ('LUNES'), ('MARTES'), ('MIERCOLES'), ('JUEVES'), ('VIERNES'), ('SABADO');
+GO
+
+--Insertar datos en la tabla POLITICAS
+INSERT INTO politicas (politica)
+VALUES
+    ('Hora de inicio de check-in: 3:00 PM; Hora de finalización del check-in: 1:00 AM'),
+    ('El check-in temprano está sujeto a disponibilidad'),
+    ('El check-in temprano está disponible por un cargo adicional'),
+    ('El check-in tardío está sujeto a disponibilidad'),
+    ('Edad mínima para hacer el check-in: 18 años'),
+    ('Check-out antes del mediodía'),
+    ('El check-out tardío está sujeto a disponibilidad'),
+    ('Se aplicará un cargo por check-out tardío'),
+    ('Check-out express disponible'),
+    ('Instrucciones especiales de check-in: El personal de recepción recibirá a los huéspedes a su llegada. Para obtener más detalles, por favor contacta al establecimiento utilizando la información en la confirmación de la reserva.'),
+    ('Esta propiedad no permite cambios de nombre en las reservas. El nombre en la reserva debe coincidir con el nombre del huésped que está haciendo el check-in y alojándose en la propiedad; se requiere identificación con foto. La tarjeta de crédito utilizada para hacer la reserva debe ser presentada por el titular de la tarjeta al hacer el check-in junto con una identificación con foto que coincida. Cualquier otro acuerdo debe ser coordinado con la propiedad antes de la llegada.'),
+    ('Renovaciones y cierres: Las siguientes instalaciones están cerradas de forma estacional cada año. Estarán cerradas del 1 de septiembre al 15 de junio: Piscina'),
+    ('Métodos de acceso: Recepción atendida'),
+    ('Mascotas: No se permiten mascotas (los animales de servicio son bienvenidos y están exentos de tarifas)'),
+    ('Niños y camas adicionales: Los niños son bienvenidos. Los niños pueden alojarse gratis utilizando las camas existentes en la habitación de los padres o tutores. Camas supletorias disponibles por EUR 35.0 por noche. Cunas gratuitas disponibles bajo petición en el establecimiento.');
+GO
+
+-- Insertar datos en la tabla hoteles
+INSERT INTO hoteles (nombre, telefono, correo, descripcion, sitio_web)
+VALUES
+    ('Hotel A', '123456789', 'info@hotela.com', 'Descripción del Hotel A', 'www.hotela.com'),
+    ('Hotel B', '987654321', 'info@hotelb.com', 'Descripción del Hotel B', 'www.hotelb.com');
+GO
+
+-- Insertar datos en la tabla sucursales
+INSERT INTO sucursales (reembolsable, descripcion, telefono, correo, id_hotel, id_direccion)
+VALUES
+    (1, 'Sucursal 1 del Hotel A', '111111111', 'info@sucursal1-hotela.com', 1, 1), -- Asignando la sucursal al Hotel A
+    (0, 'Sucursal 2 del Hotel A', '222222222', 'info@sucursal2-hotela.com', 1, 2), -- Asignando la sucursal al Hotel A
+    (1, 'Sucursal 1 del Hotel B', '333333333', 'info@sucursal1-hotelb.com', 2, 3), -- Asignando la sucursal al Hotel B
+    (0, 'Sucursal 2 del Hotel B', '444444444', 'info@sucursal2-hotelb.com', 2, 4); -- Asignando la sucursal al Hotel B
+GO
+
+-- Insertar datos en la tabla POLITICAS_SUCURSAL
+INSERT INTO politicas_sucursal (id_sucursal, id_politica)
+VALUES
+    -- Asignar políticas a la Sucursal 1 del Hotel A
+    (1, 1), (1, 2), (1, 6), (1, 8), (1, 14),
+    
+    -- Asignar políticas a la Sucursal 2 del Hotel A
+    (2, 1), (2, 5), (2, 6), (2, 10), (2, 15),
+    
+    -- Asignar políticas a la Sucursal 1 del Hotel B
+    (3, 3), (3, 4), (3, 6), (3, 8), (3, 13),
+    
+    -- Asignar políticas a la Sucursal 2 del Hotel B
+    (4, 3), (4, 4), (4, 7), (4, 11), (4, 15);
+GO
