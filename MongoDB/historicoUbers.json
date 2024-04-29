@@ -1,0 +1,210 @@
+[{
+  "_id": {
+    "$oid": "662ec5f06f6bc7e4e9cc55fc"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55c9"
+  },
+  "marca": "Honda",
+  "color": "Verde",
+  "placa": "JUH5-KDU4",
+  "anio": 2024,
+  "fechaInicio": "15/06/2020",
+  "fechaFinal": "11/12/2020"
+},
+{
+  "_id": {
+    "$oid": "662ec5f06f6bc7e4e9cc55fd"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55c9"
+  },
+  "marca": "Toyota",
+  "color": "Azul",
+  "placa": "ABC123",
+  "anio": 2022,
+  "fechaInicio": "12/12/2020",
+  "fechaFinal": "02/05/2022"
+},
+{
+  "_id": {
+    "$oid": "662ec5f06f6bc7e4e9cc55fe"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55c9"
+  },
+  "marca": "Ford",
+  "color": "Rojo",
+  "placa": "XYZ789",
+  "anio": 2023,
+  "fechaInicio": "03/05/2022",
+  "fechaFinal": "13/08/2023"
+},
+{
+  "_id": {
+    "$oid": "662ec70f6f6bc7e4e9cc5608"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55ca"
+  },
+  "marca": "Honda",
+  "color": "Verde",
+  "placa": "JUH5-KDU4",
+  "anio": 2024,
+  "fechaInicio": "10/03/2018",
+  "fechaFinal": "11/12/2020"
+},
+{
+  "_id": {
+    "$oid": "662ec70f6f6bc7e4e9cc5609"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55ca"
+  },
+  "marca": "Toyota",
+  "color": "Azul",
+  "placa": "ABC123",
+  "anio": 2022,
+  "fechaInicio": "12/12/2020",
+  "fechaFinal": "02/05/2022"
+},
+{
+  "_id": {
+    "$oid": "662ec70f6f6bc7e4e9cc560a"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55ca"
+  },
+  "marca": "Ford",
+  "color": "Rojo",
+  "placa": "XYZ789",
+  "anio": 2023,
+  "fechaInicio": "03/05/2022",
+  "fechaFinal": "19/05/2024"
+},
+{
+  "_id": {
+    "$oid": "662ec7e26f6bc7e4e9cc5610"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55d2"
+  },
+  "marca": "Honda",
+  "color": "Verde",
+  "placa": "JUH5-KDU4",
+  "anio": 2024,
+  "fechaInicio": "30/04/2015",
+  "fechaFinal": "11/12/2020"
+},
+{
+  "_id": {
+    "$oid": "662ec7e26f6bc7e4e9cc5611"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55d2"
+  },
+  "marca": "Toyota",
+  "color": "Azul",
+  "placa": "ABC123",
+  "anio": 2022,
+  "fechaInicio": "12/12/2020",
+  "fechaFinal": "02/05/2022"
+},
+{
+  "_id": {
+    "$oid": "662ec7e26f6bc7e4e9cc5612"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55d2"
+  },
+  "marca": "Ford",
+  "color": "Rojo",
+  "placa": "XYZ789",
+  "anio": 2023,
+  "fechaInicio": "03/05/2022",
+  "fechaFinal": "14/10/2023"
+},
+{
+  "_id": {
+    "$oid": "662eca0d6f6bc7e4e9cc5616"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55d1"
+  },
+  "marca": "Honda",
+  "color": "Verde",
+  "placa": "JUH5-KDU4",
+  "anio": 2024,
+  "fechaInicio": "14/05/2016",
+  "fechaFinal": "11/12/2020"
+},
+{
+  "_id": {
+    "$oid": "662eca0d6f6bc7e4e9cc5617"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55d1"
+  },
+  "marca": "Toyota",
+  "color": "Azul",
+  "placa": "ABC123",
+  "anio": 2022,
+  "fechaInicio": "12/12/2020",
+  "fechaFinal": "02/05/2022"
+},
+{
+  "_id": {
+    "$oid": "662eca0d6f6bc7e4e9cc5618"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55d1"
+  },
+  "marca": "Ford",
+  "color": "Rojo",
+  "placa": "XYZ789",
+  "anio": 2023,
+  "fechaInicio": "03/05/2022",
+  "fechaFinal": "19/05/2024"
+},
+{
+  "_id": {
+    "$oid": "662eca0d6f6bc7e4e9cc5619"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55d1"
+  },
+  "marca": "Chevrolet",
+  "color": "Blanco",
+  "placa": "789K-33BH",
+  "anio": 2017,
+  "fechaInicio": "20/05/2024",
+  "fechaFinal": "17/09/2024"
+},
+{
+  "_id": {
+    "$oid": "662ecb1d6f6bc7e4e9cc5620"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55cf"
+  },
+  "marca": "Toyota",
+  "color": "Azul",
+  "placa": "ABC123",
+  "anio": 2022,
+  "fechaInicio": "17/09/2017",
+  "fechaFinal": "11/12/2020"
+},
+{
+  "_id": {
+    "$oid": "662ecb1d6f6bc7e4e9cc5621"
+  },
+  "idConductor": {
+    "$oid": "662ebf466f6bc7e4e9cc55cf"
+  },
+  "marca": "Ford",
+  "color": "Rojo",
+  "placa": "XYZ789",
+  "anio": 2023,
+  "fechaInicio": "12/12/2020",
+  "fechaFinal": "27/04/2024"
+}]

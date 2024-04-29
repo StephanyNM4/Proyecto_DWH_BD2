@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d5"
+  },
+  "descripcion": "Estandar",
+  "precioBase": 100,
+  "precioXkm": 10
+},
+{
+  "_id": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d6"
+  },
+  "descripcion": "Premium",
+  "precioBase": 150,
+  "precioXkm": 15
+},
+{
+  "_id": {
+    "$oid": "662ebfd86f6bc7e4e9cc55d7"
+  },
+  "descripcion": "VIP",
+  "precioBase": 200,
+  "precioXkm": 20
+}]

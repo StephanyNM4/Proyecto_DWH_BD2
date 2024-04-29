@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8AF25FDE-67F5-1B85-D8AA-DC96AB883472" containerWithKeyObject="18A722A9-1BCF-49E6-386E-633197007D94" localFKIndex="3EB2B242-7650-3475-F3D0-12A96EC65A6A" name="TBL_CA_TBL_C_FK">
-<createdBy>steph</createdBy>
-<createdTime>2024-03-24 05:47:09 UTC</createdTime>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="58FD4778-D241-FF5A-DA7C-30570822A272" containerWithKeyObject="40340681-3837-4735-331E-9EB292E71A1C" localFKIndex="E4EC422E-4B18-8455-9901-5AB907082E65" name="TBL_BOL_TBL_CLI_FK">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:39:28 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <referredTableLongName>TBL_CLIENTES</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

@@ -3,7 +3,6 @@
 <createdBy>Usuario</createdBy>
 <createdTime>2024-03-24 14:14:05 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<ordsAlias>table_28</ordsAlias>
 <abbreviation>EVALUACIONES</abbreviation>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
@@ -18,6 +17,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORREO_CLIENTE" id="4B6300CF-F9BF-15C3-8281-4494478DD90E">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:43:18 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5078296F-3B09-F018-DA23-BDF9AC795BE2" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+</associations>
 </Column>
 <Column name="LIMPIEZA" id="133E0582-9FAA-213D-B2C7-51983494BF1A">
 <createdBy>Usuario</createdBy>
@@ -73,20 +87,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CORREO_CLIENTE" id="23FCDBC4-6129-01F2-D5BA-25C774321DB8">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 14:18:40 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="6692C8AE-FF34-C2A1-EE75-8B9BCA2032BA" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
-</associations>
-</Column>
 <Column name="ID_HOTEL" id="D5A62DE5-1F0A-F23E-9023-AA25AA8FB5F2">
 <createdBy>Usuario</createdBy>
 <createdTime>2024-03-24 14:18:55 UTC</createdTime>
@@ -113,16 +113,6 @@
 <colUsage columnID="9068BE7D-F4BE-32B0-C5E7-53262D872584"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="055F6E46-85DB-5FCC-B43E-D552C6FAD18F" name="FK_EVALUACIONES_X_HOTEL_C">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 14:22:22 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="23FCDBC4-6129-01F2-D5BA-25C774321DB8"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="5FF5080F-9F7A-851C-7778-F0960EDB735C" name="FK_EVALUACIONES_HOTEL">
 <createdBy>Usuario</createdBy>
 <createdTime>2024-03-24 14:23:32 UTC</createdTime>
@@ -131,6 +121,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="D5A62DE5-1F0A-F23E-9023-AA25AA8FB5F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="15C2C96B-A828-F8B8-791F-755F22B132A4" name="TBL_EVA_X_HOT_TBL_CLI_FK">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:43:18 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B6300CF-F9BF-15C3-8281-4494478DD90E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

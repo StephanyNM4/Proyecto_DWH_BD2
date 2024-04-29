@@ -9,18 +9,19 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CORREO_CLIENTE" id="2302408B-239C-2F27-8914-E68701B63C53">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 14:30:39 UTC</createdTime>
+<Column name="CORREO_CLIENTE" id="7954ED83-63B0-0063-3E28-09308D936F31">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:40:22 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
+<dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="9EEBDBDA-E1E1-8D9D-1656-3DF8EF606920" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
+<colAssociation fkAssociation="47FFA109-D6B1-F268-7F87-83F951E5DCE7" referredColumn="EF4372F4-5C57-8D25-D29E-677EA54AF4DE"/>
 </associations>
 </Column>
 <Column name="ID_HOTEL" id="8FD444AF-CBFA-FBE9-8C1A-3D22574F11B5">
@@ -46,18 +47,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2302408B-239C-2F27-8914-E68701B63C53"/>
 <colUsage columnID="8FD444AF-CBFA-FBE9-8C1A-3D22574F11B5"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="FF86D616-1868-768C-DF5B-7BED7480A021" name="FK_FAVORITOS_CLIENTE">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 14:31:52 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="2302408B-239C-2F27-8914-E68701B63C53"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="367B0976-9819-E3FC-9823-63AD61F87B64" name="FK_FAVORITOS_HOTEL">
@@ -68,6 +58,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="8FD444AF-CBFA-FBE9-8C1A-3D22574F11B5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C279518A-A62A-B500-2257-429D38665484" name="TBL_FAV_DE_CLI_TBL_CLI_FK">
+<createdBy>Dorian Contreras</createdBy>
+<createdTime>2024-04-29 08:40:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7954ED83-63B0-0063-3E28-09308D936F31"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
