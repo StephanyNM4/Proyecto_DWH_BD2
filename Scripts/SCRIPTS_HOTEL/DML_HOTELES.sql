@@ -1,4 +1,5 @@
--- DML HOTELES 
+use hoteles;
+GO 
 
 INSERT INTO categorias_amenidades (categoria)
 VALUES
@@ -149,23 +150,6 @@ VALUES
     ('Femenino');
 GO
 
-INSERT INTO generos (genero)
-VALUES
-    ('Masculino'),
-    ('Femenino');
-GO
-
-INSERT INTO paises (nombre_pais)
-VALUES
-    ('Guatemala'),
-	('El Salvador'),
-	('Nicaragua'),
-	('Costa Rica'),
-	('Panama'),
-	('Belice'),
-    ('Honduras');
-GO
-
 INSERT INTO paises (nombre_pais)
 VALUES
     ('Guatemala'),
@@ -251,18 +235,6 @@ VALUES
 	('Propietario');
 GO
 
--- Insertar datos en la tabla deducciones_bonificaciones
-INSERT INTO deducciones_bonificaciones (descripcion, factor, porcentaje)
-VALUES
-    ('Aguinaldo', 1.0, 0.2),   
-    ('Seguro', -1.0, 0.1),
-	('Catoceavo', 1.0, 0.15);
-GO
-
---Insertar datos en la tabla dias
-INSERT INTO dias (dia) VALUES ('DOMINGO'), ('LUNES'), ('MARTES'), ('MIERCOLES'), ('JUEVES'), ('VIERNES'), ('SABADO');
-GO
-
 --Insertar datos en la tabla POLITICAS
 INSERT INTO politicas (politica)
 VALUES
@@ -314,3 +286,233 @@ VALUES
     -- Asignar políticas a la Sucursal 2 del Hotel B
     (4, 3), (4, 4), (4, 7), (4, 11), (4, 15);
 GO
+
+-- Insertar datos en la tabla POLITICAS_SUCURSAL
+INSERT INTO personas (nombre, apellido, no_identidad, fecha_nacimiento, correo, telefono, id_estado_civil, id_genero, id_direccion)
+VALUES
+	('Dorian Samantha', 'Contreras Velasquez', '0801200302345', '2003-01-25', 'dcontreras@correo.com', '89756654', 1, 1, 1),
+	('Kattherine Mayely', 'Hernandez', '0501200416400', '2002-01-26', 'khernan@correo.com', '89760331', 2, 2, 4),
+	('Stephany Nicole', 'Matamoros', '0801200302346', '2002-01-25', 'stephm@correo.com', '89760123', 2, 2, 5),
+	('Erick', 'Marín Reyes', '0702195002345', '1950-01-25', 'ereyes@correo.com',  '89123331', 2, 1, 6),
+	('Josefo Orlando', 'Hernandez', '0801194002345', '1940-01-25', 'jhernan@correo.com', '98723331', 2, 1, 7),
+	('Jose', 'Reyes', '0801200536789', '2005-01-20', 'jreyes@correo.com', '90823331', 2, 1, 9),
+	('Jose Luis', 'Garcia Montero', '0804197002345', '2003-01-25', 'jgarcia@correo.com', '89764331', 2, 1, 2),
+	('Lesvia', 'Suarez', '0801201002355', '2010-01-25', 'lsuarez@correo.com', '89765331', 2, 2, 3),
+	('Adrian', 'Martinez', '0801200102345', '2001-01-25', 'amartinez@correo.com', '89123331', 2, 1, 6),
+	('Saida', 'Ramos', '0801201002345', '2010-01-29', 'sramos@correo.com', '89120651', 2, 2, 8),
+    ('Nestor', 'Luque', '0801219900234', '1990-01-25', 'nluque@correo.com', '86103331', 2, 1, 10),
+	('Daniel', 'Muñoz', '0801219900290', '1990-02-25', 'daniel_munoz@gmail.com', '+2000111222', 3, 1, 11),
+	('Isabella', 'Vasquez', '0801219900235', '1990-03-25', 'isabella_vasquez@gmail.com', '+2111222333', 3, 2, 12),
+	('Samuel', 'Ramírez', '0801219900735', '1990-11-25', 'samuel_ramirez@gmail.com', '+2222333444', 3, 1, 13),
+	('Martina', 'Torres', '0803219900735', '1990-11-27', 'martina_torres@gmail.com', '+2333444555', 3, 2, 14),
+    ('Juan', 'González', '0802219900735', '1990-11-28', 'juan_gonzalez@gmail.com', '+2444555666', 3, 1, 15);
+GO
+
+INSERT INTO personas (nombre, apellido, no_identidad, fecha_nacimiento, correo, telefono, id_estado_civil, id_genero, id_direccion)
+VALUES 
+	('Juan Pablo', 'Lopez', '0702200302345', '2003-01-25', 'juanpablo@correo.com', '89756654', 1, 1, 1),
+	('Maria Fernanda', 'Gutierrez', '0301200416400', '2002-01-26', 'maria@correo.com', '89760331', 2, 2, 4),
+	('Carlos', 'Perez', '0302200302346', '2002-01-25', 'carlos@correo.com', '89760123', 2, 2, 5),
+	('Ana Maria', 'Rodriguez', '0902195002345', '1950-01-25', 'ana@correo.com',  '89123331', 2, 1, 6),
+	('Juan Carlos', 'Sanchez', '0901194002345', '1940-01-25', 'juancarlos@correo.com', '98723331', 2, 1, 7),
+	('Luis', 'Martinez', '0301200536789', '2005-01-20', 'luis@correo.com', '90823331', 2, 1, 9),
+	('Sara', 'Hernandez', '0102197002345', '2003-01-25', 'sara@correo.com', '89764331', 2, 1, 2),
+	('Laura', 'Diaz', '0809201002355', '2010-01-25', 'laura@correo.com', '89765331', 2, 2, 3),
+	('Pedro', 'Ramirez', '0405200102345', '2001-01-25', 'pedro@correo.com', '89123331', 2, 1, 6),
+	('Martha', 'Lopez', '0405201002345', '2010-01-29', 'martha@correo.com', '89120651', 2, 2, 8),
+	('Luisa', 'Garcia', '0405219900234', '1990-01-25', 'luisa@correo.com', '86103331', 2, 1, 10),
+	('Miguel', 'Torres', '0405219900290', '1990-02-25', 'miguel@correo.com', '+2000111222', 3, 1, 11),
+	('Carmen', 'Sanchez', '0203219900235', '1990-03-25', 'carmen@correo.com', '+2111222333', 3, 2, 12),
+	('Manuel', 'Gonzalez', '0203219900935', '1990-11-25', 'manuel@correo.com', '+2222333444', 3, 1, 13),
+	('Rosa', 'Hernandez', '0203219900735', '1990-11-27', 'rosa@correo.com', '+2333444555', 3, 2, 14),
+	('Josefina', 'Martinez', '1803219900735', '1990-11-28', 'josefina@correo.com', '+2444555666', 3, 1, 15);
+GO
+
+--Insertar datos en la tabla empleados 
+INSERT INTO empleados (codigo, fecha_ingreso, id_persona) 
+VALUES 
+	--Empleados de la sucursal 1A
+	('E1A1', '1995-01-25', 1),
+	('E1A2', '1995-01-25', 2),
+	('E1A3', '1995-01-25', 3),
+	('E1A4', '1995-01-25', 4),
+	--Empleados de la sucursal 2A
+	('E2A1', '1995-01-26', 5),
+	('E2A2', '1995-01-26', 6),
+	('E2A3', '1995-01-26', 7),
+	('E2A4', '1995-01-26', 8),
+	--Empleados de la sucursal 1B
+	('E1B1', '1995-01-30', 9),
+	('E1B2', '1995-01-30', 10),
+	('E1B3', '1995-01-30', 11),
+	('E1B4', '1995-01-30', 12),
+	--Empleados de la sucursal 2B
+	('E2B1', '1995-01-31', 13),
+	('E2B2', '1995-01-31', 14),
+	('E2B3', '1995-01-31', 15),
+	('E2B4', '1995-01-31', 16);
+GO
+
+--Inserciones en la tabla de contratos.
+INSERT INTO contratos (fecha_inicio, fecha_fin, salario_neto, id_cargo, id_empleado)
+VALUES
+	(GETDATE(), '2030-12-20', 20000, 1, 1),
+	(GETDATE(), '2030-12-20', 20000, 2, 2),
+	(GETDATE(), '2030-12-20', 20000, 3, 3),
+	(GETDATE(), '2030-12-20', 20000, 4, 4),
+	(GETDATE(), '2030-12-20', 20000, 5, 5),
+	(GETDATE(), '2030-12-20', 20000, 6, 6),
+	(GETDATE(), '2030-12-20', 20000, 1, 7),
+	(GETDATE(), '2030-12-20', 20000, 2, 8),
+	(GETDATE(), '2030-12-20', 20000, 1, 9),
+	(GETDATE(), '2030-12-20', 20000, 2, 10),
+	(GETDATE(), '2030-12-20', 20000, 3, 11),
+	(GETDATE(), '2030-12-20', 20000, 4, 12),
+	(GETDATE(), '2030-12-20', 20000, 5, 13),
+    (GETDATE(), '2030-12-20', 20000, 6, 14),
+	(GETDATE(), '2030-12-20', 20000, 1, 15),
+	(GETDATE(), '2030-12-20', 20000, 2, 16);
+GO
+
+--Insertar datos en la tabla periodos_tiempo
+INSERT INTO periodos_tiempo (periodo) 
+	VALUES ('Fin de semana.'), ('Lun-Vie');
+GO
+
+--Inserciones en la tabla de turnos
+INSERT INTO turnos (hora_inicio, hora_fin, id_periodo)
+VALUES 
+	('06:00:00', '14:00:00', 1),
+	('14:00:00', '22:00:00', 1),
+	('22:00:00', '06:00:00', 1),
+	('06:00:00', '14:00:00', 2),
+	('14:00:00', '22:00:00', 2),
+	('22:00:00', '06:00:00', 2);
+GO
+
+INSERT INTO contratos_turnos (id_contrato, id_turno)
+VALUES 
+	(1,1), (2,2), (3,3), (4,4),
+	(5,5), (6,6), (7,1), (8,2),
+	(9,3), (10,4), (11,5), (12,6),
+	(13,1), (14,2), (15,3), (16,4);
+GO
+
+-- Insertar datos en la tabla deducciones_bonificaciones
+INSERT INTO deducciones_bonificaciones (descripcion, factor, porcentaje)
+VALUES
+    ('Aguinaldo', 1.0, 0.2),   
+    ('Seguro', -1.0, 0.1),
+	('Catoceavo', 1.0, 0.15);
+GO
+
+-- Insertar datos en la tabla DED_BON_CONTRATOS
+INSERT INTO ded_bon_contratos (id_ded_bon, id_contrato)
+VALUES
+    (1,1),   
+    (2,3),
+	(3,6);
+GO
+
+-- Insertar datos en la tabla empleados_sucursales
+INSERT INTO empleados_sucursales (id_empleado, id_sucursal)
+VALUES
+    (1,1), (2,1), (3,1), (4,1),
+	(5,2), (6,2), (7,2), (8,2),
+	(9,3), (10,3), (11,3), (12,3),
+	(13,4), (14,4), (15,4), (16,4);
+GO
+
+--Insertar datos en la tabla de clientes
+INSERT INTO clientes (fecha_registro, usuario, contrasenia, id_persona)
+VALUES 
+	(GETDATE(), 'isabella', 'contraseña20', 13),
+	(GETDATE(), 'samuel', 'contraseña21', 14),
+	(GETDATE(), 'martina', 'contraseña22', 15),
+	(GETDATE(), 'juan', 'contraseña23', 16),
+	(GETDATE(), 'juanpablo', '1234', 17),
+	(GETDATE(), 'mafer', '1234', 18),
+	(GETDATE(), 'carlosperez', '1234', 19),
+	(GETDATE(), 'anamaria', '1234', 20),
+	(GETDATE(), 'juanca', '1234', 21),
+	(GETDATE(), 'luism', '1234', 22),
+	(GETDATE(), 'saraher', '1234', 23),
+	(GETDATE(), 'lauradiaz', '1234', 24),
+	(GETDATE(), 'pedro', '1234', 25),
+	(GETDATE(), 'martha', '1234', 26),
+	(GETDATE(), 'luisa', '1234', 27),
+	(GETDATE(), 'miguel', '1234', 28),
+	(GETDATE(), 'carmen', '1234', 29),
+	(GETDATE(), 'manuel', '1234', 30),
+	(GETDATE(), 'rosa', '1234', 31),
+	(GETDATE(), 'josefina', '1234', 32);
+GO
+
+--Registros para la tabla favoritos_de_clientes
+INSERT INTO favoritos_de_clientes (id_cliente, id_sucursal)
+VALUES
+	(1,1), (1,2), (2,3), (4,1), (1,4), (5,1), (3,2), (10,2), (11,4), (12,4);
+GO
+
+--Insertar datos en las tabla servicios_sucursales.
+INSERT INTO servicios_sucursales (id_servicio, id_sucursal)
+VALUES
+    (1, 1), (2, 1), (3, 1), (4, 1), (5, 1),
+    (6, 2), (7, 2), (8, 2), (9, 2), (10, 2),
+    (11, 3), (12, 3), (13, 3), (14, 3), (15, 3),
+    (16, 4), (17, 4), (18, 4), (19, 4), (20, 4);
+GO
+
+--Inserts a la tabla de habitaciones, 5 x sucursal.
+INSERT INTO habitaciones (codigo, precio, limite_personas, cantidad_camas, id_sucursal, descripcion, disponible)
+VALUES
+    ('HAB001', 50.00, 2, 1, 1, 'Habitación individual', 1),
+    ('HAB002', 70.00, 4, 2, 1, 'Habitación doble', 1),
+    ('HAB003', 100.00, 6, 3, 1, 'Habitación familiar', 1),
+    ('HAB004', 60.00, 3, 2, 1, 'Habitación doble estándar', 1),
+    ('HAB005', 80.00, 4, 2, 1, 'Habitación doble superior', 1),
+    
+    ('HAB006', 55.00, 2, 1, 2, 'Habitación individual', 1),
+    ('HAB007', 75.00, 4, 2, 2, 'Habitación doble', 1),
+    ('HAB008', 110.00, 6, 3, 2, 'Habitación familiar', 1),
+    ('HAB009', 65.00, 3, 2, 2, 'Habitación doble estándar', 1),
+    ('HAB010', 85.00, 4, 2, 2, 'Habitación doble superior', 1),
+    
+    ('HAB011', 60.00, 2, 1, 3, 'Habitación individual', 1),
+    ('HAB012', 80.00, 4, 2, 3, 'Habitación doble', 1),
+    ('HAB013', 120.00, 6, 3, 3, 'Habitación familiar', 1),
+    ('HAB014', 70.00, 3, 2, 3, 'Habitación doble estándar', 1),
+    ('HAB015', 90.00, 4, 2, 3, 'Habitación doble superior', 1),
+    
+    ('HAB016', 65.00, 2, 1, 4, 'Habitación individual', 1),
+    ('HAB017', 85.00, 4, 2, 4, 'Habitación doble', 1),
+    ('HAB018', 125.00, 6, 3, 4, 'Habitación familiar', 1),
+    ('HAB019', 75.00, 3, 2, 4, 'Habitación doble estándar', 1),
+    ('HAB020', 95.00, 4, 2, 4, 'Habitación doble superior', 1);
+GO
+
+--Inserts a la tabla de amenidades, 3 x habitación.
+INSERT INTO amenidades_habitaciones (id_amenidad, id_habitacion)
+VALUES
+    (1, 1), (2, 1), (3, 1),
+    (4, 2), (5, 2), (6, 2),
+    (7, 3), (8, 3), (9, 3),
+    (10, 4), (11, 4), (12, 4),
+    (13, 5), (14, 5), (15, 5),
+    (16, 6), (17, 6), (18, 6),
+    (19, 7), (20, 7), (21, 7),
+    (22, 8), (23, 8), (24, 8),
+    (25, 9), (26, 9), (27, 9),
+    (28, 10), (29, 10), (30, 10),
+    (31, 11), (32, 11), (33, 11),
+    (25, 12), (26, 12), (27, 12),
+    (1, 13), (2, 13), (3, 13),
+    (4, 14), (5, 14), (6, 14),
+    (7, 15), (8, 15), (9, 15),
+    (10, 16), (11, 16), (12, 16),
+    (13, 17), (14, 17), (15, 17),
+    (16, 18), (17, 18), (18, 18),
+    (19, 19), (20, 19), (21, 19),
+    (22, 20), (23, 20), (24, 20);
+GO
+
