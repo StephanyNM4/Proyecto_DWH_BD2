@@ -1,5 +1,3 @@
---use master
---drop database hoteles
 CREATE DATABASE hoteles;
 GO
 USE hoteles;
@@ -270,7 +268,8 @@ CREATE TABLE habitaciones(
 	limite_personas INT NOT NULL,
 	cantidad_camas INT NOT NULL,
 	id_sucursal INT NOT NULL,
-	descripcion VARCHAR(100) NOT NULL
+	descripcion VARCHAR(100) NOT NULL,
+	disponible BIT NOT NULL DEFAULT 1
 
 	CONSTRAINT uq_habitacion UNIQUE (codigo, id_sucursal),
 	CONSTRAINT fk_habitacion_sucursal FOREIGN KEY (id_sucursal) REFERENCES sucursales(id_sucursal)
