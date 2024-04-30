@@ -31,7 +31,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="FECHA_INIICO" id="0499C3E0-A8E4-F51C-0F3D-6058B483F4FE">
+<Column name="FECHA_INICO" id="0499C3E0-A8E4-F51C-0F3D-6058B483F4FE">
 <createdBy>Dorian Contreras</createdBy>
 <createdTime>2024-04-30 08:38:09 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
