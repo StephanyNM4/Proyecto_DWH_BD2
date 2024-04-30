@@ -36,7 +36,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="2778F044-F0B4-493E-6B08-8490F22095C4" otype="Note" vid="87FFA8ED-96D5-359F-9365-39B8FE6AB8BF">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="747" y="571" width="196" height="40"/>
+<bounds x="716" y="624" width="196" height="40"/>
 <comment>Servicios adicionales: articulos de vuelo, bebida, comida, periodicos..</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="2FF271D1-5D09-4818-1433-79E4BBB32659" otype="Table" vid="6A871685-D5AB-3028-F16C-71FF882E5213">
@@ -70,8 +70,8 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="4FAEAAD9-4C02-05F0-1C54-D159638A9CB2" otype="Note" vid="6DD05D68-61F8-EE1E-0C58-1DDCB02DA85D">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="999" y="620" width="135" height="91"/>
-<comment>Tabla intermedia de los boletos que puede tener una factura, se le agrega el costo del equipaje con la informacion del boleto</comment>
+<bounds x="1002" y="669" width="135" height="48"/>
+<comment>Tabla intermedia de los boletos que puede tener una factura</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="573A9452-E0AA-FFFD-93DB-BA42E567FDB2" otype="Table" vid="CF40DC41-1232-036D-4022-F1F0B7D576B2">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
