@@ -308,13 +308,12 @@ CREATE TABLE reservaciones(
 	id_reservacion INT IDENTITY PRIMARY KEY,
 	fecha_inicio DATE NOT NULL,
 	fecha_fin DATE NOT NULL,
-	precio DECIMAL(10,2) NOT NULL,
 	id_cliente INT NOT NULL,
 	id_habitacion INT NOT NULL,
+	pagado BIT DEFAULT 0
 
 	CONSTRAINT fk_reservacion_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
-	CONSTRAINT fk_reservacion_habitacion FOREIGN KEY (id_habitacion) REFERENCES habitaciones(id_habitacion),
-	CONSTRAINT uq_reservacion UNIQUE (id_cliente, id_habitacion, fecha_inicio, fecha_fin)
+	CONSTRAINT fk_reservacion_habitacion FOREIGN KEY (id_habitacion) REFERENCES habitaciones(id_habitacion)
 );
 GO
 

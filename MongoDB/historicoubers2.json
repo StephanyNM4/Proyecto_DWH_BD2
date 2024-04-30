@@ -9,8 +9,12 @@
   "color": "Verde",
   "placa": "JUH5-KDU4",
   "anio": 2024,
-  "fechaInicio": "15/06/2020",
-  "fechaFinal": "11/12/2020"
+  "fechaInicio": {
+    "$date": "2020-06-15T00:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2020-11-12T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -23,8 +27,12 @@
   "color": "Azul",
   "placa": "ABC123",
   "anio": 2022,
-  "fechaInicio": "12/12/2020",
-  "fechaFinal": "02/05/2022"
+  "fechaInicio": {
+    "$date": "2020-12-12T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2022-02-05T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -37,8 +45,12 @@
   "color": "Rojo",
   "placa": "XYZ789",
   "anio": 2023,
-  "fechaInicio": "03/05/2022",
-  "fechaFinal": "13/08/2023"
+  "fechaInicio": {
+    "$date": "2022-03-05T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2023-08-13T00:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -51,8 +63,12 @@
   "color": "Verde",
   "placa": "JUH5-KDU4",
   "anio": 2024,
-  "fechaInicio": "10/03/2018",
-  "fechaFinal": "11/12/2020"
+  "fechaInicio": {
+    "$date": "2018-10-03T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2020-11-12T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -65,8 +81,12 @@
   "color": "Azul",
   "placa": "ABC123",
   "anio": 2022,
-  "fechaInicio": "12/12/2020",
-  "fechaFinal": "02/05/2022"
+  "fechaInicio": {
+    "$date": "2020-12-12T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2022-02-05T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -79,8 +99,12 @@
   "color": "Rojo",
   "placa": "XYZ789",
   "anio": 2023,
-  "fechaInicio": "03/05/2022",
-  "fechaFinal": "19/05/2024"
+  "fechaInicio": {
+    "$date": "2022-03-05T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2024-05-19T00:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -93,8 +117,12 @@
   "color": "Verde",
   "placa": "JUH5-KDU4",
   "anio": 2024,
-  "fechaInicio": "30/04/2015",
-  "fechaFinal": "11/12/2020"
+  "fechaInicio": {
+    "$date": "2015-04-30T00:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2020-11-12T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -107,8 +135,12 @@
   "color": "Azul",
   "placa": "ABC123",
   "anio": 2022,
-  "fechaInicio": "12/12/2020",
-  "fechaFinal": "02/05/2022"
+  "fechaInicio": {
+    "$date": "2020-12-12T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2022-02-05T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -121,8 +153,12 @@
   "color": "Rojo",
   "placa": "XYZ789",
   "anio": 2023,
-  "fechaInicio": "03/05/2022",
-  "fechaFinal": "14/10/2023"
+  "fechaInicio": {
+    "$date": "2022-03-05T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2023-10-14T00:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -135,8 +171,12 @@
   "color": "Verde",
   "placa": "JUH5-KDU4",
   "anio": 2024,
-  "fechaInicio": "14/05/2016",
-  "fechaFinal": "11/12/2020"
+  "fechaInicio": {
+    "$date": "2016-05-14T00:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2020-11-12T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -149,8 +189,12 @@
   "color": "Azul",
   "placa": "ABC123",
   "anio": 2022,
-  "fechaInicio": "12/12/2020",
-  "fechaFinal": "02/05/2022"
+  "fechaInicio": {
+    "$date": "2020-12-12T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2022-02-05T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -163,8 +207,12 @@
   "color": "Rojo",
   "placa": "XYZ789",
   "anio": 2023,
-  "fechaInicio": "03/05/2022",
-  "fechaFinal": "19/05/2024"
+  "fechaInicio": {
+    "$date": "2022-03-05T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2024-05-19T00:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -177,8 +225,12 @@
   "color": "Blanco",
   "placa": "789K-33BH",
   "anio": 2017,
-  "fechaInicio": "20/05/2024",
-  "fechaFinal": "17/09/2024"
+  "fechaInicio": {
+    "$date": "2024-05-27T00:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2024-09-17T00:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -191,8 +243,12 @@
   "color": "Azul",
   "placa": "ABC123",
   "anio": 2022,
-  "fechaInicio": "17/09/2017",
-  "fechaFinal": "11/12/2020"
+  "fechaInicio": {
+    "$date": "2019-07-19T00:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2020-11-12T06:00:00.000Z"
+  }
 },
 {
   "_id": {
@@ -205,6 +261,10 @@
   "color": "Rojo",
   "placa": "XYZ789",
   "anio": 2023,
-  "fechaInicio": "12/12/2020",
-  "fechaFinal": "27/04/2024"
+  "fechaInicio": {
+    "$date": "2020-12-12T06:00:00.000Z"
+  },
+  "fechaFinal": {
+    "$date": "2024-04-27T00:00:00.000Z"
+  }
 }]
