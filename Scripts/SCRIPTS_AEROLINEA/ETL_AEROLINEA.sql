@@ -235,38 +235,114 @@ BEGIN
     P_ETL_FACTURAS;
 END;
 
--------------------------EXTRACCION VOLATIL CLIENTES
+-------------------------EXTRACCION (ACTUALIZACION O INSERT) CLIENTES
+CREATE OR REPLACE PROCEDURE P_INSERT_CLIENTE(P_CORREO_ELECTRONICO VARCHAR2,
+                                            P_nombre VARCHAR2,
+                                            P_apellido VARCHAR2,
+                                            P_telefono NUMBER,
+                                            P_contrasena_uber VARCHAR2:= NULL,
+                                            P_contrasena_aerolinea VARCHAR2 := NULL,
+                                            P_contrasena_hotel VARCHAR2:= NULL,
+                                            P_genero VARCHAR2:= NULL,
+                                            P_fecha_registro DATE) AS
+    --VARIABLES
+    V_CANTIDAD_CLIENTE NUMBER;
+BEGIN
+    SELECT COUNT(1)
+    INTO V_CANTIDAD_CLIENTE
+    FROM TBL_CLIENTES
+    WHERE CORREO_ELECTRONICO = P_CORREO_ELECTRONICO;
+    
+    --YA EXISTE
+    IF(V_CANTIDAD_CLIENTE>0) THEN
+        IF(P_CONTRASENA_UBER IS NOT NULL) THEN
+            UPDATE tbl_clientes
+            SET
+                contrasena_uber = P_CONTRASENA_UBER
+            WHERE correo_electronico = P_CORREO_ELECTRONICO;
+        END IF;
+        
+        IF(P_CONTRASENA_AEROLINEA IS NOT NULL) THEN
+            UPDATE tbl_clientes
+            SET
+                CONTRASENA_AEROLINEA  = P_CONTRASENA_AEROLINEA 
+            WHERE correo_electronico = P_CORREO_ELECTRONICO;
+        END IF;
+        
+        IF(P_CONTRASENA_HOTEL IS NOT NULL) THEN
+            UPDATE tbl_clientes
+            SET
+                CONTRASENA_HOTEL  = P_CONTRASENA_HOTEL
+            WHERE correo_electronico = P_CORREO_ELECTRONICO;
+        END IF;
+        
+        IF(P_GENERO IS NOT NULL) THEN
+            UPDATE tbl_clientes
+            SET
+                GENERO  = P_GENERO
+            WHERE correo_electronico = P_CORREO_ELECTRONICO;
+        END IF;
+    --NO EXISTE
+    ELSE
+        INSERT INTO tbl_clientes (
+        correo_electronico,
+        nombre,
+        apellido,
+        telefono,
+        contrasena_uber,
+        contrasena_aerolinea,
+        contrasena_hotel,
+        genero,
+        fecha_registro
+    ) VALUES (
+        P_CORREO_ELECTRONICO,
+        P_nombre,
+        P_apellido,
+        P_telefono,
+        P_contrasena_uber,
+        P_contrasena_aerolinea,
+        P_contrasena_hotel,
+        P_genero,
+        P_fecha_registro 
+    );
+    END IF; 
+    
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR=> '|| SQLERRM);
+END;
+
+----------------INSERTAR LOS CLIENTES DE AEROLINEA EN DWH
 CREATE OR REPLACE PROCEDURE P_ETL_CLIENTES
 AS
+        V_GENERO VARCHAR2(1);
 BEGIN
-        EXECUTE IMMEDIATE 'TRUNCATE TABLE tbl_clientes';
+
+        FOR REGISTRO IN (
+            SELECT B.correo_electronico,
+                    B.nombre,
+                    B.apellido,
+                    B.telefono,
+                    B.contrasena,
+                    C.genero,
+                    A.fecha_registro
+            FROM TBL_CLIENTES@DB_LINK_AEROLINEA A
+            INNER JOIN TBL_PERSONAS@DB_LINK_AEROLINEA B
+            ON (A.ID_CLIENTE = B.ID_PERSONA)
+            INNER JOIN TBL_GENEROS@DB_LINK_AEROLINEA C
+            ON (B.ID_GENERO = C.ID_GENERO)) LOOP
         
-        INSERT INTO tbl_clientes (
-            correo_electronico,
-            nombre,
-            apellido,
-            telefono,
-            contrasena_uber,
-            contrasena_hotel,
-            contrasena_aerolinea,
-            genero,
-            fecha_registro
-        ) SELECT
-            B.correo_electronico,
-            B.nombre,
-            B.apellido,
-            B.telefono,
-            NULL,
-            NULL,
-            B.contrasena,
-            SUBSTR(C.genero, 1, 1),
-            A.fecha_registro
-        FROM TBL_CLIENTES@DB_LINK_AEROLINEA A
-        INNER JOIN TBL_PERSONAS@DB_LINK_AEROLINEA B
-        ON (A.ID_CLIENTE = B.ID_PERSONA)
-        INNER JOIN TBL_GENEROS@DB_LINK_AEROLINEA C
-        ON (B.ID_GENERO = C.ID_GENERO);
+            V_GENERO := SUBSTR(REGISTRO.genero, 1, 1);
+            P_INSERT_CLIENTE(P_CORREO_ELECTRONICO=>REGISTRO.correo_electronico, 
+                                P_nombre =>REGISTRO.nombre ,
+                                P_apellido =>REGISTRO.apellido ,
+                                P_telefono =>REGISTRO.telefono ,
+                                P_contrasena_aerolinea =>REGISTRO.contrasena ,
+                                P_GENERO => V_GENERO,
+                                P_fecha_registro =>REGISTRO.fecha_registro );
         
+        END LOOP;
         
                 DBMS_OUTPUT.PUT_LINE('SE INSERTO CLIENTES');
         COMMIT;
@@ -358,8 +434,9 @@ END;
 
 
 
-TBL_CLIENTES
+
 ---------------------------------------IGNORAR (PRUEBAS)
+-----VUELOS ESTA BIEN QUE NO TENGAN LA MISMA CANTIDAD YA QUE NO EXTRAE VUELOS CON FECHAS FUTURAS
 SELECT * FROM TBL_VUELOS;  ---1015
 SELECT * FROM TBL_ASIENTOS; -----1757
 SELECT * FROM TBL_FACTURAS;  ----500
