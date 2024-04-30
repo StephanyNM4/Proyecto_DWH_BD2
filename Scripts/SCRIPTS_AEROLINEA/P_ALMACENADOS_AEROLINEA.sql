@@ -25,7 +25,7 @@ BEGIN
             ROUND(DBMS_RANDOM.VALUE(1, 30)),
             ROUND(DBMS_RANDOM.VALUE(1, 30)),
             NULL,
-            SYSDATE + ROUND(DBMS_RANDOM.VALUE(-600, 100)) ,
+            SYSDATE + ROUND(DBMS_RANDOM.VALUE(-600, 50)) ,
             ROUND(DBMS_RANDOM.VALUE(1400, 8000)),
             '00:00:00',
             '00:00:00',
@@ -138,7 +138,8 @@ BEGIN
                     id_vuelo,
                     id_escala,
                     id_reserva,
-                    precio
+                    precio,
+                    fecha_boleto
                 ) VALUES (
                     V_ID_BOLETO,
                     V_ID_BOLETO,
@@ -146,7 +147,8 @@ BEGIN
                     V_ID_VUELO,
                     NULL,
                     NULL,
-                    V_PRECIO
+                    V_PRECIO,
+                    V_FECHA_FACTURA
                 );
             
             ----------------CAMBIAR DISPONIBILIDAD DE ASIENTO

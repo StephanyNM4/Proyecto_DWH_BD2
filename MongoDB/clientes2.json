@@ -261,4 +261,70 @@
   "fechaRegistro": {
     "$date": "2023-10-04T06:00:00.000Z"
   }
+},
+{
+  "_id": {
+    "$oid": "663052484ac24615448e9dd2"
+  },
+  "nombre": "Dorian",
+  "apellido": "Contreras",
+  "telefono": "+1999888777",
+  "correo": "dcontreras@correo.com",
+  "contrasena": "1234",
+  "fechaNacimiento": {
+    "$date": "2003-12-08T06:00:00.000Z"
+  },
+  "ubicacion": {
+    "lng": 13.535403870556163,
+    "lat": -87.32317661217138,
+    "ubicacionNombre": "Balneario Los Mangos"
+  },
+  "carreras": [],
+  "fechaRegistro": {
+    "$date": "2020-12-03T06:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "663052b14ac24615448e9dd5"
+  },
+  "nombre": "Stephany",
+  "apellido": "Matamoros",
+  "telefono": "+1999888777",
+  "correo": "stephm@correo.com",
+  "contrasena": "1234",
+  "fechaNacimiento": {
+    "$date": "2002-10-10T06:00:00.000Z"
+  },
+  "ubicacion": {
+    "lng": 13.535403870556163,
+    "lat": -87.32317661217138,
+    "ubicacionNombre": "Balneario Los Mangos"
+  },
+  "carreras": [],
+  "fechaRegistro": {
+    "$date": "2023-12-03T06:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "663053114ac24615448e9dd7"
+  },
+  "nombre": "Kattherine ",
+  "apellido": "Hernandez",
+  "telefono": "+1999888777",
+  "correo": "khernan@correo.com",
+  "contrasena": "1234",
+  "fechaNacimiento": {
+    "$date": "2001-05-20T06:00:00.000Z"
+  },
+  "ubicacion": {
+    "lng": 13.535403870556163,
+    "lat": -87.32317661217138,
+    "ubicacionNombre": "Balneario Los Mangos"
+  },
+  "carreras": [],
+  "fechaRegistro": {
+    "$date": "2021-01-08T06:00:00.000Z"
+  }
 }]
