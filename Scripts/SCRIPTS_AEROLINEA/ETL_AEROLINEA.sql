@@ -136,7 +136,7 @@ BEGIN
 END;
 
 
-------------------INSERTAR ESCALAS
+------------------EXTRACCION INCREMENTAL ESCALAS
 CREATE OR REPLACE PROCEDURE P_ETL_ESCALAS
 AS
     V_FECHA_INICIO DATE;
@@ -181,60 +181,6 @@ END;
 
 BEGIN
     P_ETL_ESCALAS;
-END;
-
----------EXTRACCION INCREMENTAL FACTURAS
-CREATE OR REPLACE PROCEDURE P_ETL_FACTURAS
-AS
-    V_FECHA_INICIO DATE;
-    V_FECHA_FIN DATE := SYSDATE - 1;
-BEGIN
-    -----VERIFICAMOS LA ULTIMA EXTRACCION
-    SELECT MAX(FECHA_FACTURA) + 1
-    INTO V_FECHA_INICIO
-    FROM TBL_FACTURAS;
-    
-    -----
-    IF (V_FECHA_INICIO IS NULL) THEN
-        SELECT MIN(FECHA_FACTURA)
-        INTO V_FECHA_INICIO
-        FROM TBL_FACTURAS@DB_LINK_AEROLINEA;
-    END IF;
-    
-    DELETE FROM TBL_FACTURAS
-    WHERE TRUNC(FECHA_FACTURA) = TRUNC(V_FECHA_INICIO);
-
-    WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
-         INSERT INTO tbl_facturas (
-            id_factura_dwh,
-            id_factura_aerolinea,
-            id_factura_hotel,
-            fecha_factura,
-            impuesto_porcentaje,
-            impuesto_valor,
-            total,
-            metodo_pago
-        ) SELECT
-            SEQ_FACTURAS_DWH.NEXTVAL,
-            id_factura,
-            NULL,
-            fecha_factura,
-            impuesto_porcentaje,
-            impuesto_valor,
-            total,
-            B.metodo_pago
-        FROM TBL_FACTURAS@DB_LINK_AEROLINEA A
-        INNER JOIN TBL_METODO_PAGO@DB_LINK_AEROLINEA B
-        ON (A.ID_METODO_PAGO = B.ID_METODO_PAGO)
-        WHERE TRUNC(A.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO);
-         
-        COMMIT;
-        V_FECHA_INICIO := V_FECHA_INICIO + 1;
-    END LOOP;
-END;
-
-BEGIN
-    P_ETL_FACTURAS;
 END;
 
 -------------------------EXTRACCION (ACTUALIZACION O INSERT) CLIENTES
@@ -426,8 +372,97 @@ BEGIN
     P_ETL_BOLETOS;
 END;
 
+--------------------------------------EXTRACCION VOLATIL DE SERVICIOS
+CREATE OR REPLACE PROCEDURE P_ETL_SERVICIOS
+AS
+BEGIN
+
+            INSERT INTO tbl_servicios (
+                id_servicio_aerolinea,
+                id_servicio_hotel,
+                servicio,
+                costo,
+                tipo_servicio
+            ) SELECT
+                id_servicio_adicional,
+                NULL,
+                servicio,
+                precio,
+                NULL
+            FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;
+
+                DBMS_OUTPUT.PUT_LINE('SE INSERTO');
+        COMMIT;
+    EXCEPTION 
+        WHEN OTHERS THEN 
+        DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
+        ROLLBACK; 
+END;
+
+BEGIN
+    P_ETL_SERVICIOS;
+END;
+
+---------EXTRACCION INCREMENTAL FACTURAS
+CREATE OR REPLACE PROCEDURE P_ETL_FACTURACION
+AS
+    V_FECHA_INICIO DATE;
+    V_FECHA_FIN DATE := SYSDATE - 1;
+BEGIN
+    -----VERIFICAMOS LA ULTIMA EXTRACCION DE FACTURAS
+    SELECT MAX(FECHA_FACTURA) + 1
+    INTO V_FECHA_INICIO
+    FROM TBL_FACTURAS;
+    
+    -----EN CASO DE QUE NO SE HAYA REALIZADO NINGUNA EXTRACCION, 
+    -----EXTRAE LA INFORMACION DESDE LA FECHA MINIMA
+    IF (V_FECHA_INICIO IS NULL) THEN
+        SELECT MIN(FECHA_FACTURA)
+        INTO V_FECHA_INICIO
+        FROM TBL_FACTURAS@DB_LINK_AEROLINEA;
+    END IF;
+    
+    DELETE FROM TBL_FACTURAS
+    WHERE TRUNC(FECHA_FACTURA) = TRUNC(V_FECHA_INICIO);
+
+    WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+    
+------------------------------------EXTRACCION INCREMENTAL FACTURAS   
+         INSERT INTO tbl_facturas (
+            id_factura_aerolinea,
+            id_factura_hotel,
+            fecha_factura,
+            impuesto_porcentaje,
+            impuesto_valor,
+            total,
+            metodo_pago
+        ) SELECT
+            A.id_factura,
+            NULL,
+            A.fecha_factura,
+            A.impuesto_porcentaje,
+            A.impuesto_valor,
+            A.total,
+            B.metodo_pago
+        FROM TBL_FACTURAS@DB_LINK_AEROLINEA A
+        INNER JOIN TBL_METODO_PAGO@DB_LINK_AEROLINEA B
+        ON (A.ID_METODO_PAGO = B.ID_METODO_PAGO)
+        WHERE TRUNC(A.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO);
+
+        DBMS_OUTPUT.PUT_LINE('inserto factura');
+        
+        V_FECHA_INICIO := V_FECHA_INICIO + 1;
+    END LOOP;
+END;
+
+BEGIN
+    P_ETL_FACTURACION;
+END;
+
+
 ------------------------------------EXTRACCION INCREMENTAL FACTURA_BOLETOS
-CREATE OR REPLACE PROCEDURE P_ETL_FACTURA_BOLETOS
+CREATE OR REPLACE PROCEDURE P_ETL_BOLETO_POR_FACTURA
 AS
     V_FECHA_INICIO DATE;
     V_FECHA_FIN DATE := SYSDATE - 1;
@@ -443,36 +478,37 @@ BEGIN
         INTO V_FECHA_INICIO
         FROM TBL_FACTURAS@DB_LINK_AEROLINEA;
     END IF;
-            DBMS_OUTPUT.PUT_LINE('FECHA_INICIO: ' || V_FECHA_INICIO);
-
-    FOR REGISTRO IN (SELECT B.FECHA_FACTURA FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
-                        INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
-                        ON (A.ID_FACTURA = B.ID_FACTURA)
-                        WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
-                        
-        DELETE FROM TBL_FACTURA_BOLETOS
-        WHERE TRUNC(REGISTRO.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO);
-                    DBMS_OUTPUT.PUT_LINE('ELIMINADO');
-
-    END LOOP;
     
+
+DBMS_OUTPUT.PUT_LINE(V_FECHA_INICIO);
+DBMS_OUTPUT.PUT_LINE(V_FECHA_FIN);
     WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
-    
-            INSERT INTO tbl_factura_boletos (
-                id_boleto_factura,
-                id_factura,
-                id_boleto,
-                subtotal
-            ) SELECT
-                A.id_boleto_factura,
-                A.id_factura,
-                A.id_boleto,
-                A.subtotal
-            FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
-            INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
-            ON (A.ID_FACTURA = B.ID_FACTURA)
-            WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO);
-            DBMS_OUTPUT.PUT_LINE('INSERTO');
+
+        FOR REGISTRO IN (SELECT A.id_boleto_factura,
+                                A.id_factura,
+                                A.id_boleto,
+                                A.subtotal
+                            FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                            INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                            ON (A.ID_FACTURA = B.ID_FACTURA)
+                            WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO) ) LOOP
+                            
+                            DBMS_OUTPUT.PUT_LINE('2');
+                            INSERT INTO tbl_factura_boletos (
+                                    id_boleto_factura,
+                                    id_factura,
+                                    id_boleto,
+                                    subtotal
+                                ) VALUES (
+                                    REGISTRO.id_boleto_factura,
+                                    REGISTRO.id_factura,
+                                    REGISTRO.id_boleto,
+                                    REGISTRO.subtotal
+                                );
+            
+                DBMS_OUTPUT.PUT_LINE('inserto boleto por factura');
+            END LOOP;
+                        DBMS_OUTPUT.PUT_LINE(V_FECHA_INICIO);
 
         COMMIT;
         V_FECHA_INICIO := V_FECHA_INICIO + 1;
@@ -480,8 +516,168 @@ BEGIN
 END;
 
 BEGIN
-    P_ETL_FACTURA_BOLETOS;
+    P_ETL_BOLETO_POR_FACTURA;
 END;
+
+
+
+------------------------------------EXTRACCION INCREMENTAL SERVICIOS POR BOLETO
+CREATE OR REPLACE PROCEDURE P_ETL_SERVICIOS_POR_BOLETO
+AS
+    V_FECHA_INICIO DATE;
+    V_FECHA_FIN DATE := SYSDATE - 1;
+BEGIN
+    -----VERIFICAMOS LA ULTIMA EXTRACCION
+    SELECT MAX(FECHA_BOLETO) + 1
+    INTO V_FECHA_INICIO
+    FROM TBL_BOLETOS;
+    
+    -----
+    IF (V_FECHA_INICIO IS NULL) THEN
+        SELECT MIN(FECHA_BOLETO)
+        INTO V_FECHA_INICIO
+        FROM TBL_BOLETOS@DB_LINK_AEROLINEA;
+    END IF;
+    
+
+
+    WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+        FOR REGISTRO IN ( SELECT A.ID_BOLETO_FACTURA,
+                            C.ID_SERVICIO_ADICIONAL
+                        FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                        INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                        ON (A.ID_FACTURA = B.ID_FACTURA)
+                        INNER JOIN TBL_SERVICIOS_POR_BOLETO@DB_LINK_AEROLINEA C
+                        ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
+                        WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
+            
+            INSERT INTO tbl_servicios_x_boleto (
+                id_boleto_factura,
+                id_servicio
+            ) VALUES (
+                REGISTRO.ID_BOLETO_FACTURA,
+                REGISTRO.ID_SERVICIO_ADICIONAL
+            );
+        
+            COMMIT;
+            
+            DBMS_OUTPUT.PUT_LINE('inserto servicio por boleto');
+        END LOOP;
+        
+        COMMIT;
+        V_FECHA_INICIO := V_FECHA_INICIO + 1;
+    END LOOP;
+END;
+
+BEGIN
+    P_ETL_SERVICIOS_POR_BOLETO;
+END;
+
+
+------------------------------------EXTRACCION INCREMENTAL EQUIPAJES 
+CREATE OR REPLACE PROCEDURE P_ETL_EQUIPAJES
+AS
+    V_FECHA_INICIO DATE;
+    V_FECHA_FIN DATE := SYSDATE - 1;
+BEGIN
+    -----VERIFICAMOS LA ULTIMA EXTRACCION DE FACTURAS
+    SELECT MAX(FECHA_FACTURA) + 1
+    INTO V_FECHA_INICIO
+    FROM TBL_FACTURAS;
+    
+    -----EN CASO DE QUE NO SE HAYA REALIZADO NINGUNA EXTRACCION, 
+    -----EXTRAE LA INFORMACION DESDE LA FECHA MINIMA
+    IF (V_FECHA_INICIO IS NULL) THEN
+        SELECT MIN(FECHA_FACTURA)
+        INTO V_FECHA_INICIO
+        FROM TBL_FACTURAS@DB_LINK_AEROLINEA;
+    END IF;
+
+    WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+               
+                 INSERT INTO tbl_equipajes (
+                    id_equipaje,
+                    tipo_equipaje,
+                    peso,
+                    costo
+                ) SELECT
+                    A.id_equipaje,
+                    B.tipo_equipaje,
+                    SUM(A.PESO_ADICIONAL + B.PESO),
+                    SUM(A.COSTO_ADICIONAL + B.COSTO)
+                FROM TBL_EQUIPAJES@DB_LINK_AEROLINEA A
+                INNER JOIN TBL_TIPOS_EQUIPAJE@DB_LINK_AEROLINEA B
+                ON (A.ID_TIPO_EQUIPAJE = B.ID_TIPO_EQUIPAJE);
+                
+        COMMIT;
+        V_FECHA_INICIO := V_FECHA_INICIO + 1;
+    END LOOP;
+END;
+
+BEGIN
+    P_ETL_EQUIPAJE;
+END;
+
+------------------------------------EXTRACCION INCREMENTAL EQUIPAJES POR BOLETO
+CREATE OR REPLACE PROCEDURE P_ETL_EQUIPAJES_POR_BOLETO
+AS
+    V_FECHA_INICIO DATE;
+    V_FECHA_FIN DATE := SYSDATE - 1;
+BEGIN
+    -----VERIFICAMOS LA ULTIMA EXTRACCION
+    SELECT MAX(FECHA_BOLETO) + 1
+    INTO V_FECHA_INICIO
+    FROM TBL_BOLETOS;
+    
+    -----
+    IF (V_FECHA_INICIO IS NULL) THEN
+        SELECT MIN(FECHA_BOLETO)
+        INTO V_FECHA_INICIO
+        FROM TBL_BOLETOS@DB_LINK_AEROLINEA;
+    END IF;
+    
+    WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+        FOR REGISTRO IN ( SELECT A.ID_BOLETO_FACTURA,
+                            C.ID_EQUIPAJE
+                        FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                        INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                        ON (A.ID_FACTURA = B.ID_FACTURA)
+                        INNER JOIN TBL_EQUIPAJES_POR_BOLETO@DB_LINK_AEROLINEA C
+                        ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
+                        WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO) ) LOOP
+            
+                    INSERT INTO tbl_equipajes_por_boleto (
+                        id_equipaje,
+                        id_boleto_factura
+                    ) VALUES (
+                        REGISTRO.ID_BOLETO_FACTURA,
+                        REGISTRO.ID_EQUIPAJE
+                    );
+            COMMIT;
+            
+            DBMS_OUTPUT.PUT_LINE('inserto equipaje por boleto');
+        END LOOP;
+        
+        COMMIT;
+        V_FECHA_INICIO := V_FECHA_INICIO + 1;
+    END LOOP;
+END;
+
+BEGIN
+    P_ETL_EQUIPAJES_POR_BOLETO;
+END;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -493,21 +689,27 @@ END;
 
 
 ---------------------------------------IGNORAR (PRUEBAS)
-SELECT * FROM TBL_VUELOS;  ---1015
-SELECT * FROM TBL_ASIENTOS; -----1757
-SELECT * FROM TBL_FACTURAS;  ----500
-SELECT * FROM TBL_CLIENTES;  ----20
-SELECT * FROM TBL_BOLETOS;  ----994
-SELECT * FROM TBL_FACTURA_BOLETOS;  ----994
+SELECT COUNT(1) FROM TBL_VUELOS;  ---1023
+SELECT COUNT(1) FROM TBL_ASIENTOS; -----1757
+SELECT COUNT(1) FROM TBL_CLIENTES;  ----20
+SELECT COUNT(1) FROM TBL_BOLETOS;  ----994
+SELECT COUNT(1) FROM TBL_SERVICIOS;  ----30
+SELECT COUNT(1) FROM TBL_EQUIPAJE;  ----
+SELECT COUNT(1) FROM TBL_FACTURAS;  ----500
+SELECT COUNT(1) FROM TBL_FACTURA_BOLETOS;  ---
 
 
-SELECT * FROM TBL_VUELOS@DB_LINK_AEROLINEA;  ---1101
-SELECT * FROM TBL_ASIENTOS@DB_LINK_AEROLINEA;  -----1757
-SELECT * FROM TBL_ESCALAS@DB_LINK_AEROLINEA;
+SELECT COUNT(1) FROM TBL_VUELOS@DB_LINK_AEROLINEA;  ---1101
+SELECT COUNT(1) FROM TBL_ASIENTOS@DB_LINK_AEROLINEA;  -----1757
+SELECT COUNT(1) FROM TBL_ESCALAS@DB_LINK_AEROLINEA;
+SELECT COUNT(1) FROM TBL_CLIENTES@DB_LINK_AEROLINEA;  ----20
+SELECT COUNT(1) FROM TBL_BOLETOS@DB_LINK_AEROLINEA;  ----1014
+SELECT COUNT(1) FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;  ----30
+SELECT COUNT(1) FROM TBL_EQUIPAJES@DB_LINK_AEROLINEA;  ----1537
 SELECT * FROM TBL_FACTURAS@DB_LINK_AEROLINEA; ----500
-SELECT * FROM TBL_CLIENTES@DB_LINK_AEROLINEA;  ----20
-SELECT * FROM TBL_BOLETOS@DB_LINK_AEROLINEA;  ----994
-SELECT * FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA;  ----994
+SELECT COUNT(1) FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA;  ----1014
+
+
 
 
 SELECT * FROM TBL_AVIONES@DB_LINK_AEROLINEA;
@@ -563,3 +765,165 @@ WHERE TRUNC(B.FECHA_PARTIDA) = TRUNC(SYSDATE);
 TRUNCATE TABLE TBL_VUELOS;
 
 
+SELECT *
+FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+ON (A.ID_FACTURA = B.ID_FACTURA)
+WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(TO_DATE('24-JUL-21', 'DD-MM-YY'));
+
+SELECT A.id_boleto_factura,
+                            C.ID_EQUIPAJE
+                        FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                        INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                        ON (A.ID_FACTURA = B.ID_FACTURA)
+                        INNER JOIN TBL_EQUIPAJES_POR_BOLETO@DB_LINK_AEROLINEA C
+                        ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
+                        WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(TO_DATE('24-JUL-21', 'DD-MM-YY'))
+                        
+                        
+                        
+                        
+---------EXTRACCION INCREMENTAL FACTURAS, FACTURAS POR BOLETO, SERVICIOS POR BOLETO
+CREATE OR REPLACE PROCEDURE P_ETL_FACTURAS
+AS
+    V_FECHA_INICIO DATE;
+    V_FECHA_FIN DATE := SYSDATE - 1;
+BEGIN
+    -----VERIFICAMOS LA ULTIMA EXTRACCION DE FACTURAS
+    SELECT MAX(FECHA_FACTURA) + 1
+    INTO V_FECHA_INICIO
+    FROM TBL_FACTURAS;
+    
+    -----EN CASO DE QUE NO SE HAYA REALIZADO NINGUNA EXTRACCION, 
+    -----EXTRAE LA INFORMACION DESDE LA FECHA MINIMA
+    IF (V_FECHA_INICIO IS NULL) THEN
+        SELECT MIN(FECHA_FACTURA)
+        INTO V_FECHA_INICIO
+        FROM TBL_FACTURAS@DB_LINK_AEROLINEA;
+    END IF;
+    
+    DELETE FROM TBL_FACTURAS
+    WHERE TRUNC(FECHA_FACTURA) = TRUNC(V_FECHA_INICIO);
+
+    WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+    
+------------------------------------EXTRACCION INCREMENTAL FACTURAS   
+         INSERT INTO tbl_facturas (
+            id_factura_aerolinea,
+            id_factura_hotel,
+            fecha_factura,
+            impuesto_porcentaje,
+            impuesto_valor,
+            total,
+            metodo_pago
+        ) SELECT
+            A.id_factura,
+            NULL,
+            A.fecha_factura,
+            A.impuesto_porcentaje,
+            A.impuesto_valor,
+            A.total,
+            B.metodo_pago
+        FROM TBL_FACTURAS@DB_LINK_AEROLINEA A
+        INNER JOIN TBL_METODO_PAGO@DB_LINK_AEROLINEA B
+        ON (A.ID_METODO_PAGO = B.ID_METODO_PAGO)
+        WHERE TRUNC(A.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO);
+
+        DBMS_OUTPUT.PUT_LINE('inserto factura');
+
+
+------------------------------------EXTRACCION INCREMENTAL FACTURA_BOLETOS
+
+        FOR REGISTRO IN (SELECT A.id_boleto_factura,
+                                A.id_factura,
+                                A.id_boleto,
+                                A.subtotal
+                            FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                            INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                            ON (A.ID_FACTURA = B.ID_FACTURA)
+                            WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
+        
+        INSERT INTO tbl_factura_boletos (
+                id_boleto_factura,
+                id_factura,
+                id_boleto,
+                subtotal
+            ) VALUES (
+                REGISTRO.id_boleto_factura,
+                REGISTRO.id_factura,
+                REGISTRO.id_boleto,
+                REGISTRO.subtotal
+            );
+            
+                DBMS_OUTPUT.PUT_LINE('inserto boleto por factura');
+            
+            END LOOP;
+------------------------------------EXTRACCION INCREMENTAL SERVICIOS POR BOLETO
+        FOR REGISTRO IN ( SELECT A.ID_BOLETO_FACTURA,
+                            C.ID_SERVICIO_ADICIONAL
+                        FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                        INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                        ON (A.ID_FACTURA = B.ID_FACTURA)
+                        INNER JOIN TBL_SERVICIOS_POR_BOLETO@DB_LINK_AEROLINEA C
+                        ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
+                        WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
+            
+            INSERT INTO tbl_servicios_x_boleto (
+                id_boleto_factura,
+                id_servicio
+            ) VALUES (
+                REGISTRO.ID_BOLETO_FACTURA,
+                REGISTRO.ID_SERVICIO_ADICIONAL
+            );
+        
+            COMMIT;
+            
+            DBMS_OUTPUT.PUT_LINE('inserto servicio por factura');
+        END LOOP;
+        
+        
+------------------------------------EXTRACCION INCREMENTAL EQUIPAJES        
+                 INSERT INTO tbl_equipajes (
+                    id_equipaje,
+                    tipo_equipaje,
+                    peso,
+                    costo
+                ) SELECT
+                    A.id_equipaje,
+                    B.tipo_equipaje,
+                    SUM(A.PESO_ADICIONAL + B.PESO),
+                    SUM(A.COSTO_ADICIONAL + B.COSTO)
+                FROM TBL_EQUIPAJES@DB_LINK_AEROLINEA A
+                INNER JOIN TBL_TIPOS_EQUIPAJE B
+                ON (A.ID_TIPO_EQUIPAJE = B.ID_TIPO_EQUIPAJE);
+                
+------------------------------------EXTRACCION INCREMENTAL EQUIPAJES POR BOLETO  
+        
+        FOR REGISTRO IN ( SELECT A.ID_BOLETO_FACTURA,
+                            C.ID_EQUIPAJE
+                        FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                        INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                        ON (A.ID_FACTURA = B.ID_FACTURA)
+                        INNER JOIN TBL_EQUIPAJES_POR_BOLETO@DB_LINK_AEROLINEA C
+                        ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
+                        WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO) ) LOOP
+            
+                    INSERT INTO tbl_equipajes_por_boleto (
+                        id_equipaje,
+                        id_boleto_factura
+                    ) VALUES (
+                        REGISTRO.ID_BOLETO_FACTURA,
+                        REGISTRO.ID_EQUIPAJE
+                    );
+            COMMIT;
+            
+            DBMS_OUTPUT.PUT_LINE('inserto equipaje por factura');
+        END LOOP;
+
+        V_FECHA_INICIO := V_FECHA_INICIO + 1;
+    END LOOP;
+END;
+
+BEGIN
+    P_ETL_FACTURAS;
+END;

@@ -79,8 +79,6 @@ CREATE TABLE tbl_clientes (
 
 ALTER TABLE tbl_clientes ADD CONSTRAINT tbl_clientes_pk PRIMARY KEY ( correo_electronico );
 
-ALTER TABLE tbl_clientes ADD CONSTRAINT tbl_clientes__un UNIQUE ( correo_electronico );
-
 CREATE TABLE tbl_comentarios (
     id_comentario VARCHAR2(24) NOT NULL,
     id_carrera    VARCHAR2(24) NOT NULL,
