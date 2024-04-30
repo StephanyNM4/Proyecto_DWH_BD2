@@ -57,7 +57,7 @@ BEGIN
             a.hora_llegada,
             a.hora_partida,
             a.gate,
-            d.id_tipo_vuelo,
+            SUBSTR(d.id_tipo_vuelo, 1, 1),
             e.descuento,
             e.fecha_fin,
             NULL,
@@ -100,7 +100,8 @@ END;
 CREATE OR REPLACE PROCEDURE P_ETL_ASIENTOS
 AS
 BEGIN
-    
+        EXECUTE IMMEDIATE 'TRUNCATE TABLE tbl_asientos';
+        
         INSERT INTO tbl_asientos (
             id_asiento,
             id_vuelo,
@@ -230,10 +231,121 @@ BEGIN
     END LOOP;
 END;
 
-
-
 BEGIN
     P_ETL_FACTURAS;
+END;
+
+-------------------------EXTRACCION VOLATIL CLIENTES
+CREATE OR REPLACE PROCEDURE P_ETL_CLIENTES
+AS
+BEGIN
+        EXECUTE IMMEDIATE 'TRUNCATE TABLE tbl_clientes';
+        
+        INSERT INTO tbl_clientes (
+            correo_electronico,
+            nombre,
+            apellido,
+            telefono,
+            contrasena_uber,
+            contrasena_hotel,
+            contrasena_aerolinea,
+            genero,
+            fecha_registro
+        ) SELECT
+            B.correo_electronico,
+            B.nombre,
+            B.apellido,
+            B.telefono,
+            NULL,
+            NULL,
+            B.contrasena,
+            SUBSTR(C.genero, 1, 1),
+            A.fecha_registro
+        FROM TBL_CLIENTES@DB_LINK_AEROLINEA A
+        INNER JOIN TBL_PERSONAS@DB_LINK_AEROLINEA B
+        ON (A.ID_CLIENTE = B.ID_PERSONA)
+        INNER JOIN TBL_GENEROS@DB_LINK_AEROLINEA C
+        ON (B.ID_GENERO = C.ID_GENERO);
+        
+        
+                DBMS_OUTPUT.PUT_LINE('SE INSERTO CLIENTES');
+        COMMIT;
+    EXCEPTION 
+        WHEN OTHERS THEN 
+        DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
+        ROLLBACK; 
+END;
+
+BEGIN
+    P_ETL_CLIENTES;
+END;
+
+-------------------------EXTRACCION INCREMENTAL BOLETOS
+CREATE OR REPLACE PROCEDURE P_ETL_BOLETOS
+AS
+    V_FECHA_INICIO DATE;
+    V_FECHA_FIN DATE := SYSDATE - 1;
+BEGIN
+    -----VERIFICAMOS LA ULTIMA EXTRACCION
+    SELECT MAX(FECHA_BOLETO) + 1
+    INTO V_FECHA_INICIO
+    FROM TBL_BOLETOS;
+    
+    -----
+    IF (V_FECHA_INICIO IS NULL) THEN
+        SELECT MIN(FECHA_BOLETO)
+        INTO V_FECHA_INICIO
+        FROM TBL_BOLETOS@DB_LINK_AEROLINEA;
+    END IF;
+    
+    DELETE FROM TBL_BOLETOS
+    WHERE TRUNC(FECHA_BOLETO) = TRUNC(V_FECHA_INICIO);
+
+    WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+         
+         INSERT INTO tbl_boletos (
+            id_boleto,
+            id_asiento,
+            id_vuelo,
+            id_escala,
+            correo_electronico,
+            precio,
+            estado_reserva,
+            fecha_boleto
+        ) SELECT
+            A.id_boleto,
+            B.id_asiento,
+            E.id_vuelo,
+            F.id_escala,
+            D.correo_electronico,
+            A.precio,
+            H.estado_reserva,
+            A.fecha_boleto
+        FROM TBL_BOLETOS@DB_LINK_AEROLINEA A
+        INNER JOIN TBL_ASIENTOS@DB_LINK_AEROLINEA B
+        ON (A.ID_ASIENTO = B.ID_ASIENTO)
+        INNER JOIN TBL_CLIENTES@DB_LINK_AEROLINEA C
+        ON (A.ID_CLIENTE = C.ID_CLIENTE)
+        INNER JOIN TBL_PERSONAS@DB_LINK_AEROLINEA D
+        ON (C.ID_CLIENTE = D.ID_PERSONA)
+        LEFT JOIN TBL_VUELOS@DB_LINK_AEROLINEA E
+        ON (A.ID_VUELO = E.ID_VUELO)
+        LEFT JOIN TBL_ESCALAS@DB_LINK_AEROLINEA F
+        ON (A.ID_ESCALA = F.ID_ESCALA)
+        LEFT JOIN TBL_RESERVAS@DB_LINK_AEROLINEA G
+        ON (A.ID_RESERVA = G.ID_RESERVA)
+        LEFT JOIN TBL_ESTADO_RESERVA@DB_LINK_AEROLINEA H
+        ON (G.ID_ESTADO_RESERVA = H.ID_ESTADO_RESERVA)
+        WHERE TRUNC(FECHA_BOLETO) = TRUNC(V_FECHA_INICIO);
+        
+        COMMIT;
+        V_FECHA_INICIO := V_FECHA_INICIO + 1;
+    END LOOP;
+END;
+
+BEGIN
+    P_ETL_BOLETOS;
 END;
 
 
@@ -246,20 +358,20 @@ END;
 
 
 
-
-
-
-
-
-
-
+TBL_CLIENTES
 ---------------------------------------IGNORAR (PRUEBAS)
-SELECT * FROM TBL_VUELOS;  ---935
+SELECT * FROM TBL_VUELOS;  ---1015
 SELECT * FROM TBL_ASIENTOS; -----1757
-SELECT * FROM TBL_FACTURAS;  ----182
+SELECT * FROM TBL_FACTURAS;  ----500
+SELECT * FROM TBL_CLIENTES;  ----20
+SELECT * FROM TBL_BOLETOS;  ----994
 SELECT * FROM TBL_VUELOS@DB_LINK_AEROLINEA;  ---1101
 SELECT * FROM TBL_ASIENTOS@DB_LINK_AEROLINEA;  -----1757
 SELECT * FROM TBL_FACTURAS@DB_LINK_AEROLINEA; ----500
+SELECT * FROM TBL_CLIENTES@DB_LINK_AEROLINEA;  ----20
+SELECT * FROM TBL_BOLETOS@DB_LINK_AEROLINEA;  ----994
+
+
 SELECT * FROM TBL_AVIONES@DB_LINK_AEROLINEA;
 SELECT * FROM TBL_ESCALAS@DB_LINK_AEROLINEA;
 
@@ -312,3 +424,5 @@ ON (A.ID_VUELO_PADRE = B.ID_VUELO)
 WHERE TRUNC(B.FECHA_PARTIDA) = TRUNC(SYSDATE);
 
 TRUNCATE TABLE TBL_VUELOS;
+
+
