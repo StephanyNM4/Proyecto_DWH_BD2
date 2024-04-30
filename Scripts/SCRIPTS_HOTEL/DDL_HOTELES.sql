@@ -310,7 +310,8 @@ CREATE TABLE reservaciones(
 	fecha_fin DATE NOT NULL,
 	id_cliente INT NOT NULL,
 	id_habitacion INT NOT NULL,
-	pagado BIT DEFAULT 0
+	pagado BIT DEFAULT 0,
+	activa BIT DEFAULT 0
 
 	CONSTRAINT fk_reservacion_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
 	CONSTRAINT fk_reservacion_habitacion FOREIGN KEY (id_habitacion) REFERENCES habitaciones(id_habitacion)
@@ -325,9 +326,10 @@ GO
 
 CREATE TABLE facturas(
 	id_factura INT IDENTITY PRIMARY KEY,
-	subtotal DECIMAL(10,2),
-	impuesto DECIMAL(10,2),
-	total DECIMAL(10,2),
+	fecha DATE DEFAULT GETDATE(),
+	subtotal DECIMAL(10,2) DEFAULT 0,
+	impuesto DECIMAL(10,2) DEFAULT 0,
+	total DECIMAL(10,2) DEFAULT 0,
 	id_cliente INT NOT NULL,
 	id_forma_pago INT NOT NULL,
 
