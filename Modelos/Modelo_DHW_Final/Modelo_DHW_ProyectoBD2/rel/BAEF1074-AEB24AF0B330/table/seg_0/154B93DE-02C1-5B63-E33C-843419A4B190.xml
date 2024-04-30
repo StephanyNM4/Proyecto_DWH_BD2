@@ -16,6 +16,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="ID_FACTURA_AEROLINEA" id="BE680DFD-7D5D-44CA-5DED-DEABFC01A99B">
@@ -63,7 +64,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TIPO" id="AE7D8050-46D5-3B53-62D7-DB0EB689BDA2">
+<Column name="TIPO_SERVICIO" id="AE7D8050-46D5-3B53-62D7-DB0EB689BDA2">
 <createdBy>Usuario</createdBy>
 <createdTime>2024-03-24 15:07:17 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
