@@ -231,7 +231,7 @@ ALTER TABLE tbl_hoteles ADD CONSTRAINT tbl_hoteles_pk PRIMARY KEY ( id_hotel );
 CREATE TABLE tbl_logs (
     id           INTEGER NOT NULL,
     nombre       VARCHAR2(100),
-    fecha_iniico DATE,
+    fecha_inicio DATE,
     fecha_final  DATE,
     nombre_base  VARCHAR2(50),
     exito        VARCHAR2(20)

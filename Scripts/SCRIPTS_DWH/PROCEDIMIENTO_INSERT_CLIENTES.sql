@@ -69,7 +69,6 @@ BEGIN
     );
     END IF; 
     
-    COMMIT;
 EXCEPTION
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('ERROR=> '|| SQLERRM);
