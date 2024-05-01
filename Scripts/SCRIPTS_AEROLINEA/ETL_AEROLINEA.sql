@@ -7,7 +7,7 @@ CREATE OR REPLACE PROCEDURE P_INSERT_LOG(P_nombre VARCHAR2,
 BEGIN
     INSERT INTO tbl_logs (
         nombre,
-        fecha_inico,
+        fecha_inicio,
         fecha_final,
         nombre_base,
         exito
