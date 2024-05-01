@@ -1,30 +1,3 @@
-SET SERVEROUTPUT ON;
--------LOG
-CREATE OR REPLACE PROCEDURE P_INSERT_LOG(P_nombre VARCHAR2,
-    P_fecha_inicio DATE,
-    P_nombre_base VARCHAR2,
-    P_exito VARCHAR) AS
-BEGIN
-    INSERT INTO tbl_logs (
-        nombre,
-        fecha_inicio,
-        fecha_final,
-        nombre_base,
-        exito
-    ) VALUES (
-        P_nombre,
-        P_fecha_inicio,
-        SYSDATE,
-        P_nombre_base,
-        P_exito
-    );
-    
-    COMMIT;
-EXCEPTION
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('ERROR: '|| SQLERRM);
-END;
-
 ----------------------------------------EXTRACCION INCREMENTAL DE VUELOS
 CREATE OR REPLACE PROCEDURE P_ETL_VUELOS
 AS
@@ -457,47 +430,6 @@ BEGIN
     P_ETL_BOLETOS;
 END;
 
------------------------------------------------EXTRACCION VOLATIL DE SERVICIOS
-CREATE OR REPLACE PROCEDURE P_ETL_SERVICIOS
-AS
-    V_INICIO_ETL DATE:= SYSDATE;
-BEGIN
-
-            INSERT INTO tbl_servicios (
-                id_servicio_aerolinea,
-                id_servicio_hotel,
-                servicio,
-                costo,
-                tipo_servicio
-            ) SELECT
-                id_servicio_adicional,
-                NULL,
-                servicio,
-                precio,
-                NULL
-            FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;
-
-        DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS FINALIZADA');
-        P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
-                        P_fecha_inicio => V_INICIO_ETL,
-                        P_nombre_base => 'BASE',
-                        P_exito => 'SUCCESS');
-        COMMIT;
-    EXCEPTION 
-        WHEN OTHERS THEN 
-        DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
-        DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
-        ROLLBACK;
-        P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
-                        P_fecha_inicio => V_INICIO_ETL,
-                        P_nombre_base => 'BASE',
-                        P_exito => 'FAIL');
-END;
-
-BEGIN
-    P_ETL_SERVICIOS;
-END;
-
 ----------------------------------------------EXTRACCION INCREMENTAL FACTURAS
 CREATE OR REPLACE PROCEDURE P_ETL_FACTURAS
 AS
@@ -524,6 +456,7 @@ BEGIN
     WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
        
          INSERT INTO tbl_facturas (
+            id_factura_dwh,
             id_factura_aerolinea,
             id_factura_hotel,
             fecha_factura,
@@ -532,6 +465,7 @@ BEGIN
             total,
             metodo_pago
         ) SELECT
+            A.id_factura,
             A.id_factura,
             NULL,
             A.fecha_factura,
@@ -604,14 +538,10 @@ BEGIN
                             WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
                                             DBMS_OUTPUT.PUT_LINE('1');
 
-            DELETE FROM TBL_FACTURA_BOLETOS;
-                            DBMS_OUTPUT.PUT_LINE(V_FECHA_INICIO);
                             DBMS_OUTPUT.PUT_LINE(REGISTRO.id_boleto_factura);
-                            DBMS_OUTPUT.PUT_LINE(REGISTRO.id_factura);
-                            DBMS_OUTPUT.PUT_LINE(REGISTRO.id_boleto);
-                            DBMS_OUTPUT.PUT_LINE(REGISTRO.subtotal);
 
-                           INSERT INTO tbl_factura_boletos (
+
+                        INSERT INTO tbl_factura_boletos (
                                 id_boleto_factura,
                                 id_factura_dwh,
                                 id_boleto,
@@ -621,8 +551,8 @@ BEGIN
                                 REGISTRO.id_factura,
                                 REGISTRO.id_boleto,
                                 REGISTRO.subtotal
-                            );              
-                                   
+                            );
+                        
                 DBMS_OUTPUT.PUT_LINE('inserto boleto por factura');
             END LOOP;
         V_FECHA_INICIO := V_FECHA_INICIO + 1;
@@ -640,7 +570,48 @@ END;
 BEGIN
     P_ETL_BOLETO_POR_FACTURA;
 END;
+-----------------------------------------------EXTRACCION VOLATIL DE SERVICIOS
+CREATE OR REPLACE PROCEDURE P_ETL_SERVICIOS
+AS
+    V_INICIO_ETL DATE:= SYSDATE;
+BEGIN
 
+            INSERT INTO tbl_servicios (
+                id_servicio_dwh,
+                id_servicio_aerolinea,
+                id_servicio_hotel,
+                servicio,
+                costo,
+                tipo_servicio
+            ) SELECT
+                id_servicio_adicional,
+                id_servicio_adicional,
+                NULL,
+                servicio,
+                precio,
+                NULL
+            FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;
+
+        DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS FINALIZADA');
+        P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                        P_fecha_inicio => V_INICIO_ETL,
+                        P_nombre_base => 'BASE',
+                        P_exito => 'SUCCESS');
+        COMMIT;
+    EXCEPTION 
+        WHEN OTHERS THEN 
+        DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
+        ROLLBACK;
+        P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                        P_fecha_inicio => V_INICIO_ETL,
+                        P_nombre_base => 'BASE',
+                        P_exito => 'FAIL');
+END;
+
+BEGIN
+    P_ETL_SERVICIOS;
+END;
 
 select * FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
                             INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
@@ -658,7 +629,7 @@ BEGIN
         -----VERIFICAMOS LA ULTIMA EXTRACCION
     SELECT COUNT(1)
     INTO V_VAL_EXTRACCION
-    FROM TBL_FACTURA_BOLETOS;
+    FROM TBL_SERVICIOS_POR_BOLETO;
     
     IF (V_VAL_EXTRACCION <= 0) THEN
         SELECT MIN(FECHA_FACTURA)
@@ -679,13 +650,8 @@ BEGIN
                         INNER JOIN TBL_SERVICIOS_POR_BOLETO@DB_LINK_AEROLINEA C
                         ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
                         WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
-            
-            INSERT INTO tbl_servicios_x_boleto (
-                id_boleto_factura,
-                id_servicio
-            ) VALUES (
 
-            );
+            DBMS_OUTPUT.PUT_LINE('1');
         
             INSERT INTO tbl_servicios_por_boleto (
                 id_servicio_dwh,
@@ -694,18 +660,26 @@ BEGIN
                 REGISTRO.ID_SERVICIO_ADICIONAL,
                 REGISTRO.ID_BOLETO_FACTURA
             );
-            COMMIT;
-            
-            DBMS_OUTPUT.PUT_LINE('inserto servicio por boleto');
+
         END LOOP;
         V_FECHA_INICIO := V_FECHA_INICIO + 1;
     END LOOP;
     
+        DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS POR BOLETO FINALIZADA');
+        P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                        P_fecha_inicio => V_INICIO_ETL,
+                        P_nombre_base => 'BASE',
+                        P_exito => 'SUCCESS');
+        COMMIT;
     EXCEPTION 
         WHEN OTHERS THEN 
         DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
         DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
-        ROLLBACK; 
+        ROLLBACK;
+        P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                        P_fecha_inicio => V_INICIO_ETL,
+                        P_nombre_base => 'BASE',
+                        P_exito => 'FAIL');
 END;
 
 BEGIN
@@ -724,7 +698,7 @@ BEGIN
             -----VERIFICAMOS LA ULTIMA EXTRACCION
     SELECT COUNT(1)
     INTO V_VAL_EXTRACCION
-    FROM TBL_FACTURA_BOLETOS;
+    FROM TBL_EQUIPAJES;
     
     IF (V_VAL_EXTRACCION <= 0) THEN
         SELECT MIN(FECHA_FACTURA)
@@ -738,7 +712,7 @@ BEGIN
     
     WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
 
-                 INSERT INTO tbl_equipajes (
+                INSERT INTO tbl_equipajes (
                     id_equipaje,
                     tipo_equipaje,
                     peso,
@@ -762,7 +736,7 @@ BEGIN
                         
         V_FECHA_INICIO := V_FECHA_INICIO + 1;
     END LOOP;
-    
+        
         DBMS_OUTPUT.PUT_LINE('EXTRACCION DE EQUIPAJES FINALIZADA');
         P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
                         P_fecha_inicio => V_INICIO_ETL,
@@ -796,7 +770,7 @@ BEGIN
     -----VERIFICAMOS LA ULTIMA EXTRACCION
     SELECT COUNT(1)
     INTO V_VAL_EXTRACCION
-    FROM TBL_FACTURA_BOLETOS;
+    FROM TBL_EQUIPAJES_POR_BOLETO;
     
     IF (V_VAL_EXTRACCION <= 0) THEN
         SELECT MIN(FECHA_FACTURA)
@@ -827,22 +801,29 @@ BEGIN
                     ) VALUES (
                         REGISTRO.ID_EQUIPAJE,
                         REGISTRO.ID_BOLETO_FACTURA
-                    );        
+                    );     
+                    
+                    
             
-            DBMS_OUTPUT.PUT_LINE('inserto equipaje por boleto');
         END LOOP;
-        
-        COMMIT;
         V_FECHA_INICIO := V_FECHA_INICIO + 1;
-            DBMS_OUTPUT.PUT_LINE('3');
-
     END LOOP;
     
+        DBMS_OUTPUT.PUT_LINE('EXTRACCION DE EQUIPAJES POR BOLETO FINALIZADA');
+        P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                        P_fecha_inicio => V_INICIO_ETL,
+                        P_nombre_base => 'BASE',
+                        P_exito => 'SUCCESS');
+        COMMIT;
     EXCEPTION 
         WHEN OTHERS THEN 
         DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
         DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
-        ROLLBACK; 
+        ROLLBACK;
+        P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                        P_fecha_inicio => V_INICIO_ETL,
+                        P_nombre_base => 'BASE',
+                        P_exito => 'FAIL');
 END;
 
 BEGIN
@@ -871,29 +852,29 @@ END;
 
 
 ---------------------------------------IGNORAR (PRUEBAS)
-SELECT COUNT(1) FROM TBL_VUELOS;  ---1023
+SELECT COUNT(1) FROM TBL_VUELOS;  ---1035
 SELECT COUNT(1) FROM TBL_ASIENTOS; -----1757
 SELECT COUNT(1) FROM TBL_CLIENTES;  ----20
-SELECT COUNT(1) FROM TBL_BOLETOS;  ----1014
-SELECT COUNT(1) FROM TBL_SERVICIOS;  ----30
-SELECT COUNT(1) FROM TBL_EQUIPAJES;  ----1537
+SELECT COUNT(1) FROM TBL_BOLETOS;  ----1012
+SELECT * FROM TBL_SERVICIOS;  ----30
 SELECT * FROM TBL_FACTURAS;  ----500
-SELECT COUNT(1) FROM TBL_FACTURA_BOLETOS;  ---
-SELECT COUNT(1) FROM TBL_SERVICIOS_X_BOLETO;  ----0
-SELECT COUNT(1) FROM TBL_EQUIPAJES_POR_BOLETO;
+SELECT COUNT(1) FROM TBL_FACTURA_BOLETOS;  ---1012
+SELECT COUNT(1) FROM TBL_SERVICIOS_POR_BOLETO;  ----2574
+SELECT COUNT(1) FROM TBL_EQUIPAJES;  ----1545
+SELECT COUNT(1) FROM TBL_EQUIPAJES_POR_BOLETO; ----1545
 SELECT * FROM TBL_LOGS;
 
 SELECT COUNT(1) FROM TBL_VUELOS@DB_LINK_AEROLINEA;  ---1101
 SELECT COUNT(1) FROM TBL_ASIENTOS@DB_LINK_AEROLINEA;  -----1757
 SELECT COUNT(1) FROM TBL_ESCALAS@DB_LINK_AEROLINEA;
 SELECT COUNT(1) FROM TBL_CLIENTES@DB_LINK_AEROLINEA;  ----20
-SELECT COUNT(1) FROM TBL_BOLETOS@DB_LINK_AEROLINEA;  ----1014
-SELECT COUNT(1) FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;  ----30
-SELECT count(1) FROM TBL_EQUIPAJES@DB_LINK_AEROLINEA;  ----1537
+SELECT COUNT(1) FROM TBL_BOLETOS@DB_LINK_AEROLINEA;  ----1012
+SELECT * FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;  ----30
+SELECT count(1) FROM TBL_EQUIPAJES@DB_LINK_AEROLINEA;  ----1545
 SELECT * FROM TBL_FACTURAS@DB_LINK_AEROLINEA; ----500
-SELECT COUNT(1) FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA;  ----1014
-SELECT COUNT(1) FROM TBL_SERVICIOS_POR_BOLETO@DB_LINK_AEROLINEA;  ----2536
-SELECT COUNT(1) FROM TBL_EQUIPAJES_POR_BOLETO@DB_LINK_AEROLINEA;  ----1537
+SELECT COUNT(1) FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA;  ----1012
+SELECT COUNT(1) FROM TBL_SERVICIOS_POR_BOLETO@DB_LINK_AEROLINEA;  ----2574
+SELECT COUNT(1) FROM TBL_EQUIPAJES_POR_BOLETO@DB_LINK_AEROLINEA;  ----1545
 
 
 
@@ -988,6 +969,3 @@ INSERT INTO tbl_equipajes (
                 WHERE TRUNC(E.FECHA_FACTURA) =  TRUNC(TO_DATE('24/JUL/21', 'DD-MM-YY'))
                 GROUP BY A.id_equipaje, B.tipo_equipaje
                 ;
-
-
---------------FALTAN LAS 3 TABLAS INTERMEDIAS DE FACTURA, SERVICIOS Y EQUIPAJE

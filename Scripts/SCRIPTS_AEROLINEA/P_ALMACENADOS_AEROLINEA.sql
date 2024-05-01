@@ -82,10 +82,10 @@ AS
     V_CLIENTE NUMBER;
     V_ID_VUELO NUMBER := 0;
     V_ID_BOLETO NUMBER;
-    V_ID_FACTURA NUMBER;
+    V_ID_FACTURA VARCHAR2(50);
     V_ID_BOLETO_FACTURA NUMBER;
     V_CONT_SERVICIOS NUMBER := 0;
-    V_SERVICIOS NUMBER;
+    V_SERVICIOS VARCHAR2(50);
     V_CONT_EQUIPAJES NUMBER := 0;
     V_EQUIPAJES NUMBER;
     V_ID_ASIENTO NUMBER := 0;
@@ -99,7 +99,7 @@ BEGIN
         V_NUMERO := ROUND(DBMS_RANDOM.VALUE(1, 3));   ---CANTIDAD DE BOLETOS A COMPRAR
         V_CLIENTE := ROUND(DBMS_RANDOM.VALUE(4, 20));  ----CLIENTE QUE COMPRA LOS BOLETOS
         V_PRECIO := ROUND(DBMS_RANDOM.VALUE(1000, 4000));--PRECIO BOLETO
-        V_ID_FACTURA := SEQ_ID_FACTURAS.NEXTVAL;
+        V_ID_FACTURA := 'A_' || SEQ_ID_FACTURAS.NEXTVAL;
 
         ----------------GENERA FACTURA
             INSERT INTO tbl_facturas (
@@ -177,7 +177,7 @@ BEGIN
                             id_servicio_adicional,
                             id_boleto_factura
                         ) VALUES (
-                            ROUND(DBMS_RANDOM.VALUE(1, 30)),
+                            'A_' || ROUND(DBMS_RANDOM.VALUE(1, 30)),
                             V_ID_BOLETO_FACTURA
                         );
                         V_CONT_SERVICIOS := V_CONT_SERVICIOS + 1;

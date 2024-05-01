@@ -1,7 +1,87 @@
 
 ----COMPILAR ACTUALIZACION O INSERCION DE CLIENTES DWH
+-------------------------EXTRACCION (ACTUALIZACION O INSERT) CLIENTES
+CREATE OR REPLACE PROCEDURE P_INSERT_CLIENTE(P_CORREO_ELECTRONICO VARCHAR2,
+                                            P_nombre VARCHAR2,
+                                            P_apellido VARCHAR2,
+                                            P_telefono NUMBER,
+                                            P_contrasena_uber VARCHAR2:= NULL,
+                                            P_contrasena_aerolinea VARCHAR2 := NULL,
+                                            P_contrasena_hotel VARCHAR2:= NULL,
+                                            P_genero VARCHAR2:= NULL,
+                                            P_fecha_registro DATE) AS
+    --VARIABLES
+    V_CANTIDAD_CLIENTE NUMBER;
+BEGIN
+    SELECT COUNT(1)
+    INTO V_CANTIDAD_CLIENTE
+    FROM TBL_CLIENTES
+    WHERE CORREO_ELECTRONICO = P_CORREO_ELECTRONICO;
+    
+    --YA EXISTE
+    IF(V_CANTIDAD_CLIENTE>0) THEN
+        IF(P_CONTRASENA_UBER IS NOT NULL) THEN
+            UPDATE tbl_clientes
+            SET
+                contrasena_uber = P_CONTRASENA_UBER
+            WHERE correo_electronico = P_CORREO_ELECTRONICO;
+        END IF;
+        
+        IF(P_CONTRASENA_AEROLINEA IS NOT NULL) THEN
+            UPDATE tbl_clientes
+            SET
+                CONTRASENA_AEROLINEA  = P_CONTRASENA_AEROLINEA 
+            WHERE correo_electronico = P_CORREO_ELECTRONICO;
+        END IF;
+        
+        IF(P_CONTRASENA_HOTEL IS NOT NULL) THEN
+            UPDATE tbl_clientes
+            SET
+                CONTRASENA_HOTEL  = P_CONTRASENA_HOTEL
+            WHERE correo_electronico = P_CORREO_ELECTRONICO;
+        END IF;
+        
+        IF(P_GENERO IS NOT NULL) THEN
+            UPDATE tbl_clientes
+            SET
+                GENERO  = P_GENERO
+            WHERE correo_electronico = P_CORREO_ELECTRONICO;
+        END IF;
+    --NO EXISTE
+    ELSE
+        INSERT INTO tbl_clientes (
+        correo_electronico,
+        nombre,
+        apellido,
+        telefono,
+        contrasena_uber,
+        contrasena_aerolinea,
+        contrasena_hotel,
+        genero,
+        fecha_registro
+    ) VALUES (
+        P_CORREO_ELECTRONICO,
+        P_nombre,
+        P_apellido,
+        P_telefono,
+        P_contrasena_uber,
+        P_contrasena_aerolinea,
+        P_contrasena_hotel,
+        P_genero,
+        P_fecha_registro 
+    );
+    END IF; 
+    
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR=> '|| SQLERRM);
+END;
 
---------------ENCABEZADO PKG
+
+------------------------------------------------------------------------
+------------------------ENCABEZADO PKG----------------------------------
+------------------------------------------------------------------------
 CREATE OR REPLACE NONEDITIONABLE PACKAGE PKG_ETLS_AEROLINEA IS 
 
     PROCEDURE P_ETL_VUELOS;
@@ -9,14 +89,18 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE PKG_ETLS_AEROLINEA IS
     PROCEDURE P_ETL_ESCALAS;
     PROCEDURE P_ETL_CLIENTES;
     PROCEDURE P_ETL_BOLETOS;
-    PROCEDURE P_ETL_SERVICIOS;
     PROCEDURE P_ETL_FACTURAS;
+    PROCEDURE P_ETL_BOLETO_POR_FACTURA;
+    PROCEDURE P_ETL_SERVICIOS;
+    PROCEDURE P_ETL_SERVICIOS_POR_BOLETO;
     PROCEDURE P_ETL_EQUIPAJES;
-
+    PROCEDURE P_ETL_EQUIPAJES_POR_BOLETO;
+    
 END PKG_ETLS_AEROLINEA;
 
-
---------------CUERPO PKG
+------------------------------------------------------------------------
+------------------------CUERPO PKG--------------------------------------
+------------------------------------------------------------------------
 CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS 
 
 ----------------------------------------EXTRACCION INCREMENTAL DE VUELOS
@@ -351,43 +435,6 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                                 P_exito => 'FAIL');
         END P_ETL_BOLETOS;
         
------------------------------------------------EXTRACCION VOLATIL DE SERVICIOS
-        PROCEDURE P_ETL_SERVICIOS
-        AS
-            V_INICIO_ETL DATE:= SYSDATE;
-        BEGIN
-        
-                    INSERT INTO tbl_servicios (
-                        id_servicio_aerolinea,
-                        id_servicio_hotel,
-                        servicio,
-                        costo,
-                        tipo_servicio
-                    ) SELECT
-                        id_servicio_adicional,
-                        NULL,
-                        servicio,
-                        precio,
-                        NULL
-                    FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;
-        
-                DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
-                                P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
-                COMMIT;
-            EXCEPTION 
-                WHEN OTHERS THEN 
-                DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
-                DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
-                ROLLBACK;
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
-                                P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
-        END P_ETL_SERVICIOS;
-        
 ----------------------------------------------EXTRACCION INCREMENTAL FACTURAS
         PROCEDURE P_ETL_FACTURAS
         AS
@@ -414,6 +461,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
             
                 INSERT INTO tbl_facturas (
+                    id_factura_dwh,
                     id_factura_aerolinea,
                     id_factura_hotel,
                     fecha_factura,
@@ -422,6 +470,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                     total,
                     metodo_pago
                 ) SELECT
+                    A.id_factura,
                     A.id_factura,
                     NULL,
                     A.fecha_factura,
@@ -453,6 +502,165 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                                 P_exito => 'FAIL');
         END P_ETL_FACTURAS;
         
+------------------------------------EXTRACCION INCREMENTAL FACTURA_BOLETOS
+        PROCEDURE P_ETL_BOLETO_POR_FACTURA
+        AS
+            V_FECHA_INICIO DATE;
+            V_FECHA_FIN DATE := SYSDATE - 1;
+            V_VAL_EXTRACCION NUMBER;
+            V_INICIO_ETL DATE:= SYSDATE;
+        BEGIN
+        
+            -----VERIFICAMOS LA ULTIMA EXTRACCION
+            SELECT COUNT(1)
+            INTO V_VAL_EXTRACCION
+            FROM TBL_FACTURA_BOLETOS;
+            
+            IF (V_VAL_EXTRACCION <= 0) THEN
+                SELECT MIN(FECHA_FACTURA)
+                INTO V_FECHA_INICIO
+                FROM TBL_FACTURAS@DB_LINK_AEROLINEA;
+            ELSE      
+                SELECT MAX(FECHA_FACTURA) + 1
+                INTO V_FECHA_INICIO
+                FROM TBL_FACTURAS;
+            END IF;
+            
+            WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+            
+                FOR REGISTRO IN (SELECT A.id_boleto_factura,
+                                        A.id_factura,
+                                        A.id_boleto,
+                                        A.subtotal
+                                    FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                                    INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                                    ON (A.ID_FACTURA = B.ID_FACTURA)
+                                    WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
+        
+                                INSERT INTO tbl_factura_boletos (
+                                        id_boleto_factura,
+                                        id_factura_dwh,
+                                        id_boleto,
+                                        subtotal
+                                    ) VALUES (
+                                        REGISTRO.id_boleto_factura,
+                                        REGISTRO.id_factura,
+                                        REGISTRO.id_boleto,
+                                        REGISTRO.subtotal
+                                    );
+                END LOOP;
+                V_FECHA_INICIO := V_FECHA_INICIO + 1;
+            END LOOP;
+            
+                DBMS_OUTPUT.PUT_LINE('EXTRACCION DE BOLETOS POR FACTURA FINALIZADA');
+                COMMIT;
+            EXCEPTION 
+                WHEN OTHERS THEN 
+                DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
+                DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
+                ROLLBACK;
+        END P_ETL_BOLETO_POR_FACTURA;
+                
+-----------------------------------------------EXTRACCION VOLATIL DE SERVICIOS
+        PROCEDURE P_ETL_SERVICIOS
+        AS
+            V_INICIO_ETL DATE:= SYSDATE;
+        BEGIN
+        
+                    INSERT INTO tbl_servicios (
+                        id_servicio_dwh,
+                        id_servicio_aerolinea,
+                        id_servicio_hotel,
+                        servicio,
+                        costo,
+                        tipo_servicio
+                    ) SELECT
+                        id_servicio_adicional,
+                        id_servicio_adicional,
+                        NULL,
+                        servicio,
+                        precio,
+                        NULL
+                    FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;
+        
+                DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS FINALIZADA');
+                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                                P_fecha_inicio => V_INICIO_ETL,
+                                P_nombre_base => 'BASE',
+                                P_exito => 'SUCCESS');
+                COMMIT;
+            EXCEPTION 
+                WHEN OTHERS THEN 
+                DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
+                DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
+                ROLLBACK;
+                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                                P_fecha_inicio => V_INICIO_ETL,
+                                P_nombre_base => 'BASE',
+                                P_exito => 'FAIL');
+        END P_ETL_SERVICIOS;
+        
+------------------------------------EXTRACCION INCREMENTAL SERVICIOS POR BOLETO
+        CREATE OR REPLACE PROCEDURE P_ETL_SERVICIOS_POR_BOLETO
+        AS
+            V_FECHA_INICIO DATE;
+            V_FECHA_FIN DATE := SYSDATE - 1;
+            V_VAL_EXTRACCION NUMBER;
+            V_INICIO_ETL DATE:= SYSDATE;
+        BEGIN
+                -----VERIFICAMOS LA ULTIMA EXTRACCION
+            SELECT COUNT(1)
+            INTO V_VAL_EXTRACCION
+            FROM TBL_SERVICIOS_POR_BOLETO;
+            
+            IF (V_VAL_EXTRACCION <= 0) THEN
+                SELECT MIN(FECHA_FACTURA)
+                INTO V_FECHA_INICIO
+                FROM TBL_FACTURAS@DB_LINK_AEROLINEA;
+            ELSE      
+                SELECT MAX(FECHA_FACTURA) + 1
+                INTO V_FECHA_INICIO
+                FROM TBL_FACTURAS;
+            END IF;
+        
+            WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+                FOR REGISTRO IN ( SELECT A.ID_BOLETO_FACTURA,
+                                    C.ID_SERVICIO_ADICIONAL
+                                FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                                INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                                ON (A.ID_FACTURA = B.ID_FACTURA)
+                                INNER JOIN TBL_SERVICIOS_POR_BOLETO@DB_LINK_AEROLINEA C
+                                ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
+                                WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
+                        
+                    INSERT INTO tbl_servicios_por_boleto (
+                        id_servicio_dwh,
+                        id_boleto_factura
+                    ) VALUES (
+                        REGISTRO.ID_SERVICIO_ADICIONAL,
+                        REGISTRO.ID_BOLETO_FACTURA
+                    );
+        
+                END LOOP;
+                V_FECHA_INICIO := V_FECHA_INICIO + 1;
+            END LOOP;
+            
+                DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS POR BOLETO FINALIZADA');
+                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                                P_fecha_inicio => V_INICIO_ETL,
+                                P_nombre_base => 'BASE',
+                                P_exito => 'SUCCESS');
+                COMMIT;
+            EXCEPTION 
+                WHEN OTHERS THEN 
+                DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
+                DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
+                ROLLBACK;
+                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                                P_fecha_inicio => V_INICIO_ETL,
+                                P_nombre_base => 'BASE',
+                                P_exito => 'FAIL');
+        END P_ETL_SERVICIOS_POR_BOLETO;        
         
 -----------------------------------------------EXTRACCION INCREMENTAL EQUIPAJES 
         PROCEDURE P_ETL_EQUIPAJES
@@ -465,7 +673,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                     -----VERIFICAMOS LA ULTIMA EXTRACCION
             SELECT COUNT(1)
             INTO V_VAL_EXTRACCION
-            FROM TBL_FACTURA_BOLETOS;
+            FROM TBL_EQUIPAJES;
             
             IF (V_VAL_EXTRACCION <= 0) THEN
                 SELECT MIN(FECHA_FACTURA)
@@ -503,7 +711,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                                 
                 V_FECHA_INICIO := V_FECHA_INICIO + 1;
             END LOOP;
-            
+                
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE EQUIPAJES FINALIZADA');
                 P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
                                 P_fecha_inicio => V_INICIO_ETL,
@@ -520,6 +728,72 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                                 P_nombre_base => 'BASE',
                                 P_exito => 'FAIL');
         END P_ETL_EQUIPAJES;
-
+------------------------------------EXTRACCION INCREMENTAL EQUIPAJES POR BOLETO
+        PROCEDURE P_ETL_EQUIPAJES_POR_BOLETO
+        AS
+            V_FECHA_INICIO DATE;
+            V_FECHA_FIN DATE := SYSDATE - 1;
+            V_VAL_EXTRACCION NUMBER;
+            V_INICIO_ETL DATE:= SYSDATE;
+        BEGIN
+        
+            -----VERIFICAMOS LA ULTIMA EXTRACCION
+            SELECT COUNT(1)
+            INTO V_VAL_EXTRACCION
+            FROM TBL_EQUIPAJES_POR_BOLETO;
+            
+            IF (V_VAL_EXTRACCION <= 0) THEN
+                SELECT MIN(FECHA_FACTURA)
+                INTO V_FECHA_INICIO
+                FROM TBL_FACTURAS@DB_LINK_AEROLINEA;
+            ELSE      
+                SELECT MAX(FECHA_FACTURA) + 1
+                INTO V_FECHA_INICIO
+                FROM TBL_FACTURAS;
+            END IF;
+            
+            WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
+            DBMS_OUTPUT.PUT_LINE(V_FECHA_INICIO);
+                FOR REGISTRO IN (SELECT A.ID_BOLETO_FACTURA,
+                                        C.ID_EQUIPAJE
+                                    FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
+                                    INNER JOIN TBL_FACTURAS@DB_LINK_AEROLINEA B
+                                    ON (A.ID_FACTURA = B.ID_FACTURA)
+                                    INNER JOIN TBL_EQUIPAJES_POR_BOLETO@DB_LINK_AEROLINEA C
+                                    ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
+                                    WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO) ) LOOP
+                        DBMS_OUTPUT.PUT_LINE('2');
+        
+                            
+                            INSERT INTO tbl_equipajes_por_boleto (
+                                id_equipaje,
+                                id_boleto_factura
+                            ) VALUES (
+                                REGISTRO.ID_EQUIPAJE,
+                                REGISTRO.ID_BOLETO_FACTURA
+                            );     
+                            
+                            
+                    
+                END LOOP;
+                V_FECHA_INICIO := V_FECHA_INICIO + 1;
+            END LOOP;
+            
+                DBMS_OUTPUT.PUT_LINE('EXTRACCION DE EQUIPAJES POR BOLETO FINALIZADA');
+                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                                P_fecha_inicio => V_INICIO_ETL,
+                                P_nombre_base => 'BASE',
+                                P_exito => 'SUCCESS');
+                COMMIT;
+            EXCEPTION 
+                WHEN OTHERS THEN 
+                DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
+                DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
+                ROLLBACK;
+                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                                P_fecha_inicio => V_INICIO_ETL,
+                                P_nombre_base => 'BASE',
+                                P_exito => 'FAIL');
+        END P_ETL_EQUIPAJES_POR_BOLETO;
 
 END PKG_ETLS_AEROLINEA;
