@@ -3,49 +3,49 @@ GO
 
 INSERT INTO categorias_amenidades (categoria)
 VALUES
-    ('Servicios de la habitaciÛn'),
-    ('BaÒo'),
+    ('Servicios de la habitaci√≥n'),
+    ('Ba√±o'),
     ('Dormitorio'),
     ('Entretenimiento'),
     ('Amigable para familias'),
     ('Comida y bebida'),
     ('Internet'),
-    ('M·s');
+    ('M√°s');
 GO
 
 INSERT INTO amenidades (amenidad, id_categoria)
 VALUES
-    ('ArtÌculos de tocador de diseÒador', 2),
-    ('ArtÌculos de tocador ecolÛgicos', 2),
+    ('Art√≠culos de tocador de dise√±ador', 2),
+    ('Art√≠culos de tocador ecol√≥gicos', 2),
     ('Secador de pelo', 2),
-    ('BaÒo privado', 2),
+    ('Ba√±o privado', 2),
     ('Ducha', 2),
     ('Toallas', 2),
-    ('S·banas', 3),
+    ('S√°banas', 3),
     ('Cortinas opacas', 3),
     ('Aire acondicionado con control de clima', 3),
-    ('EdredÛn de plumas', 3),
+    ('Edred√≥n de plumas', 3),
     ('Cunas/ camas infantiles gratuitas', 3),
-    ('Men˙ de almohadas', 3),
+    ('Men√∫ de almohadas', 3),
     ('Camas supletorias (con cargo adicional)', 3),
     ('Televisor plasma de 32 pulgadas', 4),
-    ('PelÌculas de pago', 4),
+    ('Pel√≠culas de pago', 4),
     ('Canales de TV premium', 4),
-    ('Canales por satÈlite', 4),
-    ('Servicio de cuidado infantil en la habitaciÛn (con cargo adicional)', 5),
+    ('Canales por sat√©lite', 4),
+    ('Servicio de cuidado infantil en la habitaci√≥n (con cargo adicional)', 5),
     ('Servicio de habitaciones las 24 horas', 6),
-    ('Hervidor elÈctrico', 6),
+    ('Hervidor el√©ctrico', 6),
     ('Minibar (puede aplicarse cargo adicional)', 6),
     ('WiFi gratuito', 7),
     ('Habitaciones comunicadas disponibles', 8),
     ('Limpieza diaria', 8),
     ('Escritorio', 8),
-    ('Interruptores de ahorro de energÌa', 8),
+    ('Interruptores de ahorro de energ√≠a', 8),
     ('Plancha/tabla de planchar', 8),
     ('Espacio de trabajo para laptop', 8),
     ('Caja fuerte compatible con laptop', 8),
     ('Bombillas LED', 8),
-    ('TelÈfono', 8),
+    ('Tel√©fono', 8),
     ('Cesto de reciclaje', 8),
     ('Habitaciones insonorizadas', 8);
 GO
@@ -58,85 +58,85 @@ VALUES
     ('Actividades'),
     ('Amigable para familias'),
     ('Comodidades'),
-    ('Servicios para huÈspedes'),
+    ('Servicios para hu√©spedes'),
     ('Servicios empresariales'),
     ('Exteriores'),
     ('Accesibilidad'),
     ('Spa'),
     ('Idiomas hablados'),
-    ('M·s');
+    ('M√°s');
 GO
 
-INSERT INTO servicios (servicio, descripcion, id_tipo)
+INSERT INTO servicios (id_servicio, servicio, descripcion, id_tipo)
 VALUES
-    ('EstaciÛn de carga para autos elÈctricos en el lugar', 'EstaciÛn de carga para autos elÈctricos en el lugar', 1),
-    ('Traslado de ·rea (con cargo adicional)', 'Traslado de ·rea (con cargo adicional)', 1),
-    ('Estacionamiento en el lugar (EUR 27 por dÌa)', 'Estacionamiento en el lugar (EUR 27 por dÌa)', 1),
-    ('Estacionamiento limitado en el lugar', 'Estacionamiento limitado en el lugar', 1),
-    ('Estacionamiento accesible para sillas de ruedas disponible', 'Estacionamiento accesible para sillas de ruedas disponible', 1),
-    ('Desayuno completo diario disponible de 7:00 a. m. a 11:00 a. m. por una tarifa: EUR 27 por persona', 'Desayuno completo diario disponible de 7:00 a. m. a 11:00 a. m. por una tarifa: EUR 27 por persona', 2),
-    ('2 cafeterÌas', '2 cafeterÌas', 2),
-    ('3 restaurantes', '3 restaurantes', 2),
-    ('Bar/salÛn', 'Bar/salÛn', 2),
-    ('Bar de aperitivos/deli', 'Bar de aperitivos/deli', 2),
-    ('Disponible en todas las habitaciones: WiFi gratuito', 'Disponible en todas las habitaciones: WiFi gratuito', 3),
-    ('Disponible en algunas ·reas p˙blicas: WiFi gratuito', 'Disponible en algunas ·reas p˙blicas: WiFi gratuito', 3),
-    ('Gimnasio disponible las 24 horas', 'Gimnasio disponible las 24 horas', 4),
-    ('Piscina al aire libre de temporada', 'Piscina al aire libre de temporada', 4),
-    ('Compras', 'Compras', 4),
-    ('Cuna gratuita', 'Cuna gratuita', 5),
-    ('Servicio de niÒera en la habitaciÛn (con cargo adicional)', 'Servicio de niÒera en la habitaciÛn (con cargo adicional)', 5),
-    ('Servicio de lavanderÌa', 'Servicio de lavanderÌa', 5),
-    ('Habitaciones insonorizadas', 'Habitaciones insonorizadas', 5),
-    ('RecepciÛn disponible las 24 horas', 'RecepciÛn disponible las 24 horas', 7),
-    ('Tienda de regalos/periÛdicos', 'Tienda de regalos/periÛdicos', 7),
-    ('ConservaciÛn de equipaje', 'ConservaciÛn de equipaje', 7),
-    ('Caja de seguridad en la recepciÛn', 'Caja de seguridad en la recepciÛn', 7),
-    ('Servicios de conserjerÌa', 'Servicios de conserjerÌa', 8),
-    ('Servicio de limpieza en seco/lavanderÌa', 'Servicio de limpieza en seco/lavanderÌa', 8),
-    ('Servicio de limpieza diario', 'Servicio de limpieza diario', 8),
-    ('Personal multiling¸e', 'Personal multiling¸e', 8),
-    ('Botones/portero', 'Botones/portero', 8),
-    ('Asistencia turÌstica y para la compra de entradas', 'Asistencia turÌstica y para la compra de entradas', 8),
-    ('Servicios para bodas', 'Servicios para bodas', 8),
-    ('Centro de negocios', 'Centro de negocios', 9),
-    ('EstaciÛn de computadoras', 'EstaciÛn de computadoras', 9),
-    ('Centro de conferencias', 'Centro de conferencias', 9),
-    ('Salas de reuniones', 'Salas de reuniones', 9),
-    ('JardÌn', 'JardÌn', 10),
-    ('Tumbonas de piscina', 'Tumbonas de piscina', 10),
-    ('Terraza', 'Terraza', 10),
-    ('Ascensor', 'Ascensor', 11),
-    ('Accesible en silla de ruedas (puede tener limitaciones)', 'Accesible en silla de ruedas (puede tener limitaciones)', 11),
-    ('Centro de negocios accesible en silla de ruedas', 'Centro de negocios accesible en silla de ruedas', 11),
-    ('Gimnasio accesible en silla de ruedas', 'Gimnasio accesible en silla de ruedas', 11),
-    ('SalÛn accesible en silla de ruedas', 'SalÛn accesible en silla de ruedas', 11),
-    ('Estacionamiento accesible en silla de ruedas', 'Estacionamiento accesible en silla de ruedas', 11),
-    ('Ruta de acceso accesible en silla de ruedas', 'Ruta de acceso accesible en silla de ruedas', 11),
-    ('Piscina accesible en silla de ruedas', 'Piscina accesible en silla de ruedas', 11),
-    ('BaÒo p˙blico accesible en silla de ruedas', 'BaÒo p˙blico accesible en silla de ruedas', 11),
-    ('Mostrador de registro accesible en silla de ruedas', 'Mostrador de registro accesible en silla de ruedas', 11),
-    ('Restaurante accesible en silla de ruedas', 'Restaurante accesible en silla de ruedas', 11),
-    ('Aromaterapia', 'Aromaterapia', 12),
-    ('ExfoliaciÛn corporal', 'ExfoliaciÛn corporal', 12),
-    ('Envolturas corporales', 'Envolturas corporales', 12),
-    ('Envolturas de desintoxicaciÛn', 'Envolturas de desintoxicaciÛn', 12),
-    ('Faciales', 'Faciales', 12),
-    ('Masajes con piedras calientes', 'Masajes con piedras calientes', 12),
-    ('Manicuras/pedicuras', 'Manicuras/pedicuras', 12),
-    ('Arquitectura tradicional', 'Arquitectura tradicional', 13),
-    ('Opciones de comida vegana', 'Opciones de comida vegana', 13),
-    ('Opciones de comida vegetariana', 'Opciones de comida vegetariana', 13),
-    ('Piscina al aire libre, servicio de niÒera, camas/cunas adicionales, lavanderÌa', 'Piscina al aire libre, servicio de niÒera, camas/cunas adicionales, lavanderÌa', 13);
+    ('H_001','Estaci√≥n de carga para autos el√©ctricos en el lugar', 'Estaci√≥n de carga para autos el√©ctricos en el lugar', 1),
+    ('H_002','Traslado de √°rea (con cargo adicional)', 'Traslado de √°rea (con cargo adicional)', 1),
+    ('H_003','Estacionamiento en el lugar (EUR 27 por d√≠a)', 'Estacionamiento en el lugar (EUR 27 por d√≠a)', 1),
+    ('H_004','Estacionamiento limitado en el lugar', 'Estacionamiento limitado en el lugar', 1),
+    ('H_005','Estacionamiento accesible para sillas de ruedas disponible', 'Estacionamiento accesible para sillas de ruedas disponible', 1),
+    ('H_006','Desayuno completo diario disponible de 7:00 a. m. a 11:00 a. m. por una tarifa: EUR 27 por persona', 'Desayuno completo diario disponible de 7:00 a. m. a 11:00 a. m. por una tarifa: EUR 27 por persona', 2),
+    ('H_007','2 cafeter√≠as', '2 cafeter√≠as', 2),
+    ('H_008','3 restaurantes', '3 restaurantes', 2),
+    ('H_009','Bar/sal√≥n', 'Bar/sal√≥n', 2),
+    ('H_010','Bar de aperitivos/deli', 'Bar de aperitivos/deli', 2),
+    ('H_011','Disponible en todas las habitaciones: WiFi gratuito', 'Disponible en todas las habitaciones: WiFi gratuito', 3),
+    ('H_012','Disponible en algunas √°reas p√∫blicas: WiFi gratuito', 'Disponible en algunas √°reas p√∫blicas: WiFi gratuito', 3),
+    ('H_013','Gimnasio disponible las 24 horas', 'Gimnasio disponible las 24 horas', 4),
+    ('H_014','Piscina al aire libre de temporada', 'Piscina al aire libre de temporada', 4),
+    ('H_015','Compras', 'Compras', 4),
+    ('H_016','Cuna gratuita', 'Cuna gratuita', 5),
+    ('H_017','Servicio de ni√±era en la habitaci√≥n (con cargo adicional)', 'Servicio de ni√±era en la habitaci√≥n (con cargo adicional)', 5),
+    ('H_018','Servicio de lavander√≠a', 'Servicio de lavander√≠a', 5),
+    ('H_019','Habitaciones insonorizadas', 'Habitaciones insonorizadas', 5),
+    ('H_020','Recepci√≥n disponible las 24 horas', 'Recepci√≥n disponible las 24 horas', 7),
+    ('H_021','Tienda de regalos/peri√≥dicos', 'Tienda de regalos/peri√≥dicos', 7),
+    ('H_022','Conservaci√≥n de equipaje', 'Conservaci√≥n de equipaje', 7),
+    ('H_023','Caja de seguridad en la recepci√≥n', 'Caja de seguridad en la recepci√≥n', 7),
+    ('H_024','Servicios de conserjer√≠a', 'Servicios de conserjer√≠a', 8),
+    ('H_025','Servicio de limpieza en seco/lavander√≠a', 'Servicio de limpieza en seco/lavander√≠a', 8),
+    ('H_026','Servicio de limpieza diario', 'Servicio de limpieza diario', 8),
+    ('H_027','Personal multiling√ºe', 'Personal multiling√ºe', 8),
+    ('H_028','Botones/portero', 'Botones/portero', 8),
+    ('H_029','Asistencia tur√≠stica y para la compra de entradas', 'Asistencia tur√≠stica y para la compra de entradas', 8),
+    ('H_030','Servicios para bodas', 'Servicios para bodas', 8),
+    ('H_031','Centro de negocios', 'Centro de negocios', 9),
+    ('H_032','Estaci√≥n de computadoras', 'Estaci√≥n de computadoras', 9),
+    ('H_033','Centro de conferencias', 'Centro de conferencias', 9),
+    ('H_034','Salas de reuniones', 'Salas de reuniones', 9),
+    ('H_035','Jard√≠n', 'Jard√≠n', 10),
+    ('H_036','Tumbonas de piscina', 'Tumbonas de piscina', 10),
+    ('H_037','Terraza', 'Terraza', 10),
+    ('H_038','Ascensor', 'Ascensor', 11),
+    ('H_039','Accesible en silla de ruedas (puede tener limitaciones)', 'Accesible en silla de ruedas (puede tener limitaciones)', 11),
+    ('H_040','Centro de negocios accesible en silla de ruedas', 'Centro de negocios accesible en silla de ruedas', 11),
+    ('H_041','Gimnasio accesible en silla de ruedas', 'Gimnasio accesible en silla de ruedas', 11),
+    ('H_042','Sal√≥n accesible en silla de ruedas', 'Sal√≥n accesible en silla de ruedas', 11),
+    ('H_043','Estacionamiento accesible en silla de ruedas', 'Estacionamiento accesible en silla de ruedas', 11),
+    ('H_044','Ruta de acceso accesible en silla de ruedas', 'Ruta de acceso accesible en silla de ruedas', 11),
+    ('H_045','Piscina accesible en silla de ruedas', 'Piscina accesible en silla de ruedas', 11),
+    ('H_046','Ba√±o p√∫blico accesible en silla de ruedas', 'Ba√±o p√∫blico accesible en silla de ruedas', 11),
+    ('H_047','Mostrador de registro accesible en silla de ruedas', 'Mostrador de registro accesible en silla de ruedas', 11),
+    ('H_048','Restaurante accesible en silla de ruedas', 'Restaurante accesible en silla de ruedas', 11),
+    ('H_049','Aromaterapia', 'Aromaterapia', 12),
+    ('H_050','Exfoliaci√≥n corporal', 'Exfoliaci√≥n corporal', 12),
+    ('H_051','Envolturas corporales', 'Envolturas corporales', 12),
+    ('H_052','Envolturas de desintoxicaci√≥n', 'Envolturas de desintoxicaci√≥n', 12),
+    ('H_053','Faciales', 'Faciales', 12),
+    ('H_054','Masajes con piedras calientes', 'Masajes con piedras calientes', 12),
+    ('H_055','Manicuras/pedicuras', 'Manicuras/pedicuras', 12),
+    ('H_056','Arquitectura tradicional', 'Arquitectura tradicional', 13),
+    ('H_057','Opciones de comida vegana', 'Opciones de comida vegana', 13),
+    ('H_058','Opciones de comida vegetariana', 'Opciones de comida vegetariana', 13),
+    ('H_059','Piscina al aire libre, servicio de ni√±era, camas/cunas adicionales, lavander√≠a', 'Piscina al aire libre, servicio de ni√±era, camas/cunas adicionales, lavander√≠a', 13);
 GO
 
 INSERT INTO formas_de_pago (forma_de_pago)
 VALUES
-    ('Tarjeta de crÈdito'),
-    ('Tarjeta de dÈbito'),
+    ('Tarjeta de cr√©dito'),
+    ('Tarjeta de d√©bito'),
     ('Efectivo'),
     ('Transferencia bancaria'),
-    ('Pago mÛvil'),
+    ('Pago m√≥vil'),
     ('Cheque'),
     ('Vale de regalo'),
     ('Bitcoin'),
@@ -170,13 +170,13 @@ VALUES
     ('Santa Ana', 2),
     ('San Miguel', 2),
     ('Managua', 3),
-    ('LeÛn', 3),
+    ('Le√≥n', 3),
     ('Masaya', 3),
-    ('San JosÈ', 4),
+    ('San Jos√©', 4),
     ('Liberia', 4),
-    ('LimÛn', 4),
-    ('Ciudad de Panam·', 5),
-    ('ColÛn', 5),
+    ('Lim√≥n', 4),
+    ('Ciudad de Panam√°', 5),
+    ('Col√≥n', 5),
     ('David', 5),
     ('Belmopan', 6),
     ('Belize City', 6),
@@ -194,25 +194,25 @@ VALUES
     ('789 Avenida Reforma, Zona 10', 1),        -- Guatemala City
     ('987 Calle del Sol, Barrio el Centro', 2), -- Quetzaltenango
     ('654 Avenida de los Volcanes, Zona 3', 2), -- Quetzaltenango
-    ('321 Calle de la RevoluciÛn, Zona 4', 2),  -- Quetzaltenango
-    ('456 Avenida Central, Colonia EscalÛn', 3),-- San Salvador
-    ('789 Boulevard del HipÛdromo, Zona Rosa', 3),-- San Salvador
-    ('123 Calle de las OrquÌdeas, Colonia San Benito', 3),-- San Salvador
-    ('987 Avenida BolÌvar, Distrito 1', 4),     -- Managua
+    ('321 Calle de la Revoluci√≥n, Zona 4', 2),  -- Quetzaltenango
+    ('456 Avenida Central, Colonia Escal√≥n', 3),-- San Salvador
+    ('789 Boulevard del Hip√≥dromo, Zona Rosa', 3),-- San Salvador
+    ('123 Calle de las Orqu√≠deas, Colonia San Benito', 3),-- San Salvador
+    ('987 Avenida Bol√≠var, Distrito 1', 4),     -- Managua
     ('654 Avenida de las Palmeras, Distrito 2', 4),-- Managua
     ('321 Calle del Lago, Distrito 3', 4),      -- Managua
-    ('456 Avenida Central, Barrio AmÛn', 5),    -- San JosÈ
-    ('789 Paseo ColÛn, Barrio La California', 5),-- San JosÈ
-    ('123 Avenida Segunda, Barrio Otoya', 5),   -- San JosÈ
-    ('987 Calle 50, Bella Vista', 6),           -- Ciudad de Panam·
-    ('654 Avenida Balboa, Punta Paitilla', 6),  -- Ciudad de Panam·
-    ('321 Calle Uruguay, Casco Antiguo', 6),    -- Ciudad de Panam·
+    ('456 Avenida Central, Barrio Am√≥n', 5),    -- San Jos√©
+    ('789 Paseo Col√≥n, Barrio La California', 5),-- San Jos√©
+    ('123 Avenida Segunda, Barrio Otoya', 5),   -- San Jos√©
+    ('987 Calle 50, Bella Vista', 6),           -- Ciudad de Panam√°
+    ('654 Avenida Balboa, Punta Paitilla', 6),  -- Ciudad de Panam√°
+    ('321 Calle Uruguay, Casco Antiguo', 6),    -- Ciudad de Panam√°
     ('456 Boulevard Haciena, Belmopan', 7),     -- Belmopan
     ('789 Avenida Independence, Belama Phase 2', 7),-- Belmopan
     ('123 Calle Flores, San Pedro', 7),         -- Belmopan
-    ('987 Calle Moraz·n, Barrio ConcepciÛn', 8),-- Tegucigalpa
+    ('987 Calle Moraz√°n, Barrio Concepci√≥n', 8),-- Tegucigalpa
     ('654 Avenida Kennedy, Colonia Miramontes', 8),-- Tegucigalpa
-    ('321 Avenida Los PrÛceres, Colonia Kennedy', 8);-- Tegucigalpa
+    ('321 Avenida Los Pr√≥ceres, Colonia Kennedy', 8);-- Tegucigalpa
 GO
 
 
@@ -221,7 +221,7 @@ INSERT INTO estados_civiles (estado_civil)
 VALUES
     ('Casado'),   
     ('Soltero'),
-	('En uniÛn libre');
+	('En uni√≥n libre');
 GO
 
 -- Insertar datos en la tabla cargos
@@ -238,28 +238,28 @@ GO
 --Insertar datos en la tabla POLITICAS
 INSERT INTO politicas (politica)
 VALUES
-    ('Hora de inicio de check-in: 3:00 PM; Hora de finalizaciÛn del check-in: 1:00 AM'),
-    ('El check-in temprano est· sujeto a disponibilidad'),
-    ('El check-in temprano est· disponible por un cargo adicional'),
-    ('El check-in tardÌo est· sujeto a disponibilidad'),
-    ('Edad mÌnima para hacer el check-in: 18 aÒos'),
-    ('Check-out antes del mediodÌa'),
-    ('El check-out tardÌo est· sujeto a disponibilidad'),
-    ('Se aplicar· un cargo por check-out tardÌo'),
+    ('Hora de inicio de check-in: 3:00 PM; Hora de finalizaci√≥n del check-in: 1:00 AM'),
+    ('El check-in temprano est√° sujeto a disponibilidad'),
+    ('El check-in temprano est√° disponible por un cargo adicional'),
+    ('El check-in tard√≠o est√° sujeto a disponibilidad'),
+    ('Edad m√≠nima para hacer el check-in: 18 a√±os'),
+    ('Check-out antes del mediod√≠a'),
+    ('El check-out tard√≠o est√° sujeto a disponibilidad'),
+    ('Se aplicar√° un cargo por check-out tard√≠o'),
     ('Check-out express disponible'),
-    ('Instrucciones especiales de check-in: El personal de recepciÛn recibir· a los huÈspedes a su llegada. Para obtener m·s detalles, por favor contacta al establecimiento utilizando la informaciÛn en la confirmaciÛn de la reserva.'),
-    ('Esta propiedad no permite cambios de nombre en las reservas. El nombre en la reserva debe coincidir con el nombre del huÈsped que est· haciendo el check-in y aloj·ndose en la propiedad; se requiere identificaciÛn con foto. La tarjeta de crÈdito utilizada para hacer la reserva debe ser presentada por el titular de la tarjeta al hacer el check-in junto con una identificaciÛn con foto que coincida. Cualquier otro acuerdo debe ser coordinado con la propiedad antes de la llegada.'),
-    ('Renovaciones y cierres: Las siguientes instalaciones est·n cerradas de forma estacional cada aÒo. Estar·n cerradas del 1 de septiembre al 15 de junio: Piscina'),
-    ('MÈtodos de acceso: RecepciÛn atendida'),
-    ('Mascotas: No se permiten mascotas (los animales de servicio son bienvenidos y est·n exentos de tarifas)'),
-    ('NiÒos y camas adicionales: Los niÒos son bienvenidos. Los niÒos pueden alojarse gratis utilizando las camas existentes en la habitaciÛn de los padres o tutores. Camas supletorias disponibles por EUR 35.0 por noche. Cunas gratuitas disponibles bajo peticiÛn en el establecimiento.');
+    ('Instrucciones especiales de check-in: El personal de recepci√≥n recibir√° a los hu√©spedes a su llegada. Para obtener m√°s detalles, por favor contacta al establecimiento utilizando la informaci√≥n en la confirmaci√≥n de la reserva.'),
+    ('Esta propiedad no permite cambios de nombre en las reservas. El nombre en la reserva debe coincidir con el nombre del hu√©sped que est√° haciendo el check-in y aloj√°ndose en la propiedad; se requiere identificaci√≥n con foto. La tarjeta de cr√©dito utilizada para hacer la reserva debe ser presentada por el titular de la tarjeta al hacer el check-in junto con una identificaci√≥n con foto que coincida. Cualquier otro acuerdo debe ser coordinado con la propiedad antes de la llegada.'),
+    ('Renovaciones y cierres: Las siguientes instalaciones est√°n cerradas de forma estacional cada a√±o. Estar√°n cerradas del 1 de septiembre al 15 de junio: Piscina'),
+    ('M√©todos de acceso: Recepci√≥n atendida'),
+    ('Mascotas: No se permiten mascotas (los animales de servicio son bienvenidos y est√°n exentos de tarifas)'),
+    ('Ni√±os y camas adicionales: Los ni√±os son bienvenidos. Los ni√±os pueden alojarse gratis utilizando las camas existentes en la habitaci√≥n de los padres o tutores. Camas supletorias disponibles por EUR 35.0 por noche. Cunas gratuitas disponibles bajo petici√≥n en el establecimiento.');
 GO
 
 -- Insertar datos en la tabla hoteles
 INSERT INTO hoteles (nombre, telefono, correo, descripcion, sitio_web)
 VALUES
-    ('Hotel A', '123456789', 'info@hotela.com', 'DescripciÛn del Hotel A', 'www.hotela.com'),
-    ('Hotel B', '987654321', 'info@hotelb.com', 'DescripciÛn del Hotel B', 'www.hotelb.com');
+    ('Hotel A', '123456789', 'info@hotela.com', 'Descripci√≥n del Hotel A', 'www.hotela.com'),
+    ('Hotel B', '987654321', 'info@hotelb.com', 'Descripci√≥n del Hotel B', 'www.hotelb.com');
 GO
 
 -- Insertar datos en la tabla sucursales
@@ -274,16 +274,16 @@ GO
 -- Insertar datos en la tabla POLITICAS_SUCURSAL
 INSERT INTO politicas_sucursal (id_sucursal, id_politica)
 VALUES
-    -- Asignar polÌticas a la Sucursal 1 del Hotel A
+    -- Asignar pol√≠ticas a la Sucursal 1 del Hotel A
     (1, 1), (1, 2), (1, 6), (1, 8), (1, 14),
     
-    -- Asignar polÌticas a la Sucursal 2 del Hotel A
+    -- Asignar pol√≠ticas a la Sucursal 2 del Hotel A
     (2, 1), (2, 5), (2, 6), (2, 10), (2, 15),
     
-    -- Asignar polÌticas a la Sucursal 1 del Hotel B
+    -- Asignar pol√≠ticas a la Sucursal 1 del Hotel B
     (3, 3), (3, 4), (3, 6), (3, 8), (3, 13),
     
-    -- Asignar polÌticas a la Sucursal 2 del Hotel B
+    -- Asignar pol√≠ticas a la Sucursal 2 del Hotel B
     (4, 3), (4, 4), (4, 7), (4, 11), (4, 15);
 GO
 
@@ -293,7 +293,7 @@ VALUES
 	('Dorian Samantha', 'Contreras Velasquez', '0801200302345', '2003-01-25', 'dcontreras@correo.com', '89756654', 1, 1, 1),
 	('Kattherine Mayely', 'Hernandez', '0501200416400', '2002-01-26', 'khernan@correo.com', '89760331', 2, 2, 4),
 	('Stephany Nicole', 'Matamoros', '0801200302346', '2002-01-25', 'stephm@correo.com', '89760123', 2, 2, 5),
-	('Erick', 'MarÌn Reyes', '0702195002345', '1950-01-25', 'ereyes@correo.com',  '89123331', 2, 1, 6),
+	('Erick', 'Mar√≠n Reyes', '0702195002345', '1950-01-25', 'ereyes@correo.com',  '89123331', 2, 1, 6),
 	('Josefo Orlando', 'Hernandez', '0801194002345', '1940-01-25', 'jhernan@correo.com', '98723331', 2, 1, 7),
 	('Jose', 'Reyes', '0801200536789', '2005-01-20', 'jreyes@correo.com', '90823331', 2, 1, 9),
 	('Jose Luis', 'Garcia Montero', '0804197002345', '2003-01-25', 'jgarcia@correo.com', '89764331', 2, 1, 2),
@@ -301,11 +301,11 @@ VALUES
 	('Adrian', 'Martinez', '0801200102345', '2001-01-25', 'amartinez@correo.com', '89123331', 2, 1, 6),
 	('Saida', 'Ramos', '0801201002345', '2010-01-29', 'sramos@correo.com', '89120651', 2, 2, 8),
     ('Nestor', 'Luque', '0801219900234', '1990-01-25', 'nluque@correo.com', '86103331', 2, 1, 10),
-	('Daniel', 'MuÒoz', '0801219900290', '1990-02-25', 'daniel_munoz@gmail.com', '+2000111222', 3, 1, 11),
+	('Daniel', 'Mu√±oz', '0801219900290', '1990-02-25', 'daniel_munoz@gmail.com', '+2000111222', 3, 1, 11),
 	('Isabella', 'Vasquez', '0801219900235', '1990-03-25', 'isabella_vasquez@gmail.com', '+2111222333', 3, 2, 12),
-	('Samuel', 'RamÌrez', '0801219900735', '1990-11-25', 'samuel_ramirez@gmail.com', '+2222333444', 3, 1, 13),
+	('Samuel', 'Ram√≠rez', '0801219900735', '1990-11-25', 'samuel_ramirez@gmail.com', '+2222333444', 3, 1, 13),
 	('Martina', 'Torres', '0803219900735', '1990-11-27', 'martina_torres@gmail.com', '+2333444555', 3, 2, 14),
-    ('Juan', 'Gonz·lez', '0802219900735', '1990-11-28', 'juan_gonzalez@gmail.com', '+2444555666', 3, 1, 15);
+    ('Juan', 'Gonz√°lez', '0802219900735', '1990-11-28', 'juan_gonzalez@gmail.com', '+2444555666', 3, 1, 15);
 GO
 
 INSERT INTO personas (nombre, apellido, no_identidad, fecha_nacimiento, correo, telefono, id_estado_civil, id_genero, id_direccion)
@@ -426,10 +426,10 @@ GO
 --Insertar datos en la tabla de clientes
 INSERT INTO clientes (fecha_registro, usuario, contrasenia, id_persona)
 VALUES 
-	(GETDATE(), 'isabella', 'contraseÒa20', 13),
-	(GETDATE(), 'samuel', 'contraseÒa21', 14),
-	(GETDATE(), 'martina', 'contraseÒa22', 15),
-	(GETDATE(), 'juan', 'contraseÒa23', 16),
+	(GETDATE(), 'isabella', 'contrase√±a20', 13),
+	(GETDATE(), 'samuel', 'contrase√±a21', 14),
+	(GETDATE(), 'martina', 'contrase√±a22', 15),
+	(GETDATE(), 'juan', 'contrase√±a23', 16),
 	(GETDATE(), 'juanpablo', '1234', 17),
 	(GETDATE(), 'mafer', '1234', 18),
 	(GETDATE(), 'carlosperez', '1234', 19),
@@ -457,41 +457,41 @@ GO
 --Insertar datos en las tabla servicios_sucursales.
 INSERT INTO servicios_sucursales (id_servicio, id_sucursal)
 VALUES
-    (1, 1), (2, 1), (3, 1), (4, 1), (5, 1),
-    (6, 2), (7, 2), (8, 2), (9, 2), (10, 2),
-    (11, 3), (12, 3), (13, 3), (14, 3), (15, 3),
-    (16, 4), (17, 4), (18, 4), (19, 4), (20, 4);
+    ('H_001', 1), ('H_004', 1), ('H_003', 1), ('H_004', 1), ('H_005', 1),
+    ('H_006', 2), ('H_007', 2), ('H_008', 2), ('H_009', 2), ('H_010', 2),
+    ('H_011', 3), ('H_012', 3), ('H_013', 3), ('H_014', 3), ('H_015', 3),
+    ('H_016', 4), ('H_017', 4), ('H_018', 4), ('H_019', 4), ('H_020', 4);
 GO
 
 --Inserts a la tabla de habitaciones, 5 x sucursal.
 INSERT INTO habitaciones (codigo, precio, limite_personas, cantidad_camas, id_sucursal, descripcion, disponible)
 VALUES
-    ('HAB001', 50.00, 2, 1, 1, 'HabitaciÛn individual', 1),
-    ('HAB002', 70.00, 4, 2, 1, 'HabitaciÛn doble', 1),
-    ('HAB003', 100.00, 6, 3, 1, 'HabitaciÛn familiar', 1),
-    ('HAB004', 60.00, 3, 2, 1, 'HabitaciÛn doble est·ndar', 1),
-    ('HAB005', 80.00, 4, 2, 1, 'HabitaciÛn doble superior', 1),
+    ('HAB001', 50.00, 2, 1, 1, 'Habitaci√≥n individual', 1),
+    ('HAB002', 70.00, 4, 2, 1, 'Habitaci√≥n doble', 1),
+    ('HAB003', 100.00, 6, 3, 1, 'Habitaci√≥n familiar', 1),
+    ('HAB004', 60.00, 3, 2, 1, 'Habitaci√≥n doble est√°ndar', 1),
+    ('HAB005', 80.00, 4, 2, 1, 'Habitaci√≥n doble superior', 1),
     
-    ('HAB006', 55.00, 2, 1, 2, 'HabitaciÛn individual', 1),
-    ('HAB007', 75.00, 4, 2, 2, 'HabitaciÛn doble', 1),
-    ('HAB008', 110.00, 6, 3, 2, 'HabitaciÛn familiar', 1),
-    ('HAB009', 65.00, 3, 2, 2, 'HabitaciÛn doble est·ndar', 1),
-    ('HAB010', 85.00, 4, 2, 2, 'HabitaciÛn doble superior', 1),
+    ('HAB006', 55.00, 2, 1, 2, 'Habitaci√≥n individual', 1),
+    ('HAB007', 75.00, 4, 2, 2, 'Habitaci√≥n doble', 1),
+    ('HAB008', 110.00, 6, 3, 2, 'Habitaci√≥n familiar', 1),
+    ('HAB009', 65.00, 3, 2, 2, 'Habitaci√≥n doble est√°ndar', 1),
+    ('HAB010', 85.00, 4, 2, 2, 'Habitaci√≥n doble superior', 1),
     
-    ('HAB011', 60.00, 2, 1, 3, 'HabitaciÛn individual', 1),
-    ('HAB012', 80.00, 4, 2, 3, 'HabitaciÛn doble', 1),
-    ('HAB013', 120.00, 6, 3, 3, 'HabitaciÛn familiar', 1),
-    ('HAB014', 70.00, 3, 2, 3, 'HabitaciÛn doble est·ndar', 1),
-    ('HAB015', 90.00, 4, 2, 3, 'HabitaciÛn doble superior', 1),
+    ('HAB011', 60.00, 2, 1, 3, 'Habitaci√≥n individual', 1),
+    ('HAB012', 80.00, 4, 2, 3, 'Habitaci√≥n doble', 1),
+    ('HAB013', 120.00, 6, 3, 3, 'Habitaci√≥n familiar', 1),
+    ('HAB014', 70.00, 3, 2, 3, 'Habitaci√≥n doble est√°ndar', 1),
+    ('HAB015', 90.00, 4, 2, 3, 'Habitaci√≥n doble superior', 1),
     
-    ('HAB016', 65.00, 2, 1, 4, 'HabitaciÛn individual', 1),
-    ('HAB017', 85.00, 4, 2, 4, 'HabitaciÛn doble', 1),
-    ('HAB018', 125.00, 6, 3, 4, 'HabitaciÛn familiar', 1),
-    ('HAB019', 75.00, 3, 2, 4, 'HabitaciÛn doble est·ndar', 1),
-    ('HAB020', 95.00, 4, 2, 4, 'HabitaciÛn doble superior', 1);
+    ('HAB016', 65.00, 2, 1, 4, 'Habitaci√≥n individual', 1),
+    ('HAB017', 85.00, 4, 2, 4, 'Habitaci√≥n doble', 1),
+    ('HAB018', 125.00, 6, 3, 4, 'Habitaci√≥n familiar', 1),
+    ('HAB019', 75.00, 3, 2, 4, 'Habitaci√≥n doble est√°ndar', 1),
+    ('HAB020', 95.00, 4, 2, 4, 'Habitaci√≥n doble superior', 1);
 GO
 
---Inserts a la tabla de amenidades, 3 x habitaciÛn.
+--Inserts a la tabla de amenidades, 3 x habitaci√≥n.
 INSERT INTO amenidades_habitaciones (id_amenidad, id_habitacion)
 VALUES
     (1, 1), (2, 1), (3, 1),
