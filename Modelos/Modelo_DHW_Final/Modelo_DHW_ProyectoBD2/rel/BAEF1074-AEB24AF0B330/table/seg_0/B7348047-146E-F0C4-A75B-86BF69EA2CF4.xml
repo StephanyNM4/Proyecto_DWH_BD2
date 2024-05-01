@@ -18,6 +18,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="ID_FACTURA_DWH" id="1CCD9BA4-069D-A86B-C93A-2396EC627AC3">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 08:57:28 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E63C60B5-5548-A632-0B95-F57EDBF896C0" referredColumn="4D02085B-A8E8-6128-5ED7-5DB09205C116"/>
+</associations>
+</Column>
 <Column name="ID_BOLETO" id="ABF46324-9B26-7452-FA3A-32D88800E389">
 <createdBy>steph</createdBy>
 <createdTime>2024-02-18 01:00:53 UTC</createdTime>
@@ -30,21 +44,6 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="90B8EF14-B48B-E724-2038-BCC6A1708871" referredColumn="5A756DD9-9B28-63CE-6919-529EBD8C7C8D"/>
-</associations>
-</Column>
-<Column name="ID_FACTURA_DWH" id="26026C7C-25AF-C8C0-495F-83ECFFE83B01">
-<createdBy>steph</createdBy>
-<createdTime>2024-05-01 18:42:52 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="86F940E1-2371-CFD7-E08F-EC0F82E8138D" referredColumn="4D02085B-A8E8-6128-5ED7-5DB09205C116"/>
 </associations>
 </Column>
 <Column name="SUBTOTAL" id="82CB29F1-9E05-AC3C-EB76-9A42550D8489">
@@ -81,14 +80,14 @@
 <colUsage columnID="ABF46324-9B26-7452-FA3A-32D88800E389"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1C364AB6-0694-F464-4079-5115341F9B8A" name="TBL_F_B_TBL_F_FK">
+<ind_PK_UK id="CA77697F-53AD-E187-3D37-B48AFB8AADA2" name="TBL_F_B_TBL_F_FK">
 <createdBy>steph</createdBy>
-<createdTime>2024-05-01 18:42:52 UTC</createdTime>
+<createdTime>2024-05-01 08:57:28 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="26026C7C-25AF-C8C0-495F-83ECFFE83B01"/>
+<colUsage columnID="1CCD9BA4-069D-A86B-C93A-2396EC627AC3"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
