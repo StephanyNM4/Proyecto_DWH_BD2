@@ -10,9 +10,9 @@ CREATE OR REPLACE PACKAGE PKG_ETLS_HOTELES IS
     
 --------------------- ETLs INFORMACIÓN VOLÁTIL
     PROCEDURE SP_ETL_SERVICIOS; --TAMBIÉN INSERTA EN LA TABLA TIPOS_SERVICIOS
-    --PROCEDURE SP_ETL_AMENIDADES;
+    PROCEDURE SP_ETL_AMENIDADES;
+    PROCEDURE SP_ETL_POLITICAS; 
     --PROCEDURE SP_ETL_HABITACIONES; -- TAMBIEN LLENA LA TABLA AMENIDADES_X_HABITACION
-    --PROCEDURE SP_ETL_POLITICAS; 
     --PROCEDURE SP_ETL_HOTELES;-- TAMBIÉN LLENA LAS TABLAS POLITICAS_X_HOTEL Y SERVICIOS_X_HOTEL
     --PROCEDURE SP_ETL_TIPOS_EMPLEADOS;
     --PROCEDURE SP_ETL_EMPLEADOS;
@@ -24,6 +24,7 @@ END PKG_ETLS_HOTELES;
 CREATE OR REPLACE PACKAGE BODY PKG_ETLS_HOTELES IS
 --------------------- ETLs INFORMACIÓN INCREMENTAL
 --------------------- ETLs INFORMACIÓN VOLÁTIL
+--------------------- ETL SERVICIOS
     PROCEDURE SP_ETL_SERVICIOS
     AS
         V_INICIO_ETL DATE := SYSDATE;
@@ -68,6 +69,92 @@ CREATE OR REPLACE PACKAGE BODY PKG_ETLS_HOTELES IS
                 P_exito => 'FAIL',
                 P_error => SQLERRM
             );
-            
     END SP_ETL_SERVICIOS;
+
+--------------------- ETL AMENIDADES
+    PROCEDURE SP_ETL_AMENIDADES
+    AS
+        V_INICIO_ETL DATE := SYSDATE;
+    BEGIN
+        EXECUTE IMMEDIATE 'TRUNCATE TABLE tbl_amenidades';
+    
+        --LLENAR TABLAS TEMPORALES CON LA INFO EXTRAIDA DE SQL SERVER
+        INSERT INTO amenidades SELECT * FROM amenidades@SQLSERVER_BD;
+        INSERT into categorias_amenidades SELECT * FROM categorias_amenidades@SQLSERVER_BD;
+        
+        INSERT INTO tbl_amenidades (
+            id_amenidad,
+            amenidad,
+            categoria
+        )
+        SELECT id_amenidad, amenidad, categoria 
+        FROM amenidades A
+        INNER JOIN categorias_amenidades C
+        ON (A.id_categoria = C.id_categoria);
+        
+        COMMIT;
+        
+        --GUARDAR LOG
+        P_INSERT_LOG(
+            P_nombre => $$PLSQL_UNIT,
+            P_fecha_inicio => V_INICIO_ETL,
+            P_nombre_base => 'HOTELES',
+            P_exito => 'SUCCESS',
+            P_error => NULL
+        );
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('OCURRIÓ UN ERROR AL EXTRAER LAS AMENIDADES DE LAS HABITACIONES.');
+            ROLLBACK;
+            
+            --GUARDAR LOG
+            P_INSERT_LOG(
+                P_nombre => $$PLSQL_UNIT,
+                P_fecha_inicio => V_INICIO_ETL,
+                P_nombre_base => 'HOTELES',
+                P_exito => 'FAIL',
+                P_error => SQLERRM
+            );
+            
+    END SP_ETL_AMENIDADES;
+    
+--------------------- ETL POLÍTICAS
+    PROCEDURE SP_ETL_POLITICAS
+    AS
+        V_INICIO_ETL DATE := SYSDATE;
+    BEGIN
+        EXECUTE IMMEDIATE 'TRUNCATE TABLE tbl_politicas';
+        
+        INSERT INTO tbl_politicas (
+            id_politica,
+            politica
+        )
+        SELECT * 
+        FROM politicas@SQLSERVER_BD;
+        
+        COMMIT;
+        
+        --GUARDAR LOG
+        P_INSERT_LOG(
+            P_nombre => $$PLSQL_UNIT,
+            P_fecha_inicio => V_INICIO_ETL,
+            P_nombre_base => 'HOTELES',
+            P_exito => 'SUCCESS',
+            P_error => NULL
+        );
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('OCURRIÓ UN ERROR AL EXTRAER LAS POLITICAS.');
+            ROLLBACK;
+            
+            --GUARDAR LOG
+            P_INSERT_LOG(
+                P_nombre => $$PLSQL_UNIT,
+                P_fecha_inicio => V_INICIO_ETL,
+                P_nombre_base => 'HOTELES',
+                P_exito => 'FAIL',
+                P_error => SQLERRM
+            );
+            
+    END SP_ETL_POLITICAS;
 END PKG_ETLS_HOTELES;
