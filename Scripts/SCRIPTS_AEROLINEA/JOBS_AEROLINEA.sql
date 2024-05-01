@@ -42,7 +42,7 @@ BEGIN
         ENABLED => TRUE,
         COMMENTS => 'PROGRAMA PARA VUELOS'
     );
-ENDCREATE_PROGRAM;
+END;
 
 --------------------------------------------------------PRG_P_ETL_ESCALAS
 BEGIN
