@@ -223,7 +223,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PCK_ETLS_AEROLINEA IS
         END P_ETL_ESCALAS;
         
         
-------------------------------------INSERTAR LOS CLIENTES DE AEROLINEA EN DWH
+--------------------------------------------------EXTRACCION VOLATIL CLIENTES
         PROCEDURE P_ETL_CLIENTES
         AS
                 V_GENERO VARCHAR2(1);
