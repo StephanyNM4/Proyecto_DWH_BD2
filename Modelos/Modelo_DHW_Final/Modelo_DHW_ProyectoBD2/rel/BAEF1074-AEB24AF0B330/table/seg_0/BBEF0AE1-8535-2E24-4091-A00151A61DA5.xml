@@ -19,6 +19,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CODIGO_HABITACION" id="F617EB1F-DD63-25E9-CA7C-16D55C47571E">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 15:21:22 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="38CA4010-CA39-0B2F-1BB7-EA3145EB2A4B" referredColumn="E654C474-ECA6-EE67-8E55-6A81F0709356"/>
+</associations>
+</Column>
 <Column name="CORREO_CLIENTE" id="C589D29F-E5B9-E7F0-E946-59A5BF0891D6">
 <createdBy>Dorian Contreras</createdBy>
 <createdTime>2024-04-29 08:44:57 UTC</createdTime>
@@ -63,20 +77,6 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="CODIGO_HABITACION" id="F617EB1F-DD63-25E9-CA7C-16D55C47571E">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 15:21:22 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="38CA4010-CA39-0B2F-1BB7-EA3145EB2A4B" referredColumn="E654C474-ECA6-EE67-8E55-6A81F0709356"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

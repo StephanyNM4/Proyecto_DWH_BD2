@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E63C60B5-5548-A632-0B95-F57EDBF896C0" containerWithKeyObject="B7348047-146E-F0C4-A75B-86BF69EA2CF4" localFKIndex="CA77697F-53AD-E187-3D37-B48AFB8AADA2" name="TBL_F_B_TBL_F_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 08:57:28 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<referredTableLongName>TBL_FACTURAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0226CC07-2E22-DFB7-6895-94C73895A57D</referredTableID>
+<keyObject>8C98CED5-0274-6725-7836-2AD08EEBD11B</keyObject>
+<referredKeyID>8C98CED5-0274-6725-7836-2AD08EEBD11B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_FACTURA_DWH</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

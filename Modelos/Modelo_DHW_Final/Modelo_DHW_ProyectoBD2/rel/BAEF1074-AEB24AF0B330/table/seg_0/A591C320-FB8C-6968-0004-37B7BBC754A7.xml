@@ -9,19 +9,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_FACTURA" id="FDD5292A-E425-7FCA-3C6D-CEFD6C1CBBDA">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 15:32:48 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="0B0EC5EF-B322-C5C5-EB05-18EA029A60E8" referredColumn="4D02085B-A8E8-6128-5ED7-5DB09205C116"/>
-</associations>
-</Column>
 <Column name="ID_RESERVACION" id="1297086A-4B59-79EC-4F71-756E16930AC0">
 <createdBy>Usuario</createdBy>
 <createdTime>2024-03-24 15:33:07 UTC</createdTime>
@@ -33,6 +20,20 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="6C1AA06B-C7F1-994A-B4E0-CEC97A503EDE" referredColumn="5B1D1E1C-5AA1-D9C2-4155-4CF74FBAE55D"/>
+</associations>
+</Column>
+<Column name="ID_FACTURA_DWH" id="A97A2F4B-E7A4-7B60-6F8C-EADD2D745FE2">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 09:08:32 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5474173B-6264-D376-FAE8-686F9D109069" referredColumn="4D02085B-A8E8-6128-5ED7-5DB09205C116"/>
 </associations>
 </Column>
 </columns>
@@ -48,16 +49,6 @@
 <colUsage columnID="1297086A-4B59-79EC-4F71-756E16930AC0"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E3248169-620F-17AB-A1C6-0DB86203870A" name="FK_DETALLE_FACTURA">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 15:34:41 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="FDD5292A-E425-7FCA-3C6D-CEFD6C1CBBDA"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="535F18AA-B96A-514C-7086-9AB9D969161D" name="FK_DETALLE_RESERVACION">
 <createdBy>Usuario</createdBy>
 <createdTime>2024-03-24 15:35:09 UTC</createdTime>
@@ -66,6 +57,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="1297086A-4B59-79EC-4F71-756E16930AC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="557FC1CF-53CA-D0F2-3DFC-40A6FAD1FA35" name="TBL_D_F_TBL_F_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 09:08:32 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A97A2F4B-E7A4-7B60-6F8C-EADD2D745FE2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
