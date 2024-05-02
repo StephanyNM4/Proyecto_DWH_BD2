@@ -1,6 +1,25 @@
 -----PROCEDIMIENTOS FACTURACION HOTELES
+set serveroutput on;
+alter table tbl_clientes modify nombre VARCHAR2(100);
+alter table tbl_clientes modify apellido VARCHAR2(100);
+
+begin
+    P_ETL_CLIENTES
+end;
+
+CREATE OR REPLACE TRIGGER TRG_CAMBIAR_FORMATO_FECHA
+BEFORE INSERT ON CLIENTES
+FOR EACH ROW
+BEGIN
+    :NEW.FECHA_REGISTRO := 
+END;
 
 
+SELECT SYSDATE FROM DUAL
+INSERT into clientes SELECT * FROM clientes@SQLSERVER_BD;
+INSERT into clientes SELECT fecha_registro FROM clientes@SQLSERVER_BD;
+
+select * from tbl_clientes;
 ----COMPILAR ACTUALIZACION O INSERCION DE CLIENTES DWH
 -------------------------EXTRACCION (ACTUALIZACION O INSERT) CLIENTES
 CREATE OR REPLACE PROCEDURE P_INSERT_CLIENTE(P_CORREO_ELECTRONICO VARCHAR2,
@@ -114,43 +133,43 @@ END;
                 V_GENERO VARCHAR2(1);
                 V_INICIO_ETL DATE := SYSDATE;
         BEGIN
-        
+            
+            --LLENAR TABLAS TEMPORALES CON LA INFO EXTRAIDA DE SQL SERVER
+            INSERT INTO personas SELECT * FROM personas@SQLSERVER_BD;
+            INSERT into generos SELECT * FROM generos@SQLSERVER_BD;
+            INSERT into clientes SELECT * FROM clientes@SQLSERVER_BD;
+            
                 FOR REGISTRO IN (
-                    SELECT B.correo_electronico,
-                            B.nombre,
-                            B.apellido,
-                            B.telefono,
-                            B.contrasena,
-                            C.genero,
-                            A.fecha_registro
-                    FROM CLIENTES@SQLSERVER_BD A
-                    INNER JOIN PERSONAS@SQLSERVER_BD B
-                    ON (A.ID_CLIENTE = B.ID_PERSONA)
-                    INNER JOIN GENEROS@SQLSERVER_BD C
-                    ON (B.ID_GENERO = C.ID_GENERO)) LOOP
+                    SELECT 
+                        B.correo,
+                        B.nombre,
+                        B.apellido,
+                        B.telefono,
+                        A.contrasenia,
+                        C.genero,
+                        A.fecha_registro
+                    FROM 
+                        clientes A
+                        INNER JOIN PERSONAS B
+                        ON (A.ID_CLIENTE = B.ID_PERSONA)
+                        INNER JOIN GENEROS C
+                        ON (B.ID_GENERO = C.ID_GENERO)) LOOP
                 
                     V_GENERO := SUBSTR(REGISTRO.genero, 1, 1);
-                    P_INSERT_CLIENTE(P_CORREO_ELECTRONICO=>REGISTRO.correo_electronico, 
+                    P_INSERT_CLIENTE(P_CORREO_ELECTRONICO=>REGISTRO.correo, 
                                         P_nombre =>REGISTRO.nombre ,
                                         P_apellido =>REGISTRO.apellido ,
                                         P_telefono =>REGISTRO.telefono ,
-                                        P_contrasena_aerolinea =>REGISTRO.contrasena ,
+                                        P_contrasena_aerolinea =>REGISTRO.contrasenia ,
                                         P_GENERO => V_GENERO,
                                         P_fecha_registro =>REGISTRO.fecha_registro );
                 
                 END LOOP;
                 
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE CLIENTES FINALIZADA');
-                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_CLIENTES',
-                                P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'AEROLINEA',
-                                P_exito => 'SUCCESS',
-                                P_error => '');
-                
-                DBMS_OUTPUT.PUT_LINE('EXTRACCION DE CLIENTES FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_HOTELES.P_ETL_HABITACIONES',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'HOTEL',
+                                P_nombre_base => 'HOTELES',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -161,7 +180,7 @@ END;
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_HOTELES.P_ETL_HABITACIONES',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'HOTEL',
+                                P_nombre_base => 'HOTELES',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_CLIENTES;

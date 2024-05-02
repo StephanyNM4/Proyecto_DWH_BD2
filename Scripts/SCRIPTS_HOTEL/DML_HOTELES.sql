@@ -426,26 +426,26 @@ GO
 --Insertar datos en la tabla de clientes
 INSERT INTO clientes (fecha_registro, usuario, contrasenia, id_persona)
 VALUES 
-	(GETDATE(), 'isabella', 'contraseña20', 13),
-	(GETDATE(), 'samuel', 'contraseña21', 14),
-	(GETDATE(), 'martina', 'contraseña22', 15),
-	(GETDATE(), 'juan', 'contraseña23', 16),
-	(GETDATE(), 'juanpablo', '1234', 17),
-	(GETDATE(), 'mafer', '1234', 18),
-	(GETDATE(), 'carlosperez', '1234', 19),
-	(GETDATE(), 'anamaria', '1234', 20),
-	(GETDATE(), 'juanca', '1234', 21),
-	(GETDATE(), 'luism', '1234', 22),
-	(GETDATE(), 'saraher', '1234', 23),
-	(GETDATE(), 'lauradiaz', '1234', 24),
-	(GETDATE(), 'pedro', '1234', 25),
-	(GETDATE(), 'martha', '1234', 26),
-	(GETDATE(), 'luisa', '1234', 27),
-	(GETDATE(), 'miguel', '1234', 28),
-	(GETDATE(), 'carmen', '1234', 29),
-	(GETDATE(), 'manuel', '1234', 30),
-	(GETDATE(), 'rosa', '1234', 31),
-	(GETDATE(), 'josefina', '1234', 32);
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'isabella', 'contraseña20', 13),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'samuel', 'contraseña21', 14),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'martina', 'contraseña22', 15),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'juan', 'contraseña23', 16),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'juanpablo', '1234', 17),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'mafer', '1234', 18),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'carlosperez', '1234', 19),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'anamaria', '1234', 20),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'juanca', '1234', 21),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'luism', '1234', 22),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'saraher', '1234', 23),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'lauradiaz', '1234', 24),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'pedro', '1234', 25),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'martha', '1234', 26),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'luisa', '1234', 27),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'miguel', '1234', 28),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'carmen', '1234', 29),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'manuel', '1234', 30),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'rosa', '1234', 31),
+	(FORMAT(GETDATE(), 'dd/MM/yy'), 'josefina', '1234', 32);
 GO
 
 --Registros para la tabla favoritos_de_clientes

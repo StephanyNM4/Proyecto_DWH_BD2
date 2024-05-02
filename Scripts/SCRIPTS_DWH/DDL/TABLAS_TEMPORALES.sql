@@ -90,3 +90,31 @@ CREATE GLOBAL TEMPORARY TABLE politicas(
 	id_politica INT,
 	politica VARCHAR(500)
 )ON COMMIT DELETE ROWS;
+
+--drop table clientes
+
+CREATE GLOBAL TEMPORARY TABLE clientes(
+	id_cliente INT,
+	fecha_registro DATE,
+	usuario VARCHAR(50),
+	contrasenia VARCHAR(50),
+	id_persona INT
+) ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE personas(
+	id_persona INT,
+	nombre  VARCHAR(100),
+	apellido VARCHAR(100),
+	no_identidad VARCHAR(100),
+	fecha_nacimiento DATE,
+	correo VARCHAR(50),
+	telefono VARCHAR(50),
+	id_estado_civil INT,
+	id_genero INT,
+	id_direccion INT
+) ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE generos(
+	id_genero INT,
+	genero VARCHAR(50)
+) ON COMMIT DELETE ROWS;
