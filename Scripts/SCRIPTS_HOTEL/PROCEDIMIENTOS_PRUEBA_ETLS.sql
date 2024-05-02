@@ -125,7 +125,7 @@ PROCEDURE P_ETL_HABITACIONES
         END P_ETL_RESERVACIONES;
 
 
-----------------------------------------------EXTRACCION INCREMENTAL FACTURAS
+----------------------------------------------EXTRACCION INCREMENTAL FACTURAS :D
         PROCEDURE P_ETL_FACTURAS
         AS
             V_FECHA_INICIO DATE;
@@ -260,67 +260,3 @@ CREATE OR REPLACE PROCEDURE P_ETL_DETALLES_FACTURAS
         END P_ETL_DETALLES_FACTURAS;
 
 -----------------------------------------------EXTRACCION INCREMENTAL SERVICIOS POR HOTEL
-
-        PROCEDURE P_ETL_SERVICIOS
-        AS
-            V_FECHA_INICIO DATE;
-            V_FECHA_FIN DATE := SYSDATE - 1;
-            V_VAL_EXTRACCION NUMBER;
-            V_INICIO_ETL DATE:= SYSDATE;
-        BEGIN
-                -----VERIFICAMOS LA ULTIMA EXTRACCION
-            SELECT COUNT(1)
-            INTO V_VAL_EXTRACCION
-            FROM TBL_SERVICIOS;
-            
-            IF (V_VAL_EXTRACCION <= 0) THEN
-                SELECT MIN(FECHA_FACTURA)
-                INTO V_FECHA_INICIO
-                FROM FACTURAS@SQLSERVER_BD;
-            ELSE      
-                SELECT MAX(FECHA_FACTURA) + 1
-                INTO V_FECHA_INICIO
-                FROM TBL_FACTURAS;
-            END IF;
-        
-            WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
-                FOR REGISTRO IN ( SELECT A.ID_BOLETO_FACTURA,
-                                    C.ID_SERVICIO_ADICIONAL
-                                FROM TBL_FACTURA_BOLETOS@SQLSERVER_BD A
-                                INNER JOIN TBL_FACTURAS@SQLSERVER_BD B
-                                ON (A.ID_FACTURA = B.ID_FACTURA)
-                                INNER JOIN TBL_SERVICIOS_POR_BOLETO@SQLSERVER_BD C
-                                ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
-                                WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO)) LOOP
-                        
-                    INSERT INTO tbl_servicios_x_hotel (
-                        id_servicio_dwh,
-                        id_hotel
-                    ) VALUES (
-                        REGISTRO.ID_SERVICIO_ADICIONAL,
-                        REGISTRO.ID_HOTEL
-                    );
-        
-                END LOOP;
-                V_FECHA_INICIO := V_FECHA_INICIO + 1;
-            END LOOP;
-            
-                DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS POR HOTEL FINALIZADA');
-                P_INSERT_LOG(P_nombre => 'PKG_ETLS_HOTELES.P_ETL_SERVICIOS_X_HOTEL',
-                                P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'HOTEL',
-                                P_exito => 'SUCCESS',
-                                P_error => '');
-                COMMIT;
-            EXCEPTION 
-                WHEN OTHERS THEN 
-                DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
-                DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
-                ROLLBACK;
-                P_INSERT_LOG(P_nombre => 'PKG_ETLS_HOTELES.P_ETL_SERVICIOS_X_HOTEL',
-                                P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'HOTEL',
-                                P_exito => 'FAIL',
-                                P_error => SQLCODE || '--' ||SQLERRM);
-        END P_ETL_SERVICIOS;      
- 
