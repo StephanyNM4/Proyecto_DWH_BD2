@@ -77,7 +77,34 @@ EXCEPTION
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('ERROR=> '|| SQLERRM);
 END;
-
+----COMPILAR ETL_LOG DWH
+CREATE OR REPLACE PROCEDURE P_INSERT_LOG(P_nombre VARCHAR2,
+    P_fecha_inicio DATE,
+    P_nombre_base VARCHAR2,
+    P_exito VARCHAR,
+    P_error VARCHAR) AS
+BEGIN
+    INSERT INTO tbl_logs (
+        nombre,
+        fecha_inicio,
+        fecha_final,
+        nombre_base,
+        exito,
+        error
+    ) VALUES (
+        P_nombre,
+        P_fecha_inicio,
+        SYSDATE,
+        P_nombre_base,
+        P_exito,
+        P_error
+    );
+    
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR: '|| SQLERRM);
+END;
 
 ------------------------------------------------------------------------
 ------------------------ENCABEZADO PKG----------------------------------
@@ -187,10 +214,11 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 END LOOP;
                     
                 -------INSERTAMOS EN LOGS
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_VUELOS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                                 
                     DBMS_OUTPUT.PUT_LINE('EXTRACCION DE VUELOS FINALIZADA');           
                     COMMIT;
@@ -199,10 +227,11 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK;
-                    P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                    P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_VUELOS',
                             P_fecha_inicio => V_INICIO_ETL,
                             P_nombre_base => 'BASE',
-                            P_exito => 'FAIL');
+                            P_exito => 'FAIL',
+                            P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_VUELOS;
         
 ------------------------------------------------EXTRACCION VOLATIL DE ASIENTOS
@@ -233,20 +262,22 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ON (A.ID_VUELO = C.ID_VUELO);
                 
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE ASIENTOS FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_ASIENTOS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK; 
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_ASIENTOS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_ASIENTOS;
 
 -------------------------------------------------EXTRACCION INCREMENTAL ESCALAS
@@ -292,20 +323,22 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             END LOOP;
                 
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE ESCALAS FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_ESCALAS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK; 
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_ESCALAS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_ESCALAS;
         
         
@@ -342,20 +375,22 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 END LOOP;
                 
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE CLIENTES FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_CLIENTES',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK; 
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_CLIENTES',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_CLIENTES;
 
 -------------------------------------------------EXTRACCION INCREMENTAL BOLETOS
@@ -419,20 +454,22 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             END LOOP;
             
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE BOLETOS FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_BOLETOS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK;
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_BOLETOS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_BOLETOS;
         
 ----------------------------------------------EXTRACCION INCREMENTAL FACTURAS
@@ -486,20 +523,22 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             END LOOP;
             
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE FACTURAS FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_FACTURAS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK;
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_FACTURAS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_FACTURAS;
         
 ------------------------------------EXTRACCION INCREMENTAL FACTURA_BOLETOS
@@ -553,12 +592,23 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             END LOOP;
             
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE BOLETOS POR FACTURA FINALIZADA');
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_BOLETO_POR_FACTURA',
+                                P_fecha_inicio => V_INICIO_ETL,
+                                P_nombre_base => 'BASE',
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
+
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK;
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_BOLETO_POR_FACTURA',
+                                P_fecha_inicio => V_INICIO_ETL,
+                                P_nombre_base => 'BASE',
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_BOLETO_POR_FACTURA;
                 
 -----------------------------------------------EXTRACCION VOLATIL DE SERVICIOS
@@ -584,24 +634,26 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                     FROM TBL_SERVICIOS_ADICIONALES@DB_LINK_AEROLINEA;
         
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_SERVICIOS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK;
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_SERVICIOS',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_SERVICIOS;
         
 ------------------------------------EXTRACCION INCREMENTAL SERVICIOS POR BOLETO
-        CREATE OR REPLACE PROCEDURE P_ETL_SERVICIOS_POR_BOLETO
+        PROCEDURE P_ETL_SERVICIOS_POR_BOLETO
         AS
             V_FECHA_INICIO DATE;
             V_FECHA_FIN DATE := SYSDATE - 1;
@@ -646,20 +698,22 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             END LOOP;
             
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS POR BOLETO FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_SERVICIOS_POR_BOLETO',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK;
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_SERVICIOS_POR_BOLETO',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_SERVICIOS_POR_BOLETO;        
         
 -----------------------------------------------EXTRACCION INCREMENTAL EQUIPAJES 
@@ -713,20 +767,22 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             END LOOP;
                 
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE EQUIPAJES FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK;
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_EQUIPAJES;
 ------------------------------------EXTRACCION INCREMENTAL EQUIPAJES POR BOLETO
         PROCEDURE P_ETL_EQUIPAJES_POR_BOLETO
@@ -761,9 +817,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                                     ON (A.ID_FACTURA = B.ID_FACTURA)
                                     INNER JOIN TBL_EQUIPAJES_POR_BOLETO@DB_LINK_AEROLINEA C
                                     ON (A.ID_BOLETO_FACTURA = C.ID_BOLETO_FACTURA)
-                                    WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO) ) LOOP
-                        DBMS_OUTPUT.PUT_LINE('2');
-        
+                                    WHERE TRUNC(B.FECHA_FACTURA) = TRUNC(V_FECHA_INICIO) ) LOOP        
                             
                             INSERT INTO tbl_equipajes_por_boleto (
                                 id_equipaje,
@@ -780,20 +834,22 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             END LOOP;
             
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE EQUIPAJES POR BOLETO FINALIZADA');
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES_POR_BOLETO',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'SUCCESS');
+                                P_exito => 'SUCCESS',
+                                P_error => '');
                 COMMIT;
             EXCEPTION 
                 WHEN OTHERS THEN 
                 DBMS_OUTPUT.PUT_LINE('SQLCODE: ' || SQLCODE);
                 DBMS_OUTPUT.PUT_LINE('SQLERRM: ' || SQLERRM);
                 ROLLBACK;
-                P_INSERT_LOG(P_nombre => $$PLSQL_UNIT,
+                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES_POR_BOLETO',
                                 P_fecha_inicio => V_INICIO_ETL,
                                 P_nombre_base => 'BASE',
-                                P_exito => 'FAIL');
+                                P_exito => 'FAIL',
+                                P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_EQUIPAJES_POR_BOLETO;
 
 END PKG_ETLS_AEROLINEA;

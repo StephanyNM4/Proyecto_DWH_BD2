@@ -98,36 +98,36 @@ insert into TBL_TIPOS_EQUIPAJE (id_tipo_equipaje, tipo_equipaje, peso, costo) va
 insert into TBL_TIPOS_EQUIPAJE (id_tipo_equipaje, tipo_equipaje, peso, costo) values (4, 'Equipaje de carga', 7744, 3150);
 
 --INSERTAR TIPOS DE SERVICIOS ADICIONALES
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_1', 'Asiento preferencial', 20);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_2', 'Selección de asiento estándar', 10);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_3', 'Upgrade de clase', 200);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_4', 'Acceso a sala VIP', 50);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_5', 'Embarque prioritario', 15);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_6', 'Equipaje adicional', 30);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_7', 'Comida gourmet a bordo', 25);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_8', 'Entretenimiento a bordo', 10);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_9', 'Conexión Wi-Fi', 15);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_10', 'Kits de comodidad (mantas, almohadas)', 12);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_11', 'Transporte terrestre desde el aeropuerto', 30);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_12', 'Alquiler de automóviles', 40);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_13', 'Servicio de limusina', 100);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_14', 'Reserva de hotel', 20);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_15', 'Traslado al hotel', 25);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_16', 'Servicios de cuidado de mascotas', 35);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_17', 'Asistencia en tierra para personas con movilidad reducida', 0);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_18', 'Reserva de tours locales', 50);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_19', 'Servicio de transporte de equipaje', 20);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_20', 'Seguro de viaje', 40);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_21', 'Servicio de spa en aeropuerto', 35);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_22', 'Servicio de personal shopper en aeropuerto', 30);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_23', 'Reserva de entradas para eventos', 25);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_24', 'Entrega de equipaje a domicilio', 50);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_25', 'Almacenamiento temporal de equipaje', 15);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_26', 'Servicio de recogida en el aeropuerto', 25);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_27', 'Servicio de envío de documentos', 20);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_28', 'Compra libre de impuestos en el aeropuerto', 0);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_29', 'Reserva de asistencia para niños', 20);
-INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A_30', 'Servicio de asesoramiento de viaje', 15);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A1', 'Asiento preferencial', 20);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A2', 'Selección de asiento estándar', 10);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A3', 'Upgrade de clase', 200);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A4', 'Acceso a sala VIP', 50);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A5', 'Embarque prioritario', 15);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A6', 'Equipaje adicional', 30);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A7', 'Comida gourmet a bordo', 25);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A8', 'Entretenimiento a bordo', 10);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A9', 'Conexión Wi-Fi', 15);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A10', 'Kits de comodidad (mantas, almohadas)', 12);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A11', 'Transporte terrestre desde el aeropuerto', 30);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A12', 'Alquiler de automóviles', 40);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A13', 'Servicio de limusina', 100);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A14', 'Reserva de hotel', 20);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A15', 'Traslado al hotel', 25);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A16', 'Servicios de cuidado de mascotas', 35);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A17', 'Asistencia en tierra para personas con movilidad reducida', 0);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A18', 'Reserva de tours locales', 50);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A19', 'Servicio de transporte de equipaje', 20);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A20', 'Seguro de viaje', 40);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A21', 'Servicio de spa en aeropuerto', 35);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A22', 'Servicio de personal shopper en aeropuerto', 30);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A23', 'Reserva de entradas para eventos', 25);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A24', 'Entrega de equipaje a domicilio', 50);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A25', 'Almacenamiento temporal de equipaje', 15);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A26', 'Servicio de recogida en el aeropuerto', 25);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A27', 'Servicio de envío de documentos', 20);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A28', 'Compra libre de impuestos en el aeropuerto', 0);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A29', 'Reserva de asistencia para niños', 20);
+INSERT INTO tbl_servicios_adicionales (id_servicio_adicional, servicio, precio) VALUES ('A30', 'Servicio de asesoramiento de viaje', 15);
 
 
 --INSERTAR GENEROS

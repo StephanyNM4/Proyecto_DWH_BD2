@@ -99,7 +99,7 @@ BEGIN
         V_NUMERO := ROUND(DBMS_RANDOM.VALUE(1, 3));   ---CANTIDAD DE BOLETOS A COMPRAR
         V_CLIENTE := ROUND(DBMS_RANDOM.VALUE(4, 20));  ----CLIENTE QUE COMPRA LOS BOLETOS
         V_PRECIO := ROUND(DBMS_RANDOM.VALUE(1000, 4000));--PRECIO BOLETO
-        V_ID_FACTURA := 'A_' || SEQ_ID_FACTURAS.NEXTVAL;
+        V_ID_FACTURA := 'A' || SEQ_ID_FACTURAS.NEXTVAL;
 
         ----------------GENERA FACTURA
             INSERT INTO tbl_facturas (
@@ -177,7 +177,7 @@ BEGIN
                             id_servicio_adicional,
                             id_boleto_factura
                         ) VALUES (
-                            'A_' || ROUND(DBMS_RANDOM.VALUE(1, 30)),
+                            'A' || ROUND(DBMS_RANDOM.VALUE(1, 30)),
                             V_ID_BOLETO_FACTURA
                         );
                         V_CONT_SERVICIOS := V_CONT_SERVICIOS + 1;
@@ -250,3 +250,10 @@ BEGIN
 END;
 
 COMMIT;
+
+-----ANTES DE INSERTAR ASIENTOS
+-----VERIFICAR QUE FECHA PARTIDA DE LOS PRIMEROS 6 VUELOS SEA MENOR QUE SYSDATE
+SELECT * FROM TBL_VUELOS WHERE ID_VUELO = 6;
+TRUNCATE TABLE TBL_VUELOS;
+DROP SEQUENCE SEQ_VUELOS;
+CREATE SEQUENCE SEQ_VUELOS INCREMENT BY 1 START WITH 0 MAXVALUE 1000000000 MINVALUE 0;
