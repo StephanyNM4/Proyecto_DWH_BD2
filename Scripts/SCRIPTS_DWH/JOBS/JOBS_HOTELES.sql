@@ -3,10 +3,10 @@ SET SERVEROUTPUT ON;
 ------------------------------PROGRAMAS--------------------------------
 -----------------------------------------------------------------------
 
---------------------------------------------------------PRG_P_ETL_HOTELES
+--------------------------------------------------------PRG_SP_ETL_HOTELES
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_HOTELES',
+        PROGRAM_NAME => 'PRG_SP_ETL_HOTELES',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_HOTELES; END;',
         ENABLED => TRUE,
@@ -14,10 +14,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_POLITICAS_POR_HOTEL
+--------------------------------------------------------PRG_SP_ETL_POLITICAS_POR_HOTEL
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_POLITICAS_POR_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_POLITICAS_POR_HOTEL',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_POLITICAS_POR_HOTEL; END;',
         ENABLED => TRUE,
@@ -25,10 +25,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_SERVICIOS_POR_HOTEL
+--------------------------------------------------------PRG_SP_ETL_SERVICIOS_POR_HOTEL
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_SERVICIOS_POR_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_SERVICIOS_POR_HOTEL',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_SERVICIOS_POR_HOTEL; END;',
         ENABLED => TRUE,
@@ -36,10 +36,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_EVALUACICONES_POR_HOTEL
+--------------------------------------------------------PRG_SP_ETL_EVALUACICONES_POR_HOTEL
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_EVALUACICONES_POR_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_EVALUACICONES_POR_HOTEL',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_EVALUACICONES_POR_HOTEL; END;',
         ENABLED => TRUE,
@@ -47,10 +47,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_AMENIDADES_X_HABITACION
+--------------------------------------------------------PRG_SP_ETL_AMENIDADES_X_HABITACION
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_AMENIDADES_X_HABITACION',
+        PROGRAM_NAME => 'PRG_SP_ETL_AMENIDADES_X_HABITACION',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_AMENIDADES_X_HABITACION; END;',
         ENABLED => TRUE,
@@ -58,10 +58,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_CLIENTES
+--------------------------------------------------------PRG_SP_ETL_CLIENTES
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_CLIENTES_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_CLIENTES_HOTEL',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_CLIENTES; END;',
         ENABLED => TRUE,
@@ -69,10 +69,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_HABITACIONES
+--------------------------------------------------------PRG_SP_ETL_HABITACIONES
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_HABITACIONES',
+        PROGRAM_NAME => 'PRG_SP_ETL_HABITACIONES',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_HABITACIONES; END;',
         ENABLED => TRUE,
@@ -80,10 +80,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_RESERVACIONES
+--------------------------------------------------------PRG_SP_ETL_RESERVACIONES
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_RESERVACIONES',
+        PROGRAM_NAME => 'PRG_SP_ETL_RESERVACIONES',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_RESERVACIONES; END;',
         ENABLED => TRUE,
@@ -91,10 +91,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_FACTURAS
+--------------------------------------------------------PRG_SP_ETL_FACTURAS
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_FACTURAS_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_FACTURAS_HOTEL',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_FACTURAS; END;',
         ENABLED => TRUE,
@@ -102,10 +102,10 @@ BEGIN
     );
 END;
 
---------------------------------------------------------PRG_P_ETL_DETALLES_FACTURAS
+--------------------------------------------------------PRG_SP_ETL_DETALLES_FACTURAS
 BEGIN
     DBMS_SCHEDULER.CREATE_PROGRAM(
-        PROGRAM_NAME => 'PRG_P_ETL_DETALLES_FACTURAS',
+        PROGRAM_NAME => 'PRG_SP_ETL_DETALLES_FACTURAS',
         PROGRAM_TYPE => 'PLSQL_BLOCK',
         PROGRAM_ACTION => 'BEGIN PKG_ETLS_HOTELES.P_ETL_DETALLES_FACTURAS; END;',
         ENABLED => TRUE,
@@ -151,11 +151,11 @@ END;
 
 -----------------------------------------------------------------------
 --------------------------------JOBS-----------------------------------
---------------------------------------------------------JOB_P_ETL_HOTELES
+--------------------------------------------------------JOB_SP_ETL_HOTELES
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_HOTELES',
-        PROGRAM_NAME => 'PRG_P_ETL_HOTELES',
+        JOB_NAME => 'JOB_SP_ETL_HOTELES',
+        PROGRAM_NAME => 'PRG_SP_ETL_HOTELES',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -163,11 +163,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_P_ETL_POLITICAS_POR_HOTEL
+--------------------------------------------------------JOB_SP_ETL_POLITICAS_POR_HOTEL
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_POLITICAS_POR_HOTEL',
-        PROGRAM_NAME => 'PRG_P_ETL_POLITICAS_POR_HOTEL',
+        JOB_NAME => 'JOB_SP_ETL_POLITICAS_POR_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_POLITICAS_POR_HOTEL',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -175,11 +175,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_P_ETL_SERVICIOS_POR_HOTEL
+--------------------------------------------------------JOB_SP_ETL_SERVICIOS_POR_HOTEL
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_SERVICIOS_POR_HOTEL',
-        PROGRAM_NAME => 'PRG_P_ETL_SERVICIOS_POR_HOTEL',
+        JOB_NAME => 'JOB_SP_ETL_SERVICIOS_POR_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_SERVICIOS_POR_HOTEL',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -187,11 +187,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_P_ETL_EVALUACICONES_POR_HOTEL
+--------------------------------------------------------JOB_SP_ETL_EVALUACICONES_POR_HOTEL
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_EVALUACICONES_POR_HOTEL',
-        PROGRAM_NAME => 'PRG_P_ETL_EVALUACICONES_POR_HOTEL',
+        JOB_NAME => 'JOB_SP_ETL_EVALUACICONES_POR_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_EVALUACICONES_POR_HOTEL',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -199,11 +199,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_P_ETL_AMENIDADES_X_HABITACION
+--------------------------------------------------------JOB_SP_ETL_AMENIDADES_X_HABITACION
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_AMENIDADES_X_HABITACION',
-        PROGRAM_NAME => 'PRG_P_ETL_AMENIDADES_X_HABITACION',
+        JOB_NAME => 'JOB_SP_ETL_AMENIDADES_X_HABITACION',
+        PROGRAM_NAME => 'PRG_SP_ETL_AMENIDADES_X_HABITACION',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -211,11 +211,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_P_ETL_CLIENTES
+--------------------------------------------------------JOB_SP_ETL_CLIENTES
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_CLIENTES_HOTEL',
-        PROGRAM_NAME => 'PRG_P_ETL_CLIENTES_HOTEL',
+        JOB_NAME => 'JOB_SP_ETL_CLIENTES_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_CLIENTES_HOTEL',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -223,11 +223,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_PRG_P_ETL_HABITACIONES
+--------------------------------------------------------JOB_PRG_SP_ETL_HABITACIONES
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_PRG_P_ETL_HABITACIONES',
-        PROGRAM_NAME => 'PRG_PRG_P_ETL_HABITACIONES',
+        JOB_NAME => 'JOB_PRG_SP_ETL_HABITACIONES',
+        PROGRAM_NAME => 'PRG_PRG_SP_ETL_HABITACIONES',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -235,11 +235,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_P_ETL_RESERVACIONES
+--------------------------------------------------------JOB_SP_ETL_RESERVACIONES
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_RESERVACIONES',
-        PROGRAM_NAME => 'PRG_P_ETL_RESERVACIONES',
+        JOB_NAME => 'JOB_SP_ETL_RESERVACIONES',
+        PROGRAM_NAME => 'PRG_SP_ETL_RESERVACIONES',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -247,11 +247,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_P_ETL_FACTURAS_HOTEL
+--------------------------------------------------------JOB_SP_ETL_FACTURAS_HOTEL
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_FACTURAS_HOTEL',
-        PROGRAM_NAME => 'PRG_P_ETL_FACTURAS_HOTEL',
+        JOB_NAME => 'JOB_SP_ETL_FACTURAS_HOTEL',
+        PROGRAM_NAME => 'PRG_SP_ETL_FACTURAS_HOTEL',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
@@ -259,11 +259,11 @@ BEGIN
     );
 END;
 
---------------------------------------------------------JOB_P_ETL_DETALLES_FACTURAS
+--------------------------------------------------------JOB_SP_ETL_DETALLES_FACTURAS
 BEGIN
     DBMS_SCHEDULER.CREATE_JOB(
-        JOB_NAME => 'JOB_P_ETL_DETALLES_FACTURAS',
-        PROGRAM_NAME => 'PRG_P_ETL_DETALLES_FACTURAS',
+        JOB_NAME => 'JOB_SP_ETL_DETALLES_FACTURAS',
+        PROGRAM_NAME => 'PRG_SP_ETL_DETALLES_FACTURAS',
         SCHEDULE_NAME => 'INTERVALO_DIARIO',
         ENABLED => TRUE,
         AUTO_DROP => FALSE,
