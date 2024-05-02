@@ -22,17 +22,18 @@
 <colAssociation fkAssociation="65B3C9F1-7E2E-9B89-361C-08756809B14A" referredColumn="CB7390F5-80A5-D348-8A3C-E4089D1A5DFD"/>
 </associations>
 </Column>
-<Column name="ID_SERVICIO" id="19805FEE-FD2A-6130-EA11-236348F22D25">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 15:08:39 UTC</createdTime>
+<Column name="ID_SERVICIO_DWH" id="EA6C6998-DCE7-FEA8-049A-8CBD418FD1E2">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 09:08:17 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="231AF583-0FC3-E37C-C70A-8E1A2DAD4D0F" referredColumn="3C1B1071-9DC0-3D83-1C1D-156F8E53FA0C"/>
+<colAssociation fkAssociation="946516E1-835B-5EE1-2D94-138A904DB774" referredColumn="3C1B1071-9DC0-3D83-1C1D-156F8E53FA0C"/>
 </associations>
 </Column>
 </columns>
@@ -46,7 +47,7 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="E202EE86-A26E-16B0-4A75-82A10A4CDD60"/>
-<colUsage columnID="19805FEE-FD2A-6130-EA11-236348F22D25"/>
+<colUsage columnID="EA6C6998-DCE7-FEA8-049A-8CBD418FD1E2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="582BFA73-C513-23D3-A0B6-6E0511BF3E2B" name="FK_SERVICIOS_X_HOTEL_H">
@@ -59,14 +60,14 @@
 <colUsage columnID="E202EE86-A26E-16B0-4A75-82A10A4CDD60"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E0C1A3D3-6984-37EE-4E24-7F43A18C909F" name="FK_SERVICIOS_X_HOTEL_S">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 15:11:40 UTC</createdTime>
+<ind_PK_UK id="E4646B38-41AC-5733-76ED-63E96BCCD0BE" name="TBL_S_X_H_TBL_S_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 09:08:17 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="19805FEE-FD2A-6130-EA11-236348F22D25"/>
+<colUsage columnID="EA6C6998-DCE7-FEA8-049A-8CBD418FD1E2"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

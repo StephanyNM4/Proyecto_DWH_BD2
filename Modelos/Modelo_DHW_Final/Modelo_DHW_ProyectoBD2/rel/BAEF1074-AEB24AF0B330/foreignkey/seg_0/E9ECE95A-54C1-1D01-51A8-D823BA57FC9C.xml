@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EE9C512D-3620-2A18-998B-D7B1E71ED57F" containerWithKeyObject="92584426-F8A1-E73B-56DC-9637499A4403" localFKIndex="2AACCBAA-EDBF-4E8A-36B3-47BA3395B714" name="TBL_SER_A_TBL_S_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E9ECE95A-54C1-1D01-51A8-D823BA57FC9C" containerWithKeyObject="77AB1238-6634-8ACB-0A9B-F7C8E1865027" localFKIndex="F9544A56-8D53-97C1-A5BB-12A846FFB0CD" name="TBL_S_P_B_TBL_S_FK">
 <createdBy>steph</createdBy>
-<createdTime>2024-03-24 03:46:28 UTC</createdTime>
+<createdTime>2024-05-01 08:56:24 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <referredTableLongName>TBL_SERVICIOS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
@@ -9,7 +9,7 @@
 <keyObject>FB5EF212-8447-FE53-4AAA-5B9A80893EEC</keyObject>
 <referredKeyID>FB5EF212-8447-FE53-4AAA-5B9A80893EEC</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>ID_SERVICIO</refColNames>
+<refColNames>ID_SERVICIO_DWH</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

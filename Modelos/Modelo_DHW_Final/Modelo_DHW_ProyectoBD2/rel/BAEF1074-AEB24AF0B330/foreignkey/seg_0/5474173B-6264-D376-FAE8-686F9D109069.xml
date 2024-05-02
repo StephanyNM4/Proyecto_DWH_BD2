@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0B0EC5EF-B322-C5C5-EB05-18EA029A60E8" containerWithKeyObject="A591C320-FB8C-6968-0004-37B7BBC754A7" localFKIndex="E3248169-620F-17AB-A1C6-0DB86203870A" name="FK_DETALLE_FACTURA">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 15:34:41 UTC</createdTime>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5474173B-6264-D376-FAE8-686F9D109069" containerWithKeyObject="A591C320-FB8C-6968-0004-37B7BBC754A7" localFKIndex="557FC1CF-53CA-D0F2-3DFC-40A6FAD1FA35" name="TBL_D_F_TBL_F_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 09:08:32 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <referredTableLongName>TBL_FACTURAS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
@@ -9,7 +9,7 @@
 <keyObject>8C98CED5-0274-6725-7836-2AD08EEBD11B</keyObject>
 <referredKeyID>8C98CED5-0274-6725-7836-2AD08EEBD11B</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>ID_FACTURA</refColNames>
+<refColNames>ID_FACTURA_DWH</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

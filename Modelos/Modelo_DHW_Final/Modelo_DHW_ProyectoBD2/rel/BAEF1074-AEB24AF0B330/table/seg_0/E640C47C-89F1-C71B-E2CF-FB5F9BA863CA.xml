@@ -18,6 +18,19 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="ID_HOTEL" id="D5A62DE5-1F0A-F23E-9023-AA25AA8FB5F2">
+<createdBy>Usuario</createdBy>
+<createdTime>2024-03-24 14:18:55 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="582CCD00-1613-6E73-900E-306F7FE3353A" referredColumn="CB7390F5-80A5-D348-8A3C-E4089D1A5DFD"/>
+</associations>
+</Column>
 <Column name="CORREO_CLIENTE" id="4B6300CF-F9BF-15C3-8281-4494478DD90E">
 <createdBy>Dorian Contreras</createdBy>
 <createdTime>2024-04-29 08:43:18 UTC</createdTime>
@@ -86,19 +99,6 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="ID_HOTEL" id="D5A62DE5-1F0A-F23E-9023-AA25AA8FB5F2">
-<createdBy>Usuario</createdBy>
-<createdTime>2024-03-24 14:18:55 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="582CCD00-1613-6E73-900E-306F7FE3353A" referredColumn="CB7390F5-80A5-D348-8A3C-E4089D1A5DFD"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

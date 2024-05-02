@@ -8,20 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="ID_BOLETO" id="607006F7-AA02-F3C1-52D5-9C648D1E818A">
-<createdBy>steph</createdBy>
-<createdTime>2024-04-28 02:55:17 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="02B434B1-85C1-9E0B-9805-C2A097E0875A" referredColumn="5A756DD9-9B28-63CE-6919-529EBD8C7C8D"/>
-</associations>
-</Column>
 <Column name="ID_EQUIPAJE" id="E1BE28B6-59CF-2D43-7296-3B9897E8F3C2">
 <createdBy>steph</createdBy>
 <createdTime>2024-04-28 02:55:38 UTC</createdTime>
@@ -36,18 +22,22 @@
 <colAssociation fkAssociation="E14E5A83-4CA3-7678-5346-3720C583F412" referredColumn="E3278A88-54F6-0E39-6FF1-AA8AC032C856"/>
 </associations>
 </Column>
+<Column name="ID_BOLETO_FACTURA" id="438244C9-18D5-CF50-170A-8D6B6B9BF0CA">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 08:58:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11AADE15-37FF-6FC5-6F1C-4F43B87AC62D" referredColumn="5BF72E8A-16AC-7BA8-73C6-C951B78A4B27"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="A3B82436-893A-A038-FC79-5D6552DD9B5F" name="TBL_E_P_B_TBL_B_FK">
-<createdBy>steph</createdBy>
-<createdTime>2024-04-28 02:55:17 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="607006F7-AA02-F3C1-52D5-9C648D1E818A"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="921555E0-3B01-54F1-71BE-4ED8383304F5" name="TBL_E_P_B_TBL_E_FK">
 <createdBy>steph</createdBy>
 <createdTime>2024-04-28 02:55:38 UTC</createdTime>
@@ -56,6 +46,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="E1BE28B6-59CF-2D43-7296-3B9897E8F3C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6C2BD516-CA02-D952-8055-28C722D492E6" name="TBL_E_P_B_TBL_F_B_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 08:58:38 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="438244C9-18D5-CF50-170A-8D6B6B9BF0CA"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

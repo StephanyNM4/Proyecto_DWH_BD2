@@ -16,7 +16,7 @@
 <objectViews>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="0226CC07-2E22-DFB7-6895-94C73895A57D" otype="Table" vid="5925B391-A89A-9308-EEE7-D0A622A7EE05">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="1118" y="932" width="250" height="144"/>
+<bounds x="1118" y="932" width="281" height="144"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="1B8164CC-46C3-5171-B07A-8DE6E391EEDA" otype="Table" vid="DBF00C06-87A2-4D46-F808-DD3B4C5818F5">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -36,12 +36,12 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="2778F044-F0B4-493E-6B08-8490F22095C4" otype="Note" vid="87FFA8ED-96D5-359F-9365-39B8FE6AB8BF">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="747" y="571" width="196" height="40"/>
+<bounds x="716" y="624" width="196" height="40"/>
 <comment>Servicios adicionales: articulos de vuelo, bebida, comida, periodicos..</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="2FF271D1-5D09-4818-1433-79E4BBB32659" otype="Table" vid="6A871685-D5AB-3028-F16C-71FF882E5213">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="1296" y="777" width="221" height="102"/>
+<bounds x="1335" y="782" width="221" height="102"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="38CDE6E1-39B5-72BA-9B9C-86A9ED5FD559" otype="Table" vid="73F38700-F1CB-06DC-12D3-FDB5E0D894F9">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -70,8 +70,8 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="4FAEAAD9-4C02-05F0-1C54-D159638A9CB2" otype="Note" vid="6DD05D68-61F8-EE1E-0C58-1DDCB02DA85D">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="999" y="620" width="135" height="91"/>
-<comment>Tabla intermedia de los boletos que puede tener una factura, se le agrega el costo del equipaje con la informacion del boleto</comment>
+<bounds x="1002" y="669" width="135" height="48"/>
+<comment>Tabla intermedia de los boletos que puede tener una factura</comment>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="573A9452-E0AA-FFFD-93DB-BA42E567FDB2" otype="Table" vid="CF40DC41-1232-036D-4022-F1F0B7D576B2">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -95,7 +95,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="9743F8B9-41A3-AD4F-86D9-EFAB3F2A5765" otype="Table" vid="DD9B3F53-B881-F293-56D5-6EC31BC0FA2B">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="705" y="678" width="230" height="100"/>
+<bounds x="705" y="678" width="265" height="100"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.TVNote" oid="98477E6F-A87F-74EA-E913-19026183340F" otype="Note" vid="AAE15B0A-5743-15DB-E318-45DC3008E4B0">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -122,7 +122,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="B7348047-146E-F0C4-A75B-86BF69EA2CF4" otype="Table" vid="9134C289-A186-8395-FC79-26867F5ECB37">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="1038" y="732" width="215" height="117"/>
+<bounds x="1038" y="732" width="247" height="117"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="B86FC40F-39D8-65E4-5A70-6D5C69FB9A61" otype="Table" vid="C6F11347-FD39-E465-491B-EE4B674EBA85">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -248,8 +248,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="1399" y="777"/>
-<point x="1399" y="713"/>
+<point x="1419" y="782"/>
+<point x="1419" y="713"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="4B08EEFB-A205-DEBD-3F04-BD2A70F196A7" otype="FKIndexAssociation" vid_source="67C0C04F-8AD9-7850-5E16-6347E91EF5F4" vid_target="73F38700-F1CB-06DC-12D3-FDB5E0D894F9">
@@ -366,8 +366,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="1145" y="503"/>
-<point x="1145" y="732"/>
+<point x="1161" y="503"/>
+<point x="1161" y="732"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="A9102048-C8FB-9BDE-0049-A285164CEE99" otype="FKIndexAssociation" vid_source="73F38700-F1CB-06DC-12D3-FDB5E0D894F9" vid_target="893BC2C3-ED16-1EA7-2C48-4481E0F488CE">
@@ -487,8 +487,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="1185" y="932"/>
-<point x="1185" y="849"/>
+<point x="1201" y="932"/>
+<point x="1201" y="849"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="F2ABC079-5190-434A-DC3D-222B43E95489" otype="FKIndexAssociation" vid_source="9134C289-A186-8395-FC79-26867F5ECB37" vid_target="DD9B3F53-B881-F293-56D5-6EC31BC0FA2B">
@@ -496,8 +496,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="1038" y="740"/>
-<point x="935" y="740"/>
+<point x="1038" y="755"/>
+<point x="970" y="755"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="F89D95DA-1D16-21F6-A5D3-8BF508EE0B08" otype="FKIndexAssociation" vid_source="73F38700-F1CB-06DC-12D3-FDB5E0D894F9" vid_target="069F0E90-A7E6-785F-E08D-399E17261AF0">

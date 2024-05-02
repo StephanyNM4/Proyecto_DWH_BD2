@@ -31,7 +31,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="FECHA_INICO" id="0499C3E0-A8E4-F51C-0F3D-6058B483F4FE">
+<Column name="FECHA_INICIO" id="0499C3E0-A8E4-F51C-0F3D-6058B483F4FE">
 <createdBy>Dorian Contreras</createdBy>
 <createdTime>2024-04-30 08:38:09 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
@@ -75,6 +75,18 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ERROR" id="CCEB61C1-160D-473F-BE52-376D78692683">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 20:55:10 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>

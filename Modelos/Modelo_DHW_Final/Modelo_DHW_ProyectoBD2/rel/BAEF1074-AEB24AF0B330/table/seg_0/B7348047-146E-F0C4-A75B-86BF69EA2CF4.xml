@@ -18,9 +18,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ID_FACTURA" id="AAD7CD40-384D-3036-F70C-7C8CBD004254">
+<Column name="ID_FACTURA_DWH" id="1CCD9BA4-069D-A86B-C93A-2396EC627AC3">
 <createdBy>steph</createdBy>
-<createdTime>2024-02-18 00:52:31 UTC</createdTime>
+<createdTime>2024-05-01 08:57:28 UTC</createdTime>
 <ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -29,7 +29,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="F1F7F760-2369-D80E-3106-BBB224A5F4A3" referredColumn="4D02085B-A8E8-6128-5ED7-5DB09205C116"/>
+<colAssociation fkAssociation="E63C60B5-5548-A632-0B95-F57EDBF896C0" referredColumn="4D02085B-A8E8-6128-5ED7-5DB09205C116"/>
 </associations>
 </Column>
 <Column name="ID_BOLETO" id="ABF46324-9B26-7452-FA3A-32D88800E389">
@@ -70,16 +70,6 @@
 <colUsage columnID="5BF72E8A-16AC-7BA8-73C6-C951B78A4B27"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="A19D032C-2B51-17B2-9182-DA6BA81556A7" name="TBL_FA_B_TBL_F_FK">
-<createdBy>steph</createdBy>
-<createdTime>2024-02-18 00:52:31 UTC</createdTime>
-<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="AAD7CD40-384D-3036-F70C-7C8CBD004254"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="95E7E7D3-02B1-8B61-059A-148B794C640B" name="TBL_FACTURA_B_TBL_B_FK">
 <createdBy>steph</createdBy>
 <createdTime>2024-02-18 01:00:53 UTC</createdTime>
@@ -88,6 +78,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="ABF46324-9B26-7452-FA3A-32D88800E389"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CA77697F-53AD-E187-3D37-B48AFB8AADA2" name="TBL_F_B_TBL_F_FK">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-01 08:57:28 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CCD9BA4-069D-A86B-C93A-2396EC627AC3"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
