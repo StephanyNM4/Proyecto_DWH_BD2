@@ -51,8 +51,6 @@ BEGIN
 END;
 GO
 
-select dbo.F_GenerarUsername('Maria');
-
 ---Este procedimiento se usará para el formulario de registro. Una vez registrado, se le proporcionará un usuario y una contraseña temporal.
 CREATE PROCEDURE SP_RegistrarCliente 
 	@nombre VARCHAR(100),
