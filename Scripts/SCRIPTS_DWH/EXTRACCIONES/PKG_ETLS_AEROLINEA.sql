@@ -239,7 +239,6 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
         AS
             V_INICIO_ETL DATE:= SYSDATE;
         BEGIN
-                EXECUTE IMMEDIATE 'TRUNCATE TABLE tbl_asientos';
                 
                 INSERT INTO tbl_asientos (
                     id_asiento,

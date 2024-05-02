@@ -1,28 +1,6 @@
 -----PROCEDIMIENTOS FACTURACION HOTELES
-set serveroutput on;
-alter table tbl_clientes modify nombre VARCHAR2(100);
-alter table tbl_clientes modify apellido VARCHAR2(100);
 
-ALTER SESSION SET NLS_LANGUAGE = 'ENGLISH';
 
-begin
-    P_ETL_CLIENTES
-end;
-
-CREATE OR REPLACE TRIGGER TRG_CAMBIAR_FORMATO_FECHA_1
-BEFORE INSERT ON CLIENTES
-FOR EACH ROW
-DECLARE 
-    V_FECHA_FORMATEADA VARCHAR(20) := TO_CHAR(NEW.FECHA_REGISTRO);
-BEGIN
-    :NEW.FECHA_REGISTRO := 
-END;
-
-SELECT SYSDATE FROM DUAL
-INSERT into clientes SELECT * FROM clientes@SQLSERVER_BD;
-INSERT into clientes SELECT fecha_registro FROM clientes@SQLSERVER_BD;
-
-select * from tbl_clientes;
 ----COMPILAR ACTUALIZACION O INSERCION DE CLIENTES DWH
 -------------------------EXTRACCION (ACTUALIZACION O INSERT) CLIENTES
 CREATE OR REPLACE PROCEDURE P_INSERT_CLIENTE(P_CORREO_ELECTRONICO VARCHAR2,
@@ -169,7 +147,7 @@ END;
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE CLIENTES FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_HOTELES.P_ETL_HABITACIONES',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'HOTELES',
+                                P_nombre_base => 'HOTEL',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -180,7 +158,7 @@ END;
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_HOTELES.P_ETL_HABITACIONES',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'HOTELES',
+                                P_nombre_base => 'HOTEL',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_CLIENTES;
@@ -795,3 +773,4 @@ CREATE OR REPLACE PROCEDURE P_ETL_AMENIDADES_X_HABITACION
                                 P_error => SQLCODE || '--' ||SQLERRM);
         
     END P_ETL_AMENIDADES_X_HABITACION; 
+
