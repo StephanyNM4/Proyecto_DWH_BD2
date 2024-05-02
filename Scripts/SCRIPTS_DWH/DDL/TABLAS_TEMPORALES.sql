@@ -91,8 +91,6 @@ CREATE GLOBAL TEMPORARY TABLE politicas(
 	politica VARCHAR(500)
 )ON COMMIT DELETE ROWS;
 
---drop table clientes
-
 CREATE GLOBAL TEMPORARY TABLE clientes(
 	id_cliente INT,
 	fecha_registro VARCHAR(20),
