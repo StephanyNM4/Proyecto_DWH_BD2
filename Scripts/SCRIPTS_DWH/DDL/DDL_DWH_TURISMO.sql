@@ -247,8 +247,6 @@ CREATE TABLE tbl_politicas_x_hotel (
     id_hotel    INTEGER NOT NULL
 );
 
-ALTER TABLE tbl_politicas_x_hotel ADD CONSTRAINT tbl_politicas_x_hotel_pk PRIMARY KEY ( id_politica );
-
 CREATE TABLE tbl_reservaciones (
     id_reservacion    INTEGER NOT NULL,
     codigo_habitacion VARCHAR2(20) NOT NULL,
