@@ -207,7 +207,7 @@ CREATE TABLE tipos_servicios(
 GO
 
 CREATE TABLE servicios(
-	id_servicio INT IDENTITY PRIMARY KEY,
+	id_servicio VARCHAR(50) PRIMARY KEY,
 	servicio VARCHAR(100) NOT NULL,
 	descripcion VARCHAR(500),
 	id_tipo INT NOT NULL,
@@ -219,7 +219,7 @@ GO
 
 CREATE TABLE servicios_sucursales(
 	id INT IDENTITY PRIMARY KEY,
-	id_servicio INT NOT NULL,
+	id_servicio VARCHAR(50) NOT NULL,
 	id_sucursal INT NOT NULL,
 
 	CONSTRAINT fk_servicio_s FOREIGN KEY (id_servicio) REFERENCES servicios(id_servicio),
@@ -254,12 +254,6 @@ CREATE TABLE favoritos_de_clientes(
 	CONSTRAINT fk_favorito_csucursal FOREIGN KEY (id_sucursal) REFERENCES sucursales(id_sucursal),
 	CONSTRAINT uq_favorito UNIQUE (id_cliente, id_sucursal)
 );
-
-CREATE TABLE tipos_habitaciones(
-	id_tipo INT IDENTITY PRIMARY KEY,
-	tipo_habitacion VARCHAR(100) UNIQUE NOT NULL
-);
-GO
 
 CREATE TABLE habitaciones(
 	id_habitacion INT IDENTITY PRIMARY KEY,
@@ -306,6 +300,7 @@ GO
 
 CREATE TABLE reservaciones(
 	id_reservacion INT IDENTITY PRIMARY KEY,
+	fecha_reservacion DATE DEFAULT GETDATE(),
 	fecha_inicio DATE NOT NULL,
 	fecha_fin DATE NOT NULL,
 	id_cliente INT NOT NULL,
@@ -325,7 +320,7 @@ CREATE TABLE formas_de_pago(
 GO
 
 CREATE TABLE facturas(
-	id_factura INT IDENTITY PRIMARY KEY,
+	id_factura VARCHAR(50) PRIMARY KEY,
 	fecha DATE DEFAULT GETDATE(),
 	subtotal DECIMAL(10,2) DEFAULT 0,
 	impuesto DECIMAL(10,2) DEFAULT 0,
@@ -340,7 +335,7 @@ GO
 
 CREATE TABLE detalle_factura(
 	id INT IDENTITY PRIMARY KEY,
-	id_factura INT NOT NULL,
+	id_factura VARCHAR(50) NOT NULL,
 	id_reservacion INT NOT NULL,
 
 	CONSTRAINT fk_detalle_factura FOREIGN KEY (id_factura) REFERENCES facturas(id_factura),

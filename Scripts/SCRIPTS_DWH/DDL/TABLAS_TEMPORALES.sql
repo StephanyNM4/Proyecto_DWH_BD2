@@ -37,3 +37,56 @@ CREATE GLOBAL TEMPORARY TABLE amenidades_habitaciones(
 	id_amenidad INT,
 	id_habitacion INT
 )ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE sucursales(
+	id_sucursal INT,
+	reembolsable VARCHAR(1),
+	descripcion VARCHAR(500),
+	telefono VARCHAR(50),
+	correo VARCHAR(50),
+	id_hotel INT,
+	id_direccion INT
+)ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE politicas_sucursal(
+	id INT,
+	id_sucursal INT,
+	id_politica INT
+)ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE hoteles(
+	id_hotel INT,
+	nombre VARCHAR(50),
+	telefono VARCHAR(50),
+	correo VARCHAR(50),
+	descripcion VARCHAR(500),
+	sitio_web VARCHAR(100)
+)ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE servicios_sucursales(
+	id INT,
+	id_servicio INT,
+	id_sucursal INT
+)ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE direcciones(
+	id_direccion INT,
+	referencia VARCHAR(50),
+	id_ciudad INT
+)ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE paises(
+	id_pais INT,
+	nombre_pais VARCHAR(50)
+)ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE ciudades(
+	id_ciudad INT,
+	nombre_ciudad VARCHAR(50),
+	id_pais INT
+)ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE politicas(
+	id_politica INT,
+	politica VARCHAR(500)
+)ON COMMIT DELETE ROWS;
