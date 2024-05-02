@@ -22,9 +22,6 @@ CREATE TABLE tbl_amenidades_x_habitacion (
     id_amenidad       INTEGER NOT NULL
 );
 
-ALTER TABLE tbl_amenidades_x_habitacion ADD CONSTRAINT tbl_amenidades_x_habitacion_pk PRIMARY KEY ( codigo_habitacion,
-                                                                                                    id_amenidad );
-
 CREATE TABLE tbl_asientos (
     id_asiento          NUMBER NOT NULL,
     id_vuelo            VARCHAR2(30) NOT NULL,
@@ -288,9 +285,6 @@ CREATE TABLE tbl_servicios_x_hotel (
     id_hotel        INTEGER NOT NULL,
     id_servicio_dwh VARCHAR2(50) NOT NULL
 );
-
-ALTER TABLE tbl_servicios_x_hotel ADD CONSTRAINT tbl_servicios_x_hotel_pk PRIMARY KEY ( id_hotel,
-                                                                                        id_servicio_dwh );
 
 CREATE TABLE tbl_tipos_empleados (
     id_tipo_empleado NUMBER NOT NULL,
