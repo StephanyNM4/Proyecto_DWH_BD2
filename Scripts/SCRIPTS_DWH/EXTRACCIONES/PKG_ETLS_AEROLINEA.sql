@@ -808,7 +808,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
             END IF;
             
             WHILE V_FECHA_INICIO <= V_FECHA_FIN LOOP
-            DBMS_OUTPUT.PUT_LINE(V_FECHA_INICIO);
+
                 FOR REGISTRO IN (SELECT A.ID_BOLETO_FACTURA,
                                         C.ID_EQUIPAJE
                                     FROM TBL_FACTURA_BOLETOS@DB_LINK_AEROLINEA A
