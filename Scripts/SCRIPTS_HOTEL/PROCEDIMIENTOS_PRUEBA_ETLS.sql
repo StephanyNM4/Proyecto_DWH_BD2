@@ -114,38 +114,35 @@ END;
                 V_GENERO VARCHAR2(1);
                 V_INICIO_ETL DATE := SYSDATE;
         BEGIN
-        
+
+            INSERT INTO CLIENTES SELECT * FROM CLIENTES@SQLSERVER_BD;
+            INSERT INTO PERSONAS SELECT * FROM PERSONAS@SQLSERVER_BD;
+            INSERT INTO GENEROS SELECT * FROM GENEROS@SQLSERVER_BD;
+
                 FOR REGISTRO IN (
-                    SELECT B.correo_electronico,
+                    SELECT B.correo,
                             B.nombre,
                             B.apellido,
                             B.telefono,
-                            B.contrasena,
+                            A.contrasenia,
                             C.genero,
                             A.fecha_registro
-                    FROM CLIENTES@SQLSERVER_BD A
-                    INNER JOIN PERSONAS@SQLSERVER_BD B
+                    FROM CLIENTES A
+                    INNER JOIN PERSONAS B
                     ON (A.ID_CLIENTE = B.ID_PERSONA)
-                    INNER JOIN GENEROS@SQLSERVER_BD C
+                    INNER JOIN GENEROS C
                     ON (B.ID_GENERO = C.ID_GENERO)) LOOP
                 
                     V_GENERO := SUBSTR(REGISTRO.genero, 1, 1);
-                    P_INSERT_CLIENTE(P_CORREO_ELECTRONICO=>REGISTRO.correo_electronico, 
+                    P_INSERT_CLIENTE(P_CORREO_ELECTRONICO=>REGISTRO.correo, 
                                         P_nombre =>REGISTRO.nombre ,
                                         P_apellido =>REGISTRO.apellido ,
                                         P_telefono =>REGISTRO.telefono ,
-                                        P_contrasena_aerolinea =>REGISTRO.contrasena ,
+                                        P_contrasena_aerolinea =>REGISTRO.contrasenia ,
                                         P_GENERO => V_GENERO,
                                         P_fecha_registro =>REGISTRO.fecha_registro );
                 
                 END LOOP;
-                
-                DBMS_OUTPUT.PUT_LINE('EXTRACCION DE CLIENTES FINALIZADA');
-                P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_CLIENTES',
-                                P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'AEROLINEA',
-                                P_exito => 'SUCCESS',
-                                P_error => '');
                 
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE CLIENTES FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_HOTELES.P_ETL_HABITACIONES',
@@ -170,13 +167,16 @@ END;
 
 ----------------------------------------------EXTRACCION VOLATIL SUCURSALES
 
-----------------------------------------------EXTRACCION VOLATIL HABITACIONES :D
+----------------------------------------------EXTRACCION VOLATIL HABITACIONES :'D
 CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
         AS
             V_INICIO_ETL DATE:= SYSDATE;
         BEGIN
                 EXECUTE IMMEDIATE 'TRUNCATE TABLE tbl_habitaciones';
                 
+                INSERT INTO HABITACIONES SELECT * FROM HABITACIONES@SQLSERVER_BD;
+                INSERT INTO SUCURSALES SELECT * FROM SUCURSALES@SQLSERVER_BD;
+
                 INSERT INTO tbl_habitaciones (
                     codigo_habitacion,
                     id_hotel,
@@ -193,8 +193,8 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
                     A.cantidad_camas,
                     A.descripcion,
                     A.disponible
-                FROM HABITACIONES@SQLSERVER_BD A
-                INNER JOIN SUCURSALES@SQLSERVER_BD B
+                FROM HABITACIONES A
+                INNER JOIN SUCURSALES B
                 ON (A.ID_SUCURSAL = B.ID_SUCURSAL);
                 
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE HABITACIONES FINALIZADA');
@@ -216,13 +216,18 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_HABITACIONES; 
         
-----------------------------------------------EXTRACCION INCREMENTAL RESERVACIONES :D
+----------------------------------------------EXTRACCION INCREMENTAL RESERVACIONES :'D
         CREATE OR REPLACE PROCEDURE P_ETL_RESERVACIONES
         AS
             V_FECHA_INICIO DATE;
             V_FECHA_FIN DATE := SYSDATE - 1;
             V_INICIO_ETL DATE:= SYSDATE;
         BEGIN
+            INSERT INTO RESERVACIONES SELECT * FROM RESERVACIONES@SQLSERVER_BD;
+            INSERT INTO CLIENTES SELECT * FROM CLIENTES@SQLSERVER_BD;
+            INSERT INTO PERSONAS SELECT * FROM PERSONAS@SQLSERVER_BD;
+            INSERT INTO HABITACIONES SELECT * FROM HABITACIONES@SQLSERVER_BD;
+            
             -----VERIFICAMOS LA ULTIMA EXTRACCION
             SELECT MAX(FECHA_RESERVACION) + 1
             INTO V_FECHA_INICIO
@@ -233,7 +238,7 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
             IF (V_FECHA_INICIO IS NULL) THEN
                 SELECT MIN(FECHA_RESERVACION)
                 INTO V_FECHA_INICIO
-                FROM FACTURAS@SQLSERVER_BD;
+                FROM FACTURAS;
             END IF;
             
             DELETE FROM TBL_RESERVACIONES
@@ -257,10 +262,10 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
                     A.fecha_fin,
                     D.precio,
                     A.fecha_reservacion
-                FROM RESERVACIONES@SQLSERVER_BD A
-                INNER JOIN CLIENTES@SQLSERVER_BD B 
+                FROM RESERVACIONES A
+                INNER JOIN CLIENTES B 
                 ON (A.ID_CLIENTE = B.ID_CLIENTE)
-                INNER JOIN PERSONAS@SQLSERVER_BD C 
+                INNER JOIN PERSONAS C 
                 ON (B.ID_CLIENTE = C.ID_PERSONA)
                 INNER JOIN HABITACIONES D 
                 ON (A.ID_HABITACION = D.ID_HABITACION);
@@ -289,13 +294,17 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
         END P_ETL_RESERVACIONES;
 
 
-----------------------------------------------EXTRACCION INCREMENTAL FACTURAS :D
+----------------------------------------------EXTRACCION INCREMENTAL FACTURAS :'D
         CREATE OR REPLACE PROCEDURE P_ETL_FACTURAS
         AS
             V_FECHA_INICIO DATE;
             V_FECHA_FIN DATE := SYSDATE - 1;
             V_INICIO_ETL DATE:= SYSDATE;
         BEGIN
+
+        INSERT INTO FACTURAS SELECT * FROM FACTURAS@SQLSERVER_BD;
+        INSERT INTO FORMAS_DE_PAGO SELECT * FROM FORMAS_DE_PAGO@SQLSERVER_BD;
+
             -----VERIFICAMOS LA ULTIMA EXTRACCION DE FACTURAS
             SELECT MAX(FECHA_FACTURA) + 1
             INTO V_FECHA_INICIO
@@ -306,7 +315,7 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
             IF (V_FECHA_INICIO IS NULL) THEN
                 SELECT MIN(FECHA)
                 INTO V_FECHA_INICIO
-                FROM FACTURAS@SQLSERVER_BD;
+                FROM FACTURAS;
             END IF;
             
             DELETE FROM TBL_FACTURAS
@@ -332,8 +341,8 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
                     A.impuesto,
                     A.total,
                     B.forma_de_pago
-                FROM FACTURAS@SQLSERVER_BD A
-                INNER JOIN FORMAS_DE_PAGO@SQLSERVER_BD B
+                FROM FACTURAS A
+                INNER JOIN FORMAS_DE_PAGO B
                 ON (A.ID_FORMA_PAGO = B.ID_FORMA_PAGO)
                 WHERE TRUNC(A.FECHA) = TRUNC(V_FECHA_INICIO); 
 
@@ -359,7 +368,7 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_FACTURAS;
 
------------------------------------------------EXTRACCION INCREMENTAL DETALLES FACTURAS (FACTURAS Y RESERVACIONES) 
+-----------------------------------------------EXTRACCION INCREMENTAL DETALLES FACTURAS :'D
 CREATE OR REPLACE PROCEDURE P_ETL_DETALLES_FACTURAS
         AS
             V_FECHA_INICIO DATE;
@@ -367,6 +376,9 @@ CREATE OR REPLACE PROCEDURE P_ETL_DETALLES_FACTURAS
             V_VAL_EXTRACCION NUMBER;
             V_INICIO_ETL DATE:= SYSDATE;
         BEGIN
+        
+        INSERT INTO FACTURAS SELECT * FROM FACTURAS@SQLSERVER_BD;
+        INSERT INTO DETALLE_FACTURA SELECT * FROM DETALLE_FACTURA@SQLSERVER
         
             -----VERIFICAMOS LA ULTIMA EXTRACCION
             SELECT COUNT(1)
@@ -376,7 +388,7 @@ CREATE OR REPLACE PROCEDURE P_ETL_DETALLES_FACTURAS
             IF (V_VAL_EXTRACCION <= 0) THEN
                 SELECT MIN(FECHA)
                 INTO V_FECHA_INICIO
-                FROM FACTURAS@SQLSERVER_BD;
+                FROM FACTURAS;
             ELSE      
                 SELECT MAX(FECHA_FACTURA) + 1
                 INTO V_FECHA_INICIO
@@ -387,8 +399,8 @@ CREATE OR REPLACE PROCEDURE P_ETL_DETALLES_FACTURAS
             
                 FOR REGISTRO IN (SELECT A.id_reservacion,
                                         A.id_factura
-                                    FROM DETALLE_FACTURA@SQLSERVER_BD A
-                                    INNER JOIN FACTURAS@SQLSERVER_BD B
+                                    FROM DETALLE_FACTURA A
+                                    INNER JOIN FACTURAS B
                                     ON (A.ID_FACTURA = B.ID_FACTURA)
                                     WHERE TRUNC(B.FECHA) = TRUNC(V_FECHA_INICIO)) LOOP
         
@@ -423,11 +435,15 @@ CREATE OR REPLACE PROCEDURE P_ETL_DETALLES_FACTURAS
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_DETALLES_FACTURAS;
 
------------------------------------------------EXTRACCION VOLATIL SERVICIOS POR HOTEL
+-----------------------------------------------EXTRACCION VOLATIL SERVICIOS POR HOTEL :'D
 CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
         AS
             V_INICIO_ETL DATE:= SYSDATE;
         BEGIN
+
+        INSERT INTO SUCURSALES SELECT * FROM SUCURSALES@SQLSERVER_BD;
+        INSERT INTO HABITACIONES SELECT * FROM HABITACIONES@SQLSERVER_BD;
+
                 EXECUTE IMMEDIATE 'TRUNCATE TABLE tbl_habitaciones';
                 
                 INSERT INTO tbl_habitaciones (
@@ -446,8 +462,8 @@ CREATE OR REPLACE PROCEDURE P_ETL_HABITACIONES
                     A.cantidad_camas,
                     A.descripcion,
                     A.disponible
-                FROM HABITACIONES@SQLSERVER_BD A
-                INNER JOIN SUCURSALES@SQLSERVER_BD B
+                FROM HABITACIONES A
+                INNER JOIN SUCURSALES B
                 ON (A.ID_SUCURSAL = B.ID_SUCURSAL);
                 
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE HABITACIONES FINALIZADA');
