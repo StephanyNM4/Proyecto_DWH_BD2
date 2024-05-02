@@ -1,7 +1,6 @@
-
-CREATE DATABASE hoteles4;
+CREATE DATABASE hoteles;
 GO
-USE hoteles4;
+USE hoteles;
 GO
 
 CREATE TABLE paises(
@@ -235,7 +234,7 @@ CREATE TABLE evaluaciones_hotel (
     condiciones_propiedad INT DEFAULT 5,
     cuidado_medio_ambiente INT DEFAULT 5,
     calificacion_promedio AS ROUND((limpieza + servicio_y_personal + condiciones_propiedad + cuidado_medio_ambiente) / 4.0, 2),
-	fecha_evaluacion DATE NOT NULL,
+	fecha_evaluacion VARCHAR(20) NOT NULL DEFAULT FORMAT(GETDATE(), 'dd/MM/yy'),
 	id_cliente INT NOT NULL,
 	id_sucursal INT NOT NULL,
 	sugerencias VARCHAR(1000)
@@ -338,8 +337,8 @@ CREATE TABLE detalle_factura(
 	id_factura VARCHAR(50) NOT NULL,
 	id_reservacion INT NOT NULL,
 
-	CONSTRAINT fk_detalle_factura FOREIGN KEY (id_factura) REFERENCES facturas(id_factura),
-	CONSTRAINT fk_detalle_reservacion FOREIGN KEY (id_reservacion) REFERENCES reservaciones(id_reservacion),
+	CONSTRAINT fk_detalle_factura FOREIGN KEY (id_factura) REFERENCES facturas(id_factura) ON DELETE CASCADE,
+	CONSTRAINT fk_detalle_reservacion FOREIGN KEY (id_reservacion) REFERENCES reservaciones(id_reservacion) ON DELETE CASCADE,
 	CONSTRAINT  uq_factura UNIQUE (id_factura, id_reservacion)
 );
 GO

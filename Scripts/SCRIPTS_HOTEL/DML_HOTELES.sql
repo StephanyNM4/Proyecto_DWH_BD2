@@ -1,4 +1,4 @@
-use hoteles4;
+use hoteles;
 GO 
 
 INSERT INTO categorias_amenidades (categoria)

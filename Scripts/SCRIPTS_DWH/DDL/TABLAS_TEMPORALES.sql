@@ -4,7 +4,7 @@ CREATE GLOBAL TEMPORARY TABLE tipos_servicios (
 ) ON COMMIT DELETE ROWS;
         
 CREATE GLOBAL TEMPORARY TABLE servicios (
-    id_servicio INT,
+    id_servicio VARCHAR(50),
     servicio VARCHAR(500),
     descripcion VARCHAR(500),
     id_tipo INT
@@ -65,7 +65,7 @@ CREATE GLOBAL TEMPORARY TABLE hoteles(
 
 CREATE GLOBAL TEMPORARY TABLE servicios_sucursales(
 	id INT,
-	id_servicio INT,
+	id_servicio VARCHAR(50),
 	id_sucursal INT
 )ON COMMIT DELETE ROWS;
 
@@ -95,7 +95,7 @@ CREATE GLOBAL TEMPORARY TABLE politicas(
 
 CREATE GLOBAL TEMPORARY TABLE clientes(
 	id_cliente INT,
-	fecha_registro DATE,
+	fecha_registro VARCHAR(20),
 	usuario VARCHAR(50),
 	contrasenia VARCHAR(50),
 	id_persona INT
@@ -106,7 +106,6 @@ CREATE GLOBAL TEMPORARY TABLE personas(
 	nombre  VARCHAR(100),
 	apellido VARCHAR(100),
 	no_identidad VARCHAR(100),
-	fecha_nacimiento DATE,
 	correo VARCHAR(50),
 	telefono VARCHAR(50),
 	id_estado_civil INT,
@@ -117,4 +116,50 @@ CREATE GLOBAL TEMPORARY TABLE personas(
 CREATE GLOBAL TEMPORARY TABLE generos(
 	id_genero INT,
 	genero VARCHAR(50)
+) ON COMMIT DELETE ROWS;
+
+
+CREATE GLOBAL TEMPORARY TABLE reservaciones(
+	id_reservacion INT,
+	fecha_reservacion VARCHAR(20),
+	fecha_inicio VARCHAR(20),
+	fecha_fin VARCHAR(20),
+	id_cliente INT,
+	id_habitacion INT,
+	pagado CHAR(1),
+	activa CHAR(1)
+) ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE facturas(
+	id_factura VARCHAR(50),
+	fecha VARCHAR(20),
+	subtotal DECIMAL(10,2),
+	impuesto DECIMAL(10,2),
+	total DECIMAL(10,2),
+	id_cliente INT,
+	id_forma_pago INT NOT NULL
+) ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE detalle_factura(
+	id INT,
+	id_factura VARCHAR(50),
+	id_reservacion INT
+) ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE formas_de_pago(
+	id_forma_pago INT,
+	forma_de_pago VARCHAR(100)
+) ON COMMIT DELETE ROWS;
+
+CREATE GLOBAL TEMPORARY TABLE evaluaciones_hotel (
+	id_evaluacion INT,
+    limpieza INT,
+    servicio_y_personal INT,
+    condiciones_propiedad INT,
+    cuidado_medio_ambiente INT,
+    calificacion_promedio INT,
+	fecha_evaluacion VARCHAR(20),
+	id_cliente INT,
+	id_sucursal INT,
+	sugerencias VARCHAR(1000)
 ) ON COMMIT DELETE ROWS;

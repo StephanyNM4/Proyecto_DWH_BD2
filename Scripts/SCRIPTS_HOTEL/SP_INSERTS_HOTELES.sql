@@ -2,7 +2,7 @@
 
 -- OJO --
 --DEBE EJECUTAR EL SCRIPT DML_HOTELES ANTES PARA TENER LOS REGISTROS NECESARIOS Y EVITAR ERRORES.
-USE hoteles4;
+USE hoteles;
 GO
 
 --- 1000 RESERVACIONES 
@@ -15,9 +15,9 @@ BEGIN
 
 		WHILE @contador < 1000 
 		BEGIN
-			INSERT INTO reservaciones (fecha_inicio, fecha_fin, id_cliente, id_habitacion)
+			INSERT INTO reservaciones (fecha_inicio, fecha_fin, id_cliente, id_habitacion, fecha_reservacion)
 			VALUES
-				(FORMAT(GETDATE(), 'dd/MM/yy'), FORMAT(DATEADD( DAY, ROUND(RAND() * 100 + 1, 0), GETDATE()), 'dd/MM/yy') , ROUND(RAND() * 19 + 1, 0), ROUND(RAND() * 19 + 1, 0));
+				(FORMAT( GETDATE(), 'dd/MM/yy'), FORMAT(DATEADD( DAY, ROUND(RAND() * 100 + 1, 0), GETDATE()), 'dd/MM/yy') , ROUND(RAND() * 19 + 1, 0), ROUND(RAND() * 19 + 1, 0), FORMAT( DATEADD(DAY, -3, GETDATE()), 'dd/MM/yy'));
 		SET @contador = @contador + 1;
 		END;
 		COMMIT TRANSACTION
@@ -47,7 +47,7 @@ BEGIN
 				 ROUND(RAND() * 4 + 1, 0),
 				 ROUND(RAND() * 4 + 1, 0),
 				 ROUND(RAND() * 4 + 1, 0),
-				 GETDATE(),
+				 FORMAT( DATEADD(DAY, -3, GETDATE()), 'dd/MM/yy'),
 				 ROUND(RAND() * 19 + 1, 0),
 				 ROUND(RAND() * 3 + 1, 0),
 				 CONCAT('Sugerencia ', (@contador + 1))
@@ -94,9 +94,9 @@ BEGIN
 
 		SET @id_factura = CONCAT('H',FORMAT(@contador,'D'+CAST(5 AS VARCHAR)));
 
-		INSERT INTO facturas ( id_factura, subtotal, impuesto, total, id_cliente, id_forma_pago)
+		INSERT INTO facturas ( id_factura, subtotal, impuesto, total, id_cliente, id_forma_pago, fecha)
 		VALUES 
-			( @id_factura, @precio_reservacion, @impuesto, @precio_reservacion + @impuesto, @id_cliente, ROUND( RAND() * 9 + 1, 0));
+			( @id_factura, @precio_reservacion, @impuesto, @precio_reservacion + @impuesto, @id_cliente, ROUND( RAND() * 9 + 1, 0), FORMAT( DATEADD(DAY, -3, GETDATE()), 'dd/MM/yy'));
 
 		INSERT INTO detalle_factura (id_factura, id_reservacion)
 		VALUES
