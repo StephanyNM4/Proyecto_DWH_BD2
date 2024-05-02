@@ -216,7 +216,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 -------INSERTAMOS EN LOGS
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_VUELOS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                                 
@@ -229,7 +229,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK;
                     P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_VUELOS',
                             P_fecha_inicio => V_INICIO_ETL,
-                            P_nombre_base => 'BASE',
+                            P_nombre_base => 'AEROLINEA',
                             P_exito => 'FAIL',
                             P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_VUELOS;
@@ -264,7 +264,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE ASIENTOS FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_ASIENTOS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -275,7 +275,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK; 
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_ASIENTOS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_ASIENTOS;
@@ -325,7 +325,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE ESCALAS FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_ESCALAS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -336,7 +336,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK; 
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_ESCALAS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_ESCALAS;
@@ -377,7 +377,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE CLIENTES FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_CLIENTES',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -388,7 +388,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK; 
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_CLIENTES',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_CLIENTES;
@@ -456,7 +456,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE BOLETOS FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_BOLETOS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -467,7 +467,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_BOLETOS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_BOLETOS;
@@ -525,7 +525,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE FACTURAS FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_FACTURAS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -536,7 +536,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_FACTURAS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_FACTURAS;
@@ -594,7 +594,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE BOLETOS POR FACTURA FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_BOLETO_POR_FACTURA',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -606,7 +606,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_BOLETO_POR_FACTURA',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_BOLETO_POR_FACTURA;
@@ -636,7 +636,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_SERVICIOS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -647,7 +647,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_SERVICIOS',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_SERVICIOS;
@@ -700,7 +700,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE SERVICIOS POR BOLETO FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_SERVICIOS_POR_BOLETO',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -711,7 +711,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_SERVICIOS_POR_BOLETO',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_SERVICIOS_POR_BOLETO;        
@@ -769,7 +769,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE EQUIPAJES FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -780,7 +780,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_EQUIPAJES;
@@ -836,7 +836,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 DBMS_OUTPUT.PUT_LINE('EXTRACCION DE EQUIPAJES POR BOLETO FINALIZADA');
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES_POR_BOLETO',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'SUCCESS',
                                 P_error => '');
                 COMMIT;
@@ -847,7 +847,7 @@ CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY PKG_ETLS_AEROLINEA IS
                 ROLLBACK;
                 P_INSERT_LOG(P_nombre => 'PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES_POR_BOLETO',
                                 P_fecha_inicio => V_INICIO_ETL,
-                                P_nombre_base => 'BASE',
+                                P_nombre_base => 'AEROLINEA',
                                 P_exito => 'FAIL',
                                 P_error => SQLCODE || '--' ||SQLERRM);
         END P_ETL_EQUIPAJES_POR_BOLETO;

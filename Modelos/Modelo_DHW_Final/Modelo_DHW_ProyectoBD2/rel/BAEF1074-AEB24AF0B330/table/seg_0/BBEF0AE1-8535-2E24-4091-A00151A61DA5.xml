@@ -78,6 +78,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="FECHA_RESERVACION" id="4CFFEEDA-AE5D-BDD6-6F3C-25E48E6B8AEB">
+<createdBy>steph</createdBy>
+<createdTime>2024-05-02 01:29:36 UTC</createdTime>
+<ownerDesignName>Modelo_DHW_ProyectoBD2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="3B6922B4-CC60-45F2-5F0B-F5024346789C" name="TBL_RESERVACIONES_PK">
