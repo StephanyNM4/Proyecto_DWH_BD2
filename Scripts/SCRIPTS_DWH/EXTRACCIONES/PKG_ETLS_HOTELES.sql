@@ -9,12 +9,11 @@ CREATE OR REPLACE PACKAGE PKG_ETLS_HOTELES IS
     PROCEDURE SP_ETL_DETALLES_FACTURAS;
     PROCEDURE SP_ETL_EVALUACIONES;
     
---------------------- ETLs INFORMACIÓN VOLÁTIL
-    PROCEDURE SP_ETL_SERVICIOS; --TAMBIÉN INSERTA EN LA TABLA TIPOS_SERVICIOS
+    PROCEDURE SP_ETL_SERVICIOS;
     PROCEDURE SP_ETL_AMENIDADES;
     PROCEDURE SP_ETL_POLITICAS; 
-    PROCEDURE SP_ETL_HOTELES;-- TAMBIÉN LLENA LAS TABLAS POLITICAS_X_HOTEL Y SERVICIOS_X_HOTEL
-    PROCEDURE SP_ETL_HABITACIONES; -- TAMBIEN LLENA LA TABLA AMENIDADES_X_HABITACION
+    PROCEDURE SP_ETL_HOTELES;
+    PROCEDURE SP_ETL_HABITACIONES;
     PROCEDURE SP_ETL_POLITICAS_POR_HOTEL;
     PROCEDURE SP_ETL_SERVICIOS_POR_HOTEL;
     PROCEDURE SP_ETL_AMENIDADES_X_HABITACION;
@@ -67,12 +66,12 @@ CREATE OR REPLACE PACKAGE BODY PKG_ETLS_HOTELES IS
                     fecha_reservacion
                 ) SELECT
                     A.id_reservacion,
-                    A.id_habitacion,
+                    D.codigo,
                     C.correo,
-                    TO_DATE(A.fecha_inicio, 'DD/MM/YY'),
-                    TO_DATE(A.fecha_fin, 'DD/MM/YY'),
+                    A.fecha_inicio,
+                    A.fecha_fin,
                     D.precio,
-                    TO_DATE(A.fecha_reservacion, 'DD/MM/YY')
+                    A.fecha_reservacion
                 FROM RESERVACIONES A
                     INNER JOIN CLIENTES B 
                     ON (A.ID_CLIENTE = B.ID_CLIENTE)
