@@ -50,15 +50,23 @@ FROM TBL_LOGS;
 ------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------PRUEBA AEROLINEAS---------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
+------------------------ TRUNCATE TABLAS
+TRUNCATE TABLE TBL_EQUIPAJES_POR_BOLETO;
+TRUNCATE TABLE TBL_EQUIPAJES;
+TRUNCATE TABLE TBL_SERVICIOS_POR_BOLETO;
+TRUNCATE TABLE TBL_SERVICIOS;
+TRUNCATE TABLE TBL_BOLETO_POR_FACTURA;
+TRUNCATE TABLE TBL_FACTURAS;
+TRUNCATE TABLE TBL_BOLETOS;
+TRUNCATE TABLE TBL_CLIENTES;
+TRUNCATE TABLE TBL_ESCALAS;
+TRUNCATE TABLE TBL_ASIENTOS;
+TRUNCATE TABLE TBL_VUELOS;
+
 ------------------------ CANTIDAD DE REGISTROS 
 SELECT 'TBL_CLIENTES' AS tabla, 
     COUNT(*) AS cantidad_registros 
-    FROM TBL_CLIENTES;
-UNION ALL
-SELECT 
-    'TBL_ESCALAS' AS tabla, 
-    COUNT(*) AS cantidad_registros 
-FROM TBL_ESCALAS
+    FROM TBL_CLIENTES
 UNION ALL
     SELECT 'TBL_VUELOS' AS tabla, 
     COUNT(*) AS cantidad_registros 
@@ -75,10 +83,6 @@ UNION ALL
     SELECT 'TBL_FACTURA_BOLETOS' AS tabla, 
     COUNT(*) AS cantidad_registros 
     FROM TBL_FACTURA_BOLETOS
-UNION ALL
-    SELECT 'TBL_SEGUIMIENTOS_EQUIPAJE' AS tabla, 
-    COUNT(*) AS cantidad_registros 
-    FROM TBL_SEGUIMIENTOS_EQUIPAJE
 UNION ALL
     SELECT 'TBL_EQUIPAJES' AS tabla, 
     COUNT(*) AS cantidad_registros 
