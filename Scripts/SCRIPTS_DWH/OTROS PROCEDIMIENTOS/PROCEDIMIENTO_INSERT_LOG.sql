@@ -31,7 +31,8 @@ BEGIN
     P_INSERT_LOG(P_nombre => 'NOMBRE_PROCEDIMIENTO',
     P_fecha_inicio => SYSDATE, --CAPTURAR LA FECHA CUANDO INICIE EL ETL
     P_nombre_base => 'BASE',
-    P_exito => 'SUCCESS'); --'FAIL' si falla
+    P_exito => 'SUCCESS',
+    P_error => NULL); --'FAIL' si falla
 END;
 
 
