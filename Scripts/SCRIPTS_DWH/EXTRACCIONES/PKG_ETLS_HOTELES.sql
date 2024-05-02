@@ -31,7 +31,7 @@ CREATE OR REPLACE PACKAGE BODY PKG_ETLS_HOTELES IS
     BEGIN
         --LLENAR TABLAS TEMPORALES CON LA INFO EXTRAIDA DE SQL SERVER
         INSERT INTO tipos_servicios SELECT * FROM tipos_servicios@SQLSERVER_BD;
-        INSERT into servicios SELECT * FROM servicios@SQLSERVER_BD;
+        INSERT into servicios SELECT * FROM clientes@SQLSERVER_BD;
         
         INSERT INTO tbl_servicios (
             tbl_servicios.servicio,

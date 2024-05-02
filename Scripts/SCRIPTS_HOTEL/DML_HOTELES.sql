@@ -1,4 +1,4 @@
-use hoteles;
+use hoteles4;
 GO 
 
 INSERT INTO categorias_amenidades (categoria)
@@ -288,44 +288,44 @@ VALUES
 GO
 
 -- Insertar datos en la tabla POLITICAS_SUCURSAL
-INSERT INTO personas (nombre, apellido, no_identidad, fecha_nacimiento, correo, telefono, id_estado_civil, id_genero, id_direccion)
+INSERT INTO personas (nombre, apellido, no_identidad, correo, telefono, id_estado_civil, id_genero, id_direccion)
 VALUES
-	('Dorian Samantha', 'Contreras Velasquez', '0801200302345', '2003-01-25', 'dcontreras@correo.com', '89756654', 1, 1, 1),
-	('Kattherine Mayely', 'Hernandez', '0501200416400', '2002-01-26', 'khernan@correo.com', '89760331', 2, 2, 4),
-	('Stephany Nicole', 'Matamoros', '0801200302346', '2002-01-25', 'stephm@correo.com', '89760123', 2, 2, 5),
-	('Erick', 'Marín Reyes', '0702195002345', '1950-01-25', 'ereyes@correo.com',  '89123331', 2, 1, 6),
-	('Josefo Orlando', 'Hernandez', '0801194002345', '1940-01-25', 'jhernan@correo.com', '98723331', 2, 1, 7),
-	('Jose', 'Reyes', '0801200536789', '2005-01-20', 'jreyes@correo.com', '90823331', 2, 1, 9),
-	('Jose Luis', 'Garcia Montero', '0804197002345', '2003-01-25', 'jgarcia@correo.com', '89764331', 2, 1, 2),
-	('Lesvia', 'Suarez', '0801201002355', '2010-01-25', 'lsuarez@correo.com', '89765331', 2, 2, 3),
-	('Adrian', 'Martinez', '0801200102345', '2001-01-25', 'amartinez@correo.com', '89123331', 2, 1, 6),
-	('Saida', 'Ramos', '0801201002345', '2010-01-29', 'sramos@correo.com', '89120651', 2, 2, 8),
-    ('Nestor', 'Luque', '0801219900234', '1990-01-25', 'nluque@correo.com', '86103331', 2, 1, 10),
-	('Daniel', 'Muñoz', '0801219900290', '1990-02-25', 'daniel_munoz@gmail.com', '+2000111222', 3, 1, 11),
-	('Isabella', 'Vasquez', '0801219900235', '1990-03-25', 'isabella_vasquez@gmail.com', '+2111222333', 3, 2, 12),
-	('Samuel', 'Ramírez', '0801219900735', '1990-11-25', 'samuel_ramirez@gmail.com', '+2222333444', 3, 1, 13),
-	('Martina', 'Torres', '0803219900735', '1990-11-27', 'martina_torres@gmail.com', '+2333444555', 3, 2, 14),
-    ('Juan', 'González', '0802219900735', '1990-11-28', 'juan_gonzalez@gmail.com', '+2444555666', 3, 1, 15);
+	('Dorian Samantha', 'Contreras Velasquez', '0801200302345', 'dcontreras@correo.com', '89756654', 1, 1, 1),
+	('Kattherine Mayely', 'Hernandez', '0501200416400', 'khernan@correo.com', '89760331', 2, 2, 4),
+	('Stephany Nicole', 'Matamoros', '0801200302346', 'stephm@correo.com', '89760123', 2, 2, 5),
+	('Erick', 'Marín Reyes', '0702195002345', 'ereyes@correo.com',  '89123331', 2, 1, 6),
+	('Josefo Orlando', 'Hernandez', '0801194002345', 'jhernan@correo.com', '98723331', 2, 1, 7),
+	('Jose', 'Reyes', '0801200536789', 'jreyes@correo.com', '90823331', 2, 1, 9),
+	('Jose Luis', 'Garcia Montero', '0804197002345', 'jgarcia@correo.com', '89764331', 2, 1, 2),
+	('Lesvia', 'Suarez', '0801201002355', 'lsuarez@correo.com', '89765331', 2, 2, 3),
+	('Adrian', 'Martinez', '0801200102345', 'amartinez@correo.com', '89123331', 2, 1, 6),
+	('Saida', 'Ramos', '0801201002345', 'sramos@correo.com', '89120651', 2, 2, 8),
+    ('Nestor', 'Luque', '0801219900234', 'nluque@correo.com', '86103331', 2, 1, 10),
+	('Daniel', 'Muñoz', '0801219900290', 'daniel_munoz@gmail.com', '+2000111222', 3, 1, 11),
+	('Isabella', 'Vasquez', '0801219900235', 'isabella_vasquez@gmail.com', '+2111222333', 3, 2, 12),
+	('Samuel', 'Ramírez', '0801219900735', 'samuel_ramirez@gmail.com', '+2222333444', 3, 1, 13),
+	('Martina', 'Torres', '0803219900735', 'martina_torres@gmail.com', '+2333444555', 3, 2, 14),
+    ('Juan', 'González', '0802219900735', 'juan_gonzalez@gmail.com', '+2444555666', 3, 1, 15);
 GO
 
-INSERT INTO personas (nombre, apellido, no_identidad, fecha_nacimiento, correo, telefono, id_estado_civil, id_genero, id_direccion)
+INSERT INTO personas (nombre, apellido, no_identidad, correo, telefono, id_estado_civil, id_genero, id_direccion)
 VALUES 
-	('Juan Pablo', 'Lopez', '0702200302345', '2003-01-25', 'juanpablo@correo.com', '89756654', 1, 1, 1),
-	('Maria Fernanda', 'Gutierrez', '0301200416400', '2002-01-26', 'maria@correo.com', '89760331', 2, 2, 4),
-	('Carlos', 'Perez', '0302200302346', '2002-01-25', 'carlos@correo.com', '89760123', 2, 2, 5),
-	('Ana Maria', 'Rodriguez', '0902195002345', '1950-01-25', 'ana@correo.com',  '89123331', 2, 1, 6),
-	('Juan Carlos', 'Sanchez', '0901194002345', '1940-01-25', 'juancarlos@correo.com', '98723331', 2, 1, 7),
-	('Luis', 'Martinez', '0301200536789', '2005-01-20', 'luis@correo.com', '90823331', 2, 1, 9),
-	('Sara', 'Hernandez', '0102197002345', '2003-01-25', 'sara@correo.com', '89764331', 2, 1, 2),
-	('Laura', 'Diaz', '0809201002355', '2010-01-25', 'laura@correo.com', '89765331', 2, 2, 3),
-	('Pedro', 'Ramirez', '0405200102345', '2001-01-25', 'pedro@correo.com', '89123331', 2, 1, 6),
-	('Martha', 'Lopez', '0405201002345', '2010-01-29', 'martha@correo.com', '89120651', 2, 2, 8),
-	('Luisa', 'Garcia', '0405219900234', '1990-01-25', 'luisa@correo.com', '86103331', 2, 1, 10),
-	('Miguel', 'Torres', '0405219900290', '1990-02-25', 'miguel@correo.com', '+2000111222', 3, 1, 11),
-	('Carmen', 'Sanchez', '0203219900235', '1990-03-25', 'carmen@correo.com', '+2111222333', 3, 2, 12),
-	('Manuel', 'Gonzalez', '0203219900935', '1990-11-25', 'manuel@correo.com', '+2222333444', 3, 1, 13),
-	('Rosa', 'Hernandez', '0203219900735', '1990-11-27', 'rosa@correo.com', '+2333444555', 3, 2, 14),
-	('Josefina', 'Martinez', '1803219900735', '1990-11-28', 'josefina@correo.com', '+2444555666', 3, 1, 15);
+	('Juan Pablo', 'Lopez', '0702200302345', 'juanpablo@correo.com', '89756654', 1, 1, 1),
+	('Maria Fernanda', 'Gutierrez', '0301200416400', 'maria@correo.com', '89760331', 2, 2, 4),
+	('Carlos', 'Perez', '0302200302346', 'carlos@correo.com', '89760123', 2, 2, 5),
+	('Ana Maria', 'Rodriguez', '0902195002345', 'ana@correo.com',  '89123331', 2, 1, 6),
+	('Juan Carlos', 'Sanchez', '0901194002345', 'juancarlos@correo.com', '98723331', 2, 1, 7),
+	('Luis', 'Martinez', '0301200536789', 'luis@correo.com', '90823331', 2, 1, 9),
+	('Sara', 'Hernandez', '0102197002345', 'sara@correo.com', '89764331', 2, 1, 2),
+	('Laura', 'Diaz', '0809201002355', 'laura@correo.com', '89765331', 2, 2, 3),
+	('Pedro', 'Ramirez', '0405200102345', 'pedro@correo.com', '89123331', 2, 1, 6),
+	('Martha', 'Lopez', '0405201002345', 'martha@correo.com', '89120651', 2, 2, 8),
+	('Luisa', 'Garcia', '0405219900234', 'luisa@correo.com', '86103331', 2, 1, 10),
+	('Miguel', 'Torres', '0405219900290', 'miguel@correo.com', '+2000111222', 3, 1, 11),
+	('Carmen', 'Sanchez', '0203219900235', 'carmen@correo.com', '+2111222333', 3, 2, 12),
+	('Manuel', 'Gonzalez', '0203219900935', 'manuel@correo.com', '+2222333444', 3, 1, 13),
+	('Rosa', 'Hernandez', '0203219900735', 'rosa@correo.com', '+2333444555', 3, 2, 14),
+	('Josefina', 'Martinez', '1803219900735', 'josefina@correo.com', '+2444555666', 3, 1, 15);
 GO
 
 --Insertar datos en la tabla empleados 
@@ -457,7 +457,7 @@ GO
 --Insertar datos en las tabla servicios_sucursales.
 INSERT INTO servicios_sucursales (id_servicio, id_sucursal)
 VALUES
-    ('H_001', 1), ('H_004', 1), ('H_003', 1), ('H_004', 1), ('H_005', 1),
+    ('H_001', 1), ('H_002', 1), ('H_003', 1), ('H_004', 1), ('H_005', 1),
     ('H_006', 2), ('H_007', 2), ('H_008', 2), ('H_009', 2), ('H_010', 2),
     ('H_011', 3), ('H_012', 3), ('H_013', 3), ('H_014', 3), ('H_015', 3),
     ('H_016', 4), ('H_017', 4), ('H_018', 4), ('H_019', 4), ('H_020', 4);

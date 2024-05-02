@@ -51,12 +51,13 @@ BEGIN
 END;
 GO
 
+select dbo.F_GenerarUsername('Maria');
+
 ---Este procedimiento se usará para el formulario de registro. Una vez registrado, se le proporcionará un usuario y una contraseña temporal.
 CREATE PROCEDURE SP_RegistrarCliente 
 	@nombre VARCHAR(100),
 	@apellido VARCHAR(100),
 	@identidad VARCHAR(20),
-	@fecha_nac DATE,
 	@correo VARCHAR(50),
 	@telefono VARCHAR(20),
 	@estado_civil VARCHAR(20),
@@ -103,9 +104,9 @@ BEGIN
 			---OBTENER EL ID DE LA DIRECCIÓN RECIEN INSERTADA
 			SET @id_direccion_recien_insertada = SCOPE_IDENTITY();
 			
-			INSERT INTO personas (nombre, apellido, no_identidad, fecha_nacimiento, correo, telefono, id_estado_civil, id_genero, id_direccion)
+			INSERT INTO personas (nombre, apellido, no_identidad, correo, telefono, id_estado_civil, id_genero, id_direccion)
 			VALUES 
-				(@nombre, @apellido, @identidad, @fecha_nac, @correo, @telefono, @id_estado_civil, @id_genero, @id_direccion_recien_insertada);
+				(@nombre, @apellido, @identidad, @correo, @telefono, @id_estado_civil, @id_genero, @id_direccion_recien_insertada);
 
 			---OBTENER EL ID DE LA PERSONA RECIEN INSERTADA
 			SET @id_persona_recien_insertada = SCOPE_IDENTITY();
@@ -120,7 +121,7 @@ BEGIN
 
 			INSERT INTO clientes (fecha_registro, usuario, contrasenia, id_persona)
 			VALUES 
-				(GETDATE(), @username, @contrasenia_temporal, @id_persona_recien_insertada);
+				(FORMAT(GETDATE(), 'dd/MM/yy'), @username, @contrasenia_temporal, @id_persona_recien_insertada);
 
 		COMMIT TRANSACTION;
 	END TRY
@@ -359,15 +360,16 @@ BEGIN
 		@nombre = 'Usuario de Prueba',
 		@apellido = 'Apellido Prueba',
 		@identidad = 'XXXXXXXXXXXX2',
-		@fecha_nac = '2000-01-01',
 		@correo = 'usuario@prueba.com',
 		@telefono = '12345678',
 		@estado_civil = 'Soltero',
 		@genero = 'Masculino',
 		@ciudad = 'Tegucigalpa',
-		@referencia = 'Col. Suyapa';
+		@referencia = 'Col. Suyapa 2';
 END;
 GO
+
+select * from direcciones;
 
 BEGIN
 	EXECUTE SP_HacerReservacion 

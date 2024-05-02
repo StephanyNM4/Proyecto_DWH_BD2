@@ -1,6 +1,7 @@
-CREATE DATABASE hoteles;
+
+CREATE DATABASE hoteles4;
 GO
-USE hoteles;
+USE hoteles4;
 GO
 
 CREATE TABLE paises(
@@ -46,7 +47,6 @@ CREATE TABLE personas(
 	nombre  VARCHAR(100) NOT NULL,
 	apellido VARCHAR(100) NOT NULL,
 	no_identidad VARCHAR(100) UNIQUE NOT NULL,
-	fecha_nacimiento DATE,
 	correo VARCHAR(50),
 	telefono VARCHAR(50),
 	id_estado_civil INT NOT NULL,
@@ -138,7 +138,7 @@ GO
 
 CREATE TABLE clientes(
 	id_cliente INT IDENTITY PRIMARY KEY,
-	fecha_registro DATE NOT NULL DEFAULT GETDATE(),
+	fecha_registro VARCHAR(20) NOT NULL DEFAULT FORMAT(GETDATE(), 'dd/MM/yy'),
 	usuario VARCHAR(50) UNIQUE NOT NULL,
 	contrasenia VARCHAR(50) NOT NULL,
 	id_persona INT NOT NULL,
@@ -300,9 +300,9 @@ GO
 
 CREATE TABLE reservaciones(
 	id_reservacion INT IDENTITY PRIMARY KEY,
-	fecha_reservacion DATE DEFAULT GETDATE(),
-	fecha_inicio DATE NOT NULL,
-	fecha_fin DATE NOT NULL,
+	fecha_reservacion VARCHAR(20) NOT NULL DEFAULT FORMAT(GETDATE(), 'dd/MM/yy'),
+	fecha_inicio VARCHAR(20) NOT NULL,
+	fecha_fin VARCHAR(20) NOT NULL,
 	id_cliente INT NOT NULL,
 	id_habitacion INT NOT NULL,
 	pagado BIT DEFAULT 0,
@@ -321,7 +321,7 @@ GO
 
 CREATE TABLE facturas(
 	id_factura VARCHAR(50) PRIMARY KEY,
-	fecha DATE DEFAULT GETDATE(),
+	fecha VARCHAR(20) NOT NULL DEFAULT FORMAT(GETDATE(), 'dd/MM/yy'),
 	subtotal DECIMAL(10,2) DEFAULT 0,
 	impuesto DECIMAL(10,2) DEFAULT 0,
 	total DECIMAL(10,2) DEFAULT 0,

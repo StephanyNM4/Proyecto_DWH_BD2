@@ -2,7 +2,7 @@
 
 -- OJO --
 --DEBE EJECUTAR EL SCRIPT DML_HOTELES ANTES PARA TENER LOS REGISTROS NECESARIOS Y EVITAR ERRORES.
-USE hoteles;
+USE hoteles4;
 GO
 
 --- 1000 RESERVACIONES 
@@ -17,17 +17,15 @@ BEGIN
 		BEGIN
 			INSERT INTO reservaciones (fecha_inicio, fecha_fin, id_cliente, id_habitacion)
 			VALUES
-				(GETDATE(), DATEADD( DAY, ROUND(RAND() * 100 + 1, 0), GETDATE()), ROUND(RAND() * 19 + 1, 0), ROUND(RAND() * 19 + 1, 0));
+				(FORMAT(GETDATE(), 'dd/MM/yy'), FORMAT(DATEADD( DAY, ROUND(RAND() * 100 + 1, 0), GETDATE()), 'dd/MM/yy') , ROUND(RAND() * 19 + 1, 0), ROUND(RAND() * 19 + 1, 0));
 		SET @contador = @contador + 1;
 		END;
 		COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
-		PRINT 'ERROR AL INSERTAR RESERVACIONES.';
+		PRINT 'ERROR AL INSERTAR RESERVACIONES.'  + ERROR_MESSAGE();
 		ROLLBACK;
 	END CATCH
-	
-
 END;
 GO
 
@@ -61,7 +59,7 @@ BEGIN
 		COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
-		PRINT 'ERROR AL INSERTAR FACTURAS.';
+		PRINT 'ERROR AL INSERTAR EVALUACIONES.';
 		ROLLBACK;
 	END CATCH
 END;
@@ -76,7 +74,8 @@ BEGIN
 			DECLARE @contador INT = 1,
 			@precio_reservacion DECIMAL(10,2) = 0,
 			@impuesto DECIMAL(10,2) = 0,
-			@id_cliente INT;
+			@id_cliente INT,
+			@id_factura VARCHAR(20);
 
 	WHILE @contador < 1001
 	BEGIN
@@ -93,20 +92,22 @@ BEGIN
 			FROM reservaciones
 			WHERE id_reservacion = @contador);
 
+		SET @id_factura = CONCAT('H',FORMAT(@contador,'D'+CAST(5 AS VARCHAR)));
+
 		INSERT INTO facturas ( id_factura, subtotal, impuesto, total, id_cliente, id_forma_pago)
 		VALUES 
-			(CONCAT('H', FORMAT(@contador, 'D' + CAST(5 AS VARCHAR))), @precio_reservacion, @impuesto, @precio_reservacion + @impuesto, @id_cliente, ROUND( RAND() * 9 + 1, 0));
+			( @id_factura, @precio_reservacion, @impuesto, @precio_reservacion + @impuesto, @id_cliente, ROUND( RAND() * 9 + 1, 0));
 
 		INSERT INTO detalle_factura (id_factura, id_reservacion)
 		VALUES
-			(@contador, @contador);
+			(@id_factura, @contador);
 
 		SET @contador = @contador + 1;
 	END;
 		COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
-		PRINT 'ERROR AL INSERTAR FACTURAS.';
+		PRINT 'ERROR AL INSERTAR FACTURAS.' + ERROR_MESSAGE();
 		ROLLBACK;
 	END CATCH
 END;
