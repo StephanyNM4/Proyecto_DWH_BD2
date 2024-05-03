@@ -461,7 +461,7 @@ CREATE OR REPLACE PACKAGE BODY PKG_ETLS_HOTELES IS
                                         P_nombre =>REGISTRO.nombre ,
                                         P_apellido =>REGISTRO.apellido ,
                                         P_telefono =>REGISTRO.telefono ,
-                                        P_contrasena_aerolinea =>REGISTRO.contrasenia ,
+                                        P_contrasena_hotel =>REGISTRO.contrasenia ,
                                         P_GENERO => V_GENERO,
                                         P_fecha_registro =>REGISTRO.fecha_registro );
                 

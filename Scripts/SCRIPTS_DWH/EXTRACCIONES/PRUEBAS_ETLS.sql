@@ -45,20 +45,13 @@ SELECT ID,
     ERROR
 FROM TBL_LOGS;
 
-
-
 ------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------PRUEBA AEROLINEAS---------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
 ------------------------ CANTIDAD DE REGISTROS 
 SELECT 'TBL_CLIENTES' AS tabla, 
     COUNT(*) AS cantidad_registros 
-    FROM TBL_CLIENTES;
-UNION ALL
-SELECT 
-    'TBL_ESCALAS' AS tabla, 
-    COUNT(*) AS cantidad_registros 
-FROM TBL_ESCALAS
+    FROM TBL_CLIENTES
 UNION ALL
     SELECT 'TBL_VUELOS' AS tabla, 
     COUNT(*) AS cantidad_registros 
@@ -75,10 +68,6 @@ UNION ALL
     SELECT 'TBL_FACTURA_BOLETOS' AS tabla, 
     COUNT(*) AS cantidad_registros 
     FROM TBL_FACTURA_BOLETOS
-UNION ALL
-    SELECT 'TBL_SEGUIMIENTOS_EQUIPAJE' AS tabla, 
-    COUNT(*) AS cantidad_registros 
-    FROM TBL_SEGUIMIENTOS_EQUIPAJE
 UNION ALL
     SELECT 'TBL_EQUIPAJES' AS tabla, 
     COUNT(*) AS cantidad_registros 
@@ -100,7 +89,6 @@ UNION ALL
     COUNT(*) AS cantidad_registros 
     FROM TBL_SERVICIOS;
 
-
 ------------------------ EXTRACCIONES
 BEGIN
     PKG_ETLS_AEROLINEA.P_ETL_VUELOS;
@@ -115,8 +103,8 @@ BEGIN
     PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES;
     PKG_ETLS_AEROLINEA.P_ETL_EQUIPAJES_POR_BOLETO;
 END;
-
 -----------------------------------------LOGS
+
 SELECT ID,
     NOMBRE,
     TO_CHAR(FECHA_INICIO, 'DD/MM/YYYY HH24:MI:SS') FECHA_INICIO,
@@ -124,8 +112,6 @@ SELECT ID,
     EXITO,
     ERROR
 FROM TBL_LOGS;
-
-
 
 ------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------PRUEBA HOTELES-------------------------------------------------------
